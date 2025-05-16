@@ -1,3 +1,5 @@
+import TopNavbar from "@/components/TopNavbar";
+
 export default function TemplateLayout({
   children,
 }: {
@@ -5,7 +7,10 @@ export default function TemplateLayout({
 }) {
   return (
     <main className="flex flex-col items-center justify-between bg-neutral-50">
-      {children}
+      <TopNavbar />
+      <div className="w-full max-w-7xl px-4 py-6">
+        {children}
+      </div>
     </main>
   );
 }

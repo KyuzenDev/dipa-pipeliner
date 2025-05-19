@@ -1,10 +1,10 @@
-// import next from "next";
-// import Link from "next/link";
-// import Image from "next/image";
-// import Facebook from '../../../../public/footer/facebook.svg'
-// import Instagram from '../../../../public/footer/instagram.svg';
-// import Dribbble from '../../../../public/footer/dribbble.svg';
-// import Linkedin from '../../../../public/footer/linkedin.svg';
+import next from "next";
+import Link from "next/link";
+import Image from "next/image";
+import Facebook from 'public/footer/facebook.svg'
+import Instagram from 'public/footer/instagram.svg';
+import Dribbble from 'public/footer/dribbble.svg';
+import Linkedin from '/public/footer/linkedin.svg';
 
 export default function Footer() {
     return (

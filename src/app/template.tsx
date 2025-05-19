@@ -14,7 +14,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
       <TopNavbar />
       <div className="w-full max-w-7xl px-4 py-6">{children}</div>
-      <div className="text-white bg-success-300">a</div>
       <Footer />
     </main>
   );

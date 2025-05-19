@@ -2,10 +2,10 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
-const TopNavbar = () => {
+export default function TopNavbar() {
   return (
     <div className="w-full flex items-center justify-between bg-transparent py-5">
-      <div className="w-fit px-20 xl:w-[100%] gap-30 bg-transparent flex flex-row justify-between items-center">
+      <div className="w-fit px-20 xl:w-full gap-30 bg-transparent flex flex-row justify-between items-center">
         <div>
           <div>
             <Image
@@ -21,11 +21,9 @@ const TopNavbar = () => {
             <Link href="#">Blog</Link>
             <Link href="#">Contact</Link>
           </ul>
-          <Button>Start for Free</Button>
+          <Button className="text-primary-500">Start for Free</Button>
         </div>
       </div>
     </div>
   );
 };
-
-export default TopNavbar;

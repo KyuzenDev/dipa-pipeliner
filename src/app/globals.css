@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
+@theme {
     --color-primary-50: #F3F8FF;
     --color-primary-100: #E0ECFF;
     --color-primary-200: #B8D3FF;

@@ -28,7 +28,7 @@ export default function Hero() {
             width={113}
             height={24}
           />
-          <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-linear-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
         </div>
         <Image
           src="/hero/pipeliner.png"

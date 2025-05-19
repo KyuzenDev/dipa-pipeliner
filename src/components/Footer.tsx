@@ -32,16 +32,36 @@ export default function Footer() {
         </ul>
         <div className="w-45 h-6 gap-2 flex flex-row justify-beetwen items-center">
           <button className="w-10 h-10 p-2 justify-center items-center rounded-[5px] bg-gray-300 cursor-pointer">
-            <Image src="/footer/facebook.svg" alt="facebook" />
+            <Image
+              src="/footer/facebook.svg"
+              alt="facebook"
+              width={20}
+              height={20}
+            />
           </button>
           <button className="w-10 h-10 p-2 justify-center items-center rounded-[5px] bg-gray-300 cursor-pointer">
-            <Image src="/footer/instagram.svg" alt="instagram" />
+            <Image
+              src="/footer/instagram.svg"
+              alt="instagram"
+              width={20}
+              height={20}
+            />
           </button>
           <button className="w-10 h-10 p-2 justify-center items-center rounded-[5px] bg-gray-300 cursor-pointer">
-            <Image src="/footer/dribble.svg" alt="dribbble" />
+            <Image
+              src="/footer/dribble.svg"
+              alt="dribbble"
+              width={20}
+              height={20}
+            />
           </button>
           <button className="w-10 h-10 p-2 justify-center items-center rounded-[5px] bg-gray-300 cursor-pointer">
-            <Image src="/footer/linkedin.svg" alt="linkedin" />
+            <Image
+              src="/footer/linkedin.svg"
+              alt="linkedin"
+              width={20}
+              height={20}
+            />
           </button>
         </div>
       </div>

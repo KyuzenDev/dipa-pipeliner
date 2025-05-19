@@ -6,7 +6,7 @@ const TopNavbar = () => {
   return (
     <div className="w-full flex items-center justify-between bg-transparent py-5">
       <div className="w-fit px-20 xl:w-[100%] gap-30 bg-transparent flex flex-row justify-between items-center">
-        <div>
+        <div className="w-full flex flex-row justify-between gap-1">
           <div>
             <Image
               src="/logo/app-logo.png"

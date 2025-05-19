@@ -1,6 +1,4 @@
 import Image from "next/image";
-import reportsImg from "../../../../public/hero/reports.png";
-import pipelinerImg from "../../../../public/hero/pipeliner.png";
 
 export function Hero() {
   return (
@@ -24,10 +22,10 @@ export function Hero() {
       </div>
       <div className="flex flex-col items-center justify-center gap-10">
         <div className="relative w-fit">
-          <Image src={reportsImg} alt="Reports" className="w-fit mx-2" />
+          <Image src="/hero/reports.png" alt="Reports" className="w-fit mx-2" />
           <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
         </div>
-        <Image src={pipelinerImg} alt="Pipeliner" className="w-fit mx-2" />
+        <Image src="/hero/pipeliner.png" alt="Pipeliner" className="w-fit mx-2" />
       </div>
     </div>
   );

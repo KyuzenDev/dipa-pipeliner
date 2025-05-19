@@ -1,92 +1,15 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/app/globals.css",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      colors: {
-        primary: {
-          50: "#F5F3FE",
-          100: "#ECE9FC",
-          200: "#DCD6FB",
-          300: "#C1B6F8",
-          400: "#A38CF3",
-          500: "#835BF1",
-          600: "#743EE4",
-          700: "#652CD1",
-          800: "#5425AF",
-          900: "#46208F",
-        },
-        grayscale: {
-          50: "#F8FAFC",
-          100: "#F2F5F9",
-          200: "#E3E8EF",
-          300: "#CDD5E0",
-          400: "#97A3B6",
-          500: "#677489",
-          600: "#4A5567",
-          700: "#364153",
-          800: "#20293A",
-          900: "#111729",
-        },
-        success: {
-          100: "#DEF5ED",
-          200: "#C6EEE1",
-          300: "#87DCC0",
-          400: "#42D0A1",
-          500: "#049F6C",
-          600: "#096B4B",
-        },
-        warning: {
-          100: "#FFF6E0",
-          200: "#FFEBC9",
-          300: "#FFDEA6",
-          400: "#FFBE4C",
-          500: "#F29C06",
-          600: "#BE7A03",
-        },
-        info: {
-          100: "#EBF2FE",
-          200: "#D8E6FD",
-          300: "#9DC1FB",
-          400: "#71A4F5",
-          500: "#3B82F6",
-          600: "#0950C3",
-        },
-        danger: {
-          100: "#FFF0F3",
-          200: "#FADBE1",
-          300: "#ED8296",
-          400: "#F54B6B",
-          500: "#DF1C41",
-          600: "#710E21",
-        },
-      },
-      fontFamily: {
-        sans: ["Inter Tight", "sans-serif"],
-      },
-      fontSize: {
-        "heading-1": ["56px", { lineHeight: "120%", fontWeight: 600 }],
-        "heading-2": ["48px", { lineHeight: "120%", fontWeight: 600 }],
-        "heading-3": ["40px", { lineHeight: "120%", fontWeight: 600 }],
-        "heading-4": ["32px", { lineHeight: "120%", fontWeight: 600 }],
-        "heading-5": ["24px", { lineHeight: "120%", fontWeight: 600 }],
-        "heading-6": ["20px", { lineHeight: "120%", fontWeight: 600 }],
-        bodyXLarge: ["18px", { lineHeight: "150%" }],
-        bodyLarge: ["16px", { lineHeight: "150%" }],
-        bodyMedium: ["14px", { lineHeight: "150%" }],
-        bodySmall: ["12px", { lineHeight: "150%" }],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
+
+export default config;

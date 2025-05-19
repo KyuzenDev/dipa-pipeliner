@@ -1,3 +1,59 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-primary-50: #F3F8FF;
+    --color-primary-100: #E0ECFF;
+    --color-primary-200: #B8D3FF;
+    --color-primary-300: #88B6FF;
+    --color-primary-400: #5C98FF;
+    --color-primary-500: #307AFF;
+    --color-primary-600: #2060CC;
+    --color-primary-700: #144599;
+    --color-primary-800: #0A2D66;
+    --color-primary-900: #051933;    
+  
+    --color-grayscale-50: #F8FAFC;
+    --color-grayscale-100: #F2F5F9;
+    --color-grayscale-200: #E3E8EF;
+    --color-grayscale-300: #CDD5E0;
+    --color-grayscale-400: #97A3B6;
+    --color-grayscale-500: #677489;
+    --color-grayscale-600: #4A5567;
+    --color-grayscale-700: #364153;
+    --color-grayscale-800: #20293A;
+    --color-grayscale-900: #111729;
+  
+    --color-success-100: #DEF5ED;
+    --color-success-200: #C6EEE1;
+    --color-success-300: #87DCC0;
+    --color-success-400: #42D0A1;
+    --color-success-500: #049F6C;
+    --color-success-600: #096B4B;
+  
+    --color-warning-100: #FFF6E0;
+    --color-warning-200: #FFEBC9;
+    --color-warning-300: #FFDEA6;
+    --color-warning-400: #FFBE4C;
+    --color-warning-500: #F29C06;
+    --color-warning-600: #BE7A03;
+  
+    --color-info-100: #EBF2FE;
+    --color-info-200: #D8E6FD;
+    --color-info-300: #9DC1FB;
+    --color-info-400: #71A4F5;
+    --color-info-500: #3B82F6;
+    --color-info-600: #0950C3;
+  
+    --color-danger-100: #FFF0F3;
+    --color-danger-200: #FADBE1;
+    --color-danger-300: #ED8296;
+    --color-danger-400: #F54B6B;
+    --color-danger-500: #DF1C41;
+    --color-danger-600: #710E21;
+  }
+  
+  body {
+    font-family: 'Inter Tight', sans-serif;
+  }

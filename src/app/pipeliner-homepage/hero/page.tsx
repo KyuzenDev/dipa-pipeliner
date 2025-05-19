@@ -22,11 +22,21 @@ export default function Hero() {
       </div>
       <div className="flex flex-col items-center justify-center gap-10">
         <div className="relative w-fit">
-          <Image src="/hero/reports.png" alt="Reports" className="w-fit mx-2" />
+          <Image
+            src="/hero/reports.png"
+            alt="Reports"
+            width={113}
+            height={24}
+          />
           <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
         </div>
-        <Image src="/hero/pipeliner.png" alt="Pipeliner" className="w-fit mx-2" />
+        <Image
+          src="/hero/pipeliner.png"
+          alt="Pipeliner"
+          width={113}
+          height={24}
+        />
       </div>
     </div>
   );
-};
+}

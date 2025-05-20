@@ -1,9 +1,10 @@
-import { Hero } from "./pipeliner-homepage/hero/page";
+import PipelinerHomePage from "./pipeliner-homepage/page";
+
 
 export default function RootPage() {
   return (
     <>
-      <Hero />
+      <PipelinerHomePage />
     </>
   );
 }

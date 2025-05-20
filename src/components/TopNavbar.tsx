@@ -6,7 +6,6 @@ export default function TopNavbar() {
   return (
     <div className="w-full flex items-center justify-between bg-transparent py-5">
       <div className="w-full px-20 gap-30 bg-transparent flex flex-row justify-between items-center">
-        <div>
           <div>
             <Image
               src="/logo/app-logo.png"
@@ -15,14 +14,29 @@ export default function TopNavbar() {
               height={24}
             />
           </div>
-          <ul>
-            <Link href="#">About</Link>
-            <Link href="#">Pricing</Link>
-            <Link href="#">Blog</Link>
-            <Link href="#">Contact</Link>
+          <ul className="w-full md:w-auto flex flex-wrap text-grayscale-600 gap-4 md:gap-8 justify-center items-center">
+          <li>
+            <Link href="" className="hover:text-gray-900">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="" className="hover:text-gray-900">
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link href="" className="hover:text-gray-900">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link href="" className="hover:text-gray-900">
+              Contact
+            </Link>
+          </li>
           </ul>
-          <Button className="text-primary-500">Start for Free</Button>
-        </div>
+          <Button>Start for Free</Button>
       </div>
     </div>
   );

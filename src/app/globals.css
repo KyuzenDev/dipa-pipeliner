@@ -52,6 +52,9 @@
     --color-danger-400: #F54B6B;
     --color-danger-500: #DF1C41;
     --color-danger-600: #710E21;
+
+    --drop-shadow-custom: 0px 0px 0px 1.5px #181B25;
+    --drop-shadow-hover: 0px 4px 10px rgba(24, 27, 37, 0.2);
   }
   
   body {

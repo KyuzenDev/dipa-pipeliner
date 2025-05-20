@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 items-center">
       <div className="text-center items-center flex flex-col gap-5">
         <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
           New
@@ -20,23 +20,23 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center gap-10">
+      <div className="flex flex-col items-center justify-between gap-10">
         <div className="relative w-fit">
           <Image
             src="/hero/reports.png"
             alt="Reports"
-            width={113}
-            height={24}
+            width={960}
+            height={464}
           />
           <div className="absolute bottom-0 right-0 w-full h-full bg-linear-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
         </div>
-        <Image
+      </div>
+      <Image
           src="/hero/pipeliner.png"
           alt="Pipeliner"
-          width={113}
-          height={24}
+          width={1072}
+          height={32}
         />
-      </div>
     </div>
   );
 }

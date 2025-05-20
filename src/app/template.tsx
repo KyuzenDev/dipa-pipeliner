@@ -4,12 +4,11 @@ import Footer from "@/components/Footer";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <main className="flex flex-col items-center justify-between">
-      {/* Gradient utama */}
-      <div className="flex flex-col w-full relative">
-        <div className="absolute bg-linear-to-r from-[#D9F8C0] to-[#88CCF8] w-full  backdrop-blur-md h-screen max-h-[50vh] z-[-2]"></div>
-        {/* Blur tambahan di bawah gradient */}
-        <div className="absolute bottom-0 w-full h-20 bg-linear-to-t from-[#D9F8C0] to-transparent z-[-1]"></div>
+    <main className="flex flex-col items-center justify-between w-full">
+      <div className="relative w-full h-full">
+        <div className="absolute bg-gradient-custom inset-0 backdrop-blur-md h-screen max-h-[70vh] z-[-10]">
+          <div className="absolute w-full h-full shadow-blur z-[-5]">&nbsp;</div>
+        </div>
       </div>
 
       <TopNavbar />

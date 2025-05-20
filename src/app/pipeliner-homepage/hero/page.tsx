@@ -12,7 +12,7 @@ export default function Hero() {
           AI-powered CRM designed to build, scale, and elevate your business.
         </p>
         <div>
-          <button className="bg-black text-white px-6 py-2 rounded-full mr-4">
+          <button className="bg-gradient-to-t from-black to-grayscale-700 text-white px-6 py-2 rounded-full mr-4 ">
             Start for Free
           </button>
           <button className="bg-white text-black border border-black px-6 py-2 rounded-full">

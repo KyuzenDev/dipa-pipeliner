@@ -1,13 +1,10 @@
-import AccordionItem from "@/components/ui/accordionitem";
-import next from "next";
-
-export type items = {
+export type AFA = {
   title: string;
   content: string;
   link: string;
 }
 
-const items = [
+export const afa: AFA[] = [
   {
     title: "What is Pipeliner?",
     content: "Designed for today’s fast-moving teams, Pipeliner is a CRM that bends to your needs. Its flexible data model and easy-to-build workflows let you shape the platform around your GTM...",
@@ -39,18 +36,3 @@ const items = [
     link: "#",
   },
 ];
-
-export default function AccordionList() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
-      {items.map((item, index) => (
-        <AccordionItem
-          key={index}
-          title={item.title}
-          content={item.content}
-          link={item.link}
-        />
-      ))}
-    </div>
-  );
-}

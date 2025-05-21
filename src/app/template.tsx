@@ -12,7 +12,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       </div>
 
       <TopNavbar />
-      <div className="w-full max-w-7xl px-4 py-6">{children}</div>
+      <div className="w-full max-w-7xl py-12">{children}</div>
       <Footer />
     </main>
   );

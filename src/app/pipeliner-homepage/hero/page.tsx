@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Hero() {
@@ -11,13 +12,11 @@ export default function Hero() {
         <p className="text-lg">
           AI-powered CRM designed to build, scale, and elevate your business.
         </p>
-        <div>
-          <button className="bg-gradient-to-t from-black to-grayscale-700 text-white px-6 py-2 rounded-full mr-4 ">
-            Start for Free
-          </button>
-          <button className="bg-white text-black border border-black px-6 py-2 rounded-full">
-            Contact Sales
-          </button>
+        <div className="flex flex-wrap gap-2 items-center justify-between">
+          
+          <Button>Start for Free</Button>
+        
+          <Button variant="secondary">Contact Sales</Button>
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-10">

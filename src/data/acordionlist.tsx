@@ -1,13 +1,13 @@
 import AccordionItem from "@/components/ui/accordionitem";
 import next from "next";
 
-export type items AFA = {
+export type items = {
   title: string;
   content: string;
   link: string;
 }
 
-const items AFA = [
+const items = [
   {
     title: "What is Pipeliner?",
     content: "Designed for today’s fast-moving teams, Pipeliner is a CRM that bends to your needs. Its flexible data model and easy-to-build workflows let you shape the platform around your GTM...",

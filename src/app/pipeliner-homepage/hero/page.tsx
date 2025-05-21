@@ -1,41 +1,48 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col gap-20 items-center">
-      <div className="text-center items-center flex flex-col gap-5">
-        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-          New
-        </span>
-        <h1 className="text-4xl font-bold">Customer Relationship Magic</h1>
-        <p className="text-lg">
-          AI-powered CRM designed to build, scale, and elevate your business.
-        </p>
-        <div className="flex flex-wrap gap-2 items-center justify-between">
-          
+    <div className="flex flex-col items-center gap-20">
+      <div className="text-center flex flex-col items-center gap-10">
+        <Badge variant="secondary">
+          <Badge variant="blue">
+            New
+          </Badge>
+          The Best AI CRM
+        </Badge>
+        <div className="flex flex-col gap-5">
+          <h1 className="text-5xl font-semibold leading-[120%]">Customer<br /> Relationship Magic</h1>
+          <p className="text-lg font-normal text-grayscale-700">
+            AI-powered CRM designed to build, scale, and elevate your business.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2 items-center justify-center">
           <Button>Start for Free</Button>
-        
           <Button variant="secondary">Contact Sales</Button>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between gap-10">
-        <div className="relative w-fit">
+      <div className="flex flex-col gap-20 items-center">
+
+        <div className="flex flex-col relative w-fit">
           <Image
             src="/hero/reports.png"
             alt="Reports"
-            width={960}
+            width={1150}
             height={464}
+            objectFit="contain"
           />
           <div className="absolute bottom-0 right-0 w-full h-full bg-linear-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
         </div>
       </div>
+
       <Image
-          src="/hero/pipeliner.png"
-          alt="Pipeliner"
-          width={1072}
-          height={32}
-        />
+        src="/hero/pipeliner.png"
+        alt="Pipeliner"
+        width={1400}
+        height={32}
+      />
     </div>
   );
 }

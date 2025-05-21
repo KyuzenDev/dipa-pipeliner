@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
-import Milo from '../../../../public/formulir/Mailogo.svg'
+import Milo from '@/public/formulir/Mailogo.svg'
 import Image from "next/image";
-import { Input } from "../../../components/ui/input";
+import { Input } from "@/components/ui/input";
 
 export default function Form() {
     return (

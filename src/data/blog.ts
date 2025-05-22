@@ -1,12 +1,6 @@
-export type ContentGroups = {
-    photos: string;
-    date: string;
-    category: string;
-    title: string;
-    description: string;
-}
+import { BlogDetail } from "@/app/blog/types/blogDetail"
 
-export const contentgroups: ContentGroups[] = [
+export const blogDetail: BlogDetail[] = [
     {
         photos: "public/CMS/CMS-1.svg",
         date: "April 28, 2025",

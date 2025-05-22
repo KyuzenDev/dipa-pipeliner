@@ -1,11 +1,11 @@
-export type Drove = {
+export type Drive = {
     persentation: string;
     icons: string;
     title: string;
     description: string;
 }
 
-export const drove: Drove[] = [
+export const drive: Drive[] = [
     {
         persentation: '100%',
         icons: 'public/about-icon-smell/swing.svg',

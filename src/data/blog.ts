@@ -6,7 +6,7 @@ export type ContentGroups = {
     description: string;
 }
 
-export const contentgroups: ContentGroup[] = [
+export const contentgroups: ContentGroups[] = [
     {
         photos: "public/CMS/CMS-1.svg",
         date: "April 28, 2025",

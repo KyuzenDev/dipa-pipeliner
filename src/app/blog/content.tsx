@@ -1,5 +1,4 @@
-import { blogDetail } from '@/data/blog'
-import Image from 'next/image';
+import { contentgroups } from '@/src/data/blog.ts'
 
 export default function BlogCard() {
     return (

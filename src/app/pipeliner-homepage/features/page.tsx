@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export default function features() {
+export default function Features() {
     return (
         <div className="flex flex-col items-center gap-20 py-25">
             <div className="text-center flex flex-col items-center gap-5">

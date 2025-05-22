@@ -1,4 +1,4 @@
-import { contentgroups } from '@/src/data/blog.ts'
+import { contentgroups } from '@/data/blog.ts'
 
 export default function BlogCard() {
     return (

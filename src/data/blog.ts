@@ -1,4 +1,4 @@
-export type ContentManagementSystem = {
+export type ContentGroups = {
     photos: string;
     date: string;
     category: string;
@@ -6,7 +6,7 @@ export type ContentManagementSystem = {
     description: string;
 }
 
-export const contentmanagementsystem: ContentManagementSystem[] = [
+export const contentgroups: ContentGroup[] = [
     {
         photos: "public/CMS/CMS-1.svg",
         date: "April 28, 2025",

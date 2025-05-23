@@ -1,13 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export default function Features() {
+export default function FeaturesCRM() {
     return (
         <div className="flex flex-col items-center gap-20 py-25">
             <div className="text-center flex flex-col items-center gap-5">
                 <Badge>
                     <Avatar>
-                        <AvatarImage src="/avatar/jerrell.svg" sizes="sm"/>
+                        <AvatarImage src="/avatar/jerrell.svg" sizes="sm" />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Jerrell Luna

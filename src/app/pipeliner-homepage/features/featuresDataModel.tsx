@@ -8,7 +8,7 @@ export default function FeaturesDataModel() {
                     <h1 className="text-4xl font-semibold">The Ultimate Data Model <br />
                         for Go-to-Market Success</h1>
                     <p className="text-grayscale-600">Leverage insights from your business, customer, and product data <br />
-                        to drive and enhance your team&rsquo;s performance and success.   </p>
+                        to drive and enhance your team&rsquo;s performance and success.</p>
                 </div>
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-1 border-b-1 border-grayscale-200 pb-4">

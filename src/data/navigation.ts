@@ -5,9 +5,9 @@ interface NavigationProps {
 }
 
 export const navigation: NavigationProps[] = [
-    {
-        url: "/pipeliner-homepage",
-        label: "Pipeliner",
+   {
+        url: "/blog",
+        label: "Pipeliner Blog",
         published: true,
     },
 ];

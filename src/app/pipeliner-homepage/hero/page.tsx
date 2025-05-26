@@ -24,19 +24,13 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex flex-col gap-20 items-center">
-
-        <div className="flex flex-col relative w-fit">
-          <Image
-            src="/hero/reports.png"
-            alt="Reports"
-            width={1150}
-            height={464}
-            objectFit="contain"
-          />
-          <div className="absolute bottom-0 right-0 w-full h-full bg-linear-to-t from-transparent/50 via-transparent to-transparent pointer-events-none"></div>
-        </div>
+        <Image
+          src="/hero/reports.png"
+          alt="Reports"
+          width={1150}
+          height={464}
+        />
       </div>
-
       <Image
         src="/hero/pipeliner.png"
         alt="Pipeliner"

@@ -6,6 +6,7 @@ export default function Hero404() {
                     <h1 className="w-[191px] h-[67px] font-sans font-semibold text-2xl leading-[120%] text-gray-950">Oh no...</h1>
                     <text className="w-[361px] h-[30px] font-sans font-normal text-large leading-[160%] text-gray-600">The page you are looking for doesn&apos;t exist.</text>
                 </div>
+                <button className='w-39 h-12 p-3 gap-2 rounded-2xl border-1 bg-gradient-to-t from-black to-gray-700 text-white font-sans font-medium text-base cursor-pointer'>Return to Home</button>
             </div>
         </section>
     )

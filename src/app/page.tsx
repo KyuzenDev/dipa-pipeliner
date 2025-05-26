@@ -6,11 +6,11 @@ import FeaturesDataModel from "./pipeliner-homepage/features/featuresDataModel";
 
 export default function RootPage() {
   return (
-    <>
+    <div className="w-full py-12 px-12">
       <Hero />
       <FeaturesCRM />
       <Stats />
       <FeaturesDataModel />
-    </>
+    </div>
   );
 }

@@ -2,7 +2,7 @@ import FeaturesCRM from "@/app/pipeliner-homepage/features/featuresCRM";
 import Hero from "@/app/pipeliner-homepage/hero/page";
 import Stats from "@/app/pipeliner-homepage/stats/page";
 import FeaturesDataModel from "@/app/pipeliner-homepage/features/featuresDataModel";
-import FAQList from "@/app/pipeliner-homepage/features/frequentlyAskedQuestions";
+import FeaturesFAQ from "@/app/pipeliner-homepage/features/featuresFAQ";
 
 export default function RootPage() {
   return (
@@ -11,7 +11,7 @@ export default function RootPage() {
       <FeaturesCRM />
       <Stats />
       <FeaturesDataModel />
-      <FAQList />
+      <FeaturesFAQ />
     </div>
   );
 }

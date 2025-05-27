@@ -2,8 +2,8 @@
 import FeaturesCRM from "@/app/pipeliner-homepage/features/featuresCRM";
 import Hero from "@/app/pipeliner-homepage/hero/page";
 import Stats from "@/app/pipeliner-homepage/stats/page";
-import FeaturesDataModel from "./pipeliner-homepage/features/featuresDataModel";
-import FAQList from "./pipeliner-homepage/features/frequentlyAskedQuestions";
+import FeaturesDataModel from "@/app/pipeliner-homepage/features/featuresDataModel";
+import FAQList from "@/app/pipeliner-homepage/features/frequentlyAskedQuestions";
 
 export default function RootPage() {
   return (

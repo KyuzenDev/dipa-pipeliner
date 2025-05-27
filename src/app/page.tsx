@@ -1,4 +1,3 @@
-
 import FeaturesCRM from "@/app/pipeliner-homepage/features/featuresCRM";
 import Hero from "@/app/pipeliner-homepage/hero/page";
 import Stats from "@/app/pipeliner-homepage/stats/page";

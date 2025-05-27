@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import { navigation } from "@/data/navigation";
 
 export default function Footer() {
   return (
     <div className="w-full bg-gray-100">
-      <div className="w-full max-w-[1520px] px-6 sm:px-8 md:px-20 lg:px-18 mx-auto">
+      <div className="w-full max-w-[1520px] px-6 sm:px-8 md:px-18 lg:px-12 mx-auto">
         <div className="flex flex-wrap gap-8 md:gap-5 justify-between py-8 items-center">
           <Image
             src="/logo/app-footer.png"
@@ -17,15 +18,14 @@ export default function Footer() {
 
 
           <ul className="w-full md:w-auto flex flex-wrap gap-4 md:gap-6 justify-center items-center">
-            {["Home", "About", "Pricing", "Blog", "Contact"].map((item) => (
-              <li key={item}>
-                <Link href="" className="hover:text-gray-900">
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
+            {navigation.filter(item => item.hideInNavbar || item.published).map((item) => (
+                <li key={item.url}>
+                  <Link href={item.url} className="hover:text-gray-900">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           <div className="flex gap-3 justify-center items-center">
             {["facebook", "instagram", "dribble", "linkedin"].map((platform) => (
               <button

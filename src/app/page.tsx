@@ -6,7 +6,7 @@ import FeaturesFAQ from "@/app/pipeliner-homepage/features/featuresFAQ";
 
 export default function RootPage() {
   return (
-    <div className="w-full py-12 px-12">
+    <div className="w-full py-12 px-18">
       <Hero />
       <FeaturesCRM />
       <Stats />

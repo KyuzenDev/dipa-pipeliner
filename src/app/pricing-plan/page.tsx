@@ -27,8 +27,8 @@ export default function PricingPlan() {
                     </ul>
                     <button
                         className={`w-full py-2 px-4 rounded-xl text-sm font-semibold ${plan.head === 'Enterprise'
-                                ? 'border border-gray-300 hover:bg-gray-50'
-                                : 'bg-gray-900 text-white hover:bg-gray-800'
+                                ? 'border border-gray-300 hover:bg-gray-50 cursor-pointer'
+                                : 'bg-gray-900 text-white hover:bg-gray-800 cursor-pointer'
                             }`}
                     >
                         {plan.head === 'Enterprise' ? 'Talk to Sales' : `Go with ${plan.head}`}

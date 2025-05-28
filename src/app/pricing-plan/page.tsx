@@ -7,8 +7,7 @@ export default function PricingPlan() {
                 <div
                     key={plan.head}
                     className={`border border-grayscale-200 justify-between flex flex-col gap-8 p-6 shadow-sm ${plan.version === 'Primary' ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%' : 'bg-white'
-                        }`}
-                >
+                        }`}>
                     <div className="flex flex-row justify-between items-center">
                         <h3 className="text-xl font-medium">{plan.head}</h3>
                         {plan.popularity && (

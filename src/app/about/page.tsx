@@ -1,4 +1,4 @@
-import GuidedCard from "@/components/about/components/guidedCard";
+import GuidedCard from "@/components/about/components/card/guidedCard";
 import { Badge } from "@/components/ui/badge";
 
 export default function About() {

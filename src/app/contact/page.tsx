@@ -1,5 +1,6 @@
 
 
+import FormContact from "@/components/contact/components/formContact";
 import { Badge } from "@/components/ui/badge";
 
 export default function Contact() {
@@ -14,7 +15,7 @@ export default function Contact() {
                     <p className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700">
                         Don&apos;t hesitate to reach out to us if you need further assistance.
                     </p>
-
+                    <FormContact />
                 </div>
             </div>
         </div>

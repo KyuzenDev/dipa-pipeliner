@@ -1,4 +1,5 @@
 import { pricing } from "@/data/pricing"
+import { Button } from "@/components/ui/button";
 
 export default function PricingPlan() {
     return (
@@ -29,14 +30,12 @@ export default function PricingPlan() {
                                 </li>
                             ))}
                         </ul>
-                        <button
-                            className={`w-full py-2 px-4 rounded-xl text-sm font-semibold ${plan.version === 'Primary'
-                                ? 'bg-gray-900 text-white hover:bg-gray-800'
-                                : 'border border-gray-300 hover:bg-gray-50'
-                                }`}
+                        <Button
+                            variant={plan.version === 'Primary' ? 'default' : 'outline'} // Gunakan variant sesuai kondisi
+                            className="w-full py-2 px-4 rounded-xl text-sm font-semibold"
                         >
                             {plan.head === 'Enterprise' ? 'Talk to Sales' : `Go with ${plan.head}`}
-                        </button>
+                        </Button>
                     </div>
                 </div>
             ))}

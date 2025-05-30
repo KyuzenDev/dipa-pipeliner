@@ -46,7 +46,7 @@ export default function Formula() {
                         <p className="font-sans font-normal text-sm leading-[150%] text-gray-500">Messages</p><span className="text-red-500">*</span>
                         <Input type="text" placeholder="Enter message" className="rounded-xl py-3 px-4 gap-2 bg-gray-200 h-30"></Input>
                     </div>
-                    <Button className="w-full px-[18px] gap-2 border-1 rounded-[10px] border-white text-white font-sans justify-center items-center text-center">Send Messages</Button>
+                    <Button>Send Messages</Button>
                 </div>
             </div>
         </section>

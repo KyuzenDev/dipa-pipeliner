@@ -1,12 +1,4 @@
-export interface Pricing {
-    head: string;
-    price: string;
-    description: string;
-    notes: string;
-    features: string[];
-    version: "Primary" | "Secondary";
-    popularity?: boolean;
-}
+import { Pricing } from "@/app/pricing-plan/types/pricing"
 
 export const pricing: Pricing[] = [
     {

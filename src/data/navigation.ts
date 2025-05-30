@@ -18,7 +18,7 @@ export const navigation: NavigationProps[] = [
     published: true,
   },
   {
-    url: "/pricing",
+    url: "/pricing-plan",
     label: "Pricing",
     published: true,
   },

@@ -4,16 +4,9 @@ import Link from "next/link";
 export default function NotFound() {
     return (
         <div className="relative py-50 px-40 bg-white">
-            {/* Blur Kiri */}
             <div className="absolute inset-y-0 left-0 w-1/4 backdrop-blur-lg bg-gradient-to-l from-transparent to-[#D9F8C0] "></div>
-
-            {/* Blur Kanan */}
             <div className="absolute inset-y-0 right-0 w-1/4 backdrop-blur-lg bg-gradient-to-r from-transparent to-[#88CCF8] "></div>
-
-            {/* Blur Atas */}
             <div className="absolute inset-x-0 top-0 h-1/4 backdrop-blur-lg bg-gradient-to-t from-transparent to-white opacity-80"></div>
-
-            {/* Blur Bawah */}
             <div className="absolute inset-x-0 bottom-0 h-1/4 backdrop-blur-lg bg-gradient-to-b from-transparent to-white opacity-80"></div>
 
             <div className="flex flex-col h-max-[408px] items-center justify-center py-18 gap-12 rounded-4xl bg-white relative">

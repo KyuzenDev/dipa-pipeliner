@@ -1,6 +1,6 @@
 
 
-import FormContact from "@/components/contact/components/formContact";
+import FormContact from "@/components/contact/components/form/formContact";
 import { Badge } from "@/components/ui/badge";
 
 export default function Contact() {

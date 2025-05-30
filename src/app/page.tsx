@@ -1,9 +1,12 @@
-import FeaturesCRM from "@/app/pipeliner-homepage/features/featuresCRM";
+import FeaturesCRM from "@/components/pipeliner-homepage/components/features/featuresCRM";
 import Hero from "@/app/pipeliner-homepage/hero/page";
 import Stats from "@/app/pipeliner-homepage/stats/page";
-import FeaturesDataModel from "@/app/pipeliner-homepage/features/featuresDataModel";
-import FeaturesFAQ from "@/app/pipeliner-homepage/features/featuresFAQ";
-
+import FeaturesDataModel from "@/components/pipeliner-homepage/components/features/featuresDataModel";
+import FeaturesFAQ from "@/components/pipeliner-homepage/components/features/featuresFAQ";
+import {
+  Button
+} from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 export default function RootPage() {
   return (
     <div className="w-full py-12 px-18">
@@ -12,6 +15,24 @@ export default function RootPage() {
       <Stats />
       <FeaturesDataModel />
       <FeaturesFAQ />
+      <div className="max-w-full w-full pt-20 px-16 gap-16">
+        <div className="w-full mx-auto gap-8 items-center flex flex-col">
+          <Badge>Pipeliner Platform</Badge>
+          <div className="flex flex-col gap-5 text-center">
+            <h1 className="text-4xl font-semibold leading-[120%]">Start Creating Powerful <br /> Relationship Today</h1>
+            <p className="font-normal text-grayscale-700">
+              Don&apos;t hesitate to reach out us if you need further assistance.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 items-center justify-center">
+            <Button>Start for Free</Button>
+            <Button variant="secondary">Contact Sales</Button>
+          </div>
+
+          <div className="relative w-[708px] h-[503.48px]">
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

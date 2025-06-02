@@ -1,4 +1,4 @@
-import { Head } from "../types/blogHead"
+import { Head } from "@/app/blog/types/blogHead"
 
 export default function Theme({ head, date, gol }: Head) {
     return (

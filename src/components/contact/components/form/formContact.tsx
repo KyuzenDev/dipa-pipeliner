@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function FormContact() {
     return (
-        <div className="max-w-full w-full px-6 md:px-16 pb-16 md:pb-28 pt-10 md:pt-16 gap-8 md:gap-16 bg-white flex flex-col">
+        <div className="max-w-full w-full px-6 md:px-16 pb-16 md:pb-28 pt-10 md:pt-16 gap-8 md:gap-16 bg-transparent flex flex-col">
             <div className="m-auto w-full max-w-[752px] grid grid-cols-1 md:grid-cols-2 gap-6">
  
                 <div className="flex flex-col gap-6 text-left">

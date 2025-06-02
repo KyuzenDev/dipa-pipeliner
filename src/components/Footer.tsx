@@ -31,9 +31,9 @@ export default function Footer() {
             {["facebook", "instagram", "dribble", "linkedin"].map((platform) => (
               <Button
                 key={platform}
-                className="w-8 h-8 p-1 flex cursor-pointer justify-center items-center rounded bg-gray-300 hover:bg-gray-400"
+                className="w-8 h-8 p-1 relative flex cursor-pointer justify-center items-center rounded bg-grayscale-200 hover:bg-gray-300"
               >
-                <Image src={`/footer/${platform}.svg`} alt={platform} width={16} height={16} />
+                <Image src={`/socialMedia/${platform}.svg`} alt={platform} width={20} height={20} className="absolute z-1" />
               </Button>
             ))}
           </div>

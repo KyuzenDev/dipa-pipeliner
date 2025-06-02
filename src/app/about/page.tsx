@@ -1,3 +1,4 @@
+import CEO from "@/components/about/components/card/ceoCard";
 import GuidedCard from "@/components/about/components/card/guidedCard";
 import { Badge } from "@/components/ui/badge";
 
@@ -16,16 +17,28 @@ export default function About() {
                     Pipeliner is on a mission to craft tools that support business growth through smart.
                 </p>
             </div>
-            <div className="w-full h-auto gap-8 flex flex-col items-center mx-auto">
+            <div className="w-full py-20 h-auto gap-8 flex flex-col items-center mx-auto">
                 <div className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
                     <Badge>
                         Guided
                     </Badge>
                     <h2 className="font-semibold text-xl md:text-4xl leading-[120%] text-grayscale-900">Value Driven Actions</h2>
                     <p className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700">
-                        Don’t hesitate to reach out to us if you need further assistance.
+                        Don&apos;t hesitate to reach out to us if you need further assistance.
                     </p>
                     <GuidedCard />
+                </div>
+            </div>
+            <div className="w-full py-20 h-auto gap-8 flex flex-col items-center mx-auto">
+                <div className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
+                    <Badge>
+                        Founder
+                    </Badge>
+                    <h2 className="font-semibold text-xl md:text-4xl leading-[120%] text-grayscale-900">Meet the Team</h2>
+                    <p className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700">
+                    We transform big ideas into smart solutions for today&apos;s teams.
+                    </p>
+                    <CEO />
                 </div>
             </div>
         </div>

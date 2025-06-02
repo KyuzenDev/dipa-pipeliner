@@ -22,8 +22,9 @@ export default function TopNavbar() {
           </li>
         ))}
       </ul>
-
-      <Button>Start for Free</Button>
+      <div>
+        <Button>Start for Free</Button>
+      </div>
     </div>
   );
 }

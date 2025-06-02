@@ -32,7 +32,7 @@ export default function PricingPlan() {
                                 ))}
                             </ul>
                             <Button
-                                variant={plan.version === 'Primary' ? 'default' : 'outline'} // Gunakan variant sesuai kondisi
+                                variant={plan.version === 'Primary' ? 'default' : 'outline'}
                                 className="w-full py-2 px-4 rounded-xl text-sm font-semibold"
                             >
                                 {plan.head === 'Enterprise' ? 'Talk to Sales' : `Go with ${plan.head}`}

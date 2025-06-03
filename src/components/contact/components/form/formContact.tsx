@@ -2,6 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
+
 export default function FormContact() {
     return (
         <div className="max-w-full w-full px-6 md:px-16 pb-16 md:pb-28 pt-10 md:pt-16 gap-8 md:gap-16 bg-transparent flex flex-col">

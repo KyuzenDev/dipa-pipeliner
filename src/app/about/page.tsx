@@ -2,6 +2,7 @@ import CEO from "@/components/about/components/card/ceoCard";
 import GuidedCard from "@/components/about/components/card/guidedCard";
 import { Badge } from "@/components/ui/badge";
 import FeaturesFAQ from "@/components/pipeliner-homepage/components/features/featuresFAQ";
+import CTA from "@/components/CTA";
 
 export default function About() {
     return (
@@ -41,6 +42,7 @@ export default function About() {
                     </p>
                     <CEO />
                     <FeaturesFAQ />
+                    <CTA />
                 </div>
             </div>
         </div>

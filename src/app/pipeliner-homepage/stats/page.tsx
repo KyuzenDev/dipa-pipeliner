@@ -1,6 +1,6 @@
 export default function Stats() {
     return (
-        <div className="flex flex-col md:flex-row justify-between gap-6 text-center">
+        <div className="flex flex-col md:flex-row justify-between gap-6 text-center py-12 px-18">
 
             <div className="flex flex-col gap-4 items-center">
                 <h1 className="text-4xl md:text-6xl font-semibold">20K+</h1>

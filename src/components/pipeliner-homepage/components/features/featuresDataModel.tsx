@@ -2,7 +2,7 @@ import { SlidersHorizontalIcon, StackIcon } from "@phosphor-icons/react/dist/ssr
 
 export default function FeaturesDataModel() {
     return (
-        <div className="flex flex-col justifity-between gap-20 py-25">
+        <div className="flex flex-col justifity-between gap-20 py-12 px-18">
             <div className="flex flex-col items-start gap-8">
                 <div className="flex flex-col gap-2 ">
                     <h1 className="text-4xl font-semibold">The Ultimate Data Model <br />

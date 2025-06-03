@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center gap-20">
+    <div className="flex flex-col items-center gap-20 py-12 px-18">
       <div className="text-center flex flex-col items-center gap-10">
         <Badge variant="secondary">
           <Badge variant="blue">

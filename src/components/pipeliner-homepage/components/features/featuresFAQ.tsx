@@ -7,10 +7,12 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
 
 export default function FeaturesFAQ() {
   return (
-    <div className="flex flex-col items-center gap-20 py-25">
+    <div className="flex flex-col items-center gap-20 py-12 px-18">
       <div className="text-center flex flex-col items-center gap-6">
         <Badge>
           FAQ’s
@@ -30,8 +32,16 @@ export default function FeaturesFAQ() {
           <Accordion type="single" key={index} collapsible>
             <AccordionItem value="item">
               <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="flex flex-col gap-5">
                 {item.content}
+                <div className="border-1 text-grayscale-300 border-dashed"></div>
+                <Link href={item.link} className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group">
+                  <p className="text-grayscale-600 font-medium">Learn more</p>
+                  <ArrowRightIcon
+                    size={18}
+                    className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
+                  />
+                </Link>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

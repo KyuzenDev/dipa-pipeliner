@@ -1,6 +1,8 @@
 import { pricing } from "@/data/pricing"
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/CTA";
+import FeaturesFAQ from "@/components/pipeliner-homepage/components/features/featuresFAQ";
+
 export default function PricingPlan() {
     return (
         <>
@@ -41,6 +43,7 @@ export default function PricingPlan() {
                     </div>
                 ))}
             </div>
+            <FeaturesFAQ />
             <CTA />
         </>
     )

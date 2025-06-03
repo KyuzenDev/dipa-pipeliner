@@ -7,7 +7,7 @@ import CTA from "@/components/CTA";
 
 export default function RootPage() {
   return (
-    <div className="w-full py-12 px-18">
+    <div className="w-full">
       <Hero />
       <FeaturesCRM />
       <Stats />

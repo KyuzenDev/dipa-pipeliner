@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function FeaturesCRM() {
     return (
-        <div className="flex flex-col items-center gap-20 py-25">
+        <div className="flex flex-col items-center gap-20 py-12 px-18">
             <div className="text-center flex flex-col items-center gap-5">
                 <Badge>
                     <Avatar>

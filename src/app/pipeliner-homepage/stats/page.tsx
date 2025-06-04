@@ -18,7 +18,7 @@ export default function Stats() {
                 </h1>
             </div>
 
-            <div className="p-6 md:p-12 bg-[#F5F8FC] flex justify-center items-center">
+            <div className="p-6 md:p-12 bg-[#F5F8FC] flex justify-center items-center rounded-2xl">
                 <h1 className="text-xl md:text-2xl font-semibold">
                     We design workflows, deploy AI, <br className="hidden md:block" />
                     integrate data, and make reports.

@@ -1,5 +1,5 @@
 import { blogDetail } from "@/data/blog";
-import { Button } from "../../ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function BlogCard() {

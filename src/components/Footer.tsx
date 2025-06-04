@@ -27,7 +27,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          <div className="flex gap-3 justify-center items-center">
+          <div className="flex gap-3 justify-center items-center md:flex gap-3 md:justify-center md:items-center">
             {["facebook", "instagram", "dribble", "linkedin"].map((platform) => (
               <Button
                 key={platform}

@@ -1,4 +1,5 @@
 import CTA from "@/components/CTA";
+import { Badge } from "@/components/ui/badge";
 
 export default function Blog() {
     return (

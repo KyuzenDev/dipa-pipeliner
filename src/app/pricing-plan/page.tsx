@@ -2,7 +2,7 @@ import { pricing } from "@/data/pricing"
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/CTA";
 import FeaturesFAQ from "@/components/pipeliner-homepage/components/features/featuresFAQ";
-import { Badge } from 'lucide-react';
+import { Badge } from "@/components/ui/badge";
 
 export default function PricingPlan() {
     return (

@@ -17,7 +17,7 @@ export default function BlogCard() {
                         />
                         <div className="text-sm text-gray-500">{item.date}  •  {item.category}</div>
                         <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                        <p className="text-gray-600 text-sm"></p>
+                        <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                 ))}
             </div>

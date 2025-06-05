@@ -16,7 +16,7 @@ export default function BlogCard() {
                 ))}
             </div>
 
-            <Button variant="secondary">Load More Blogs</Button>
+            <Button variant="secondary" className="m-auto">Load More Blogs</Button>
         </div>
     );
 }

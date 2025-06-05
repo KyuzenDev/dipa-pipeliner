@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function BlogCard() {
     return (
-        <div className="max-w-full w-full px-15 justify-center items-center">
+        <div className="max-w-full w-full px-15 py-12 gap-2 justify-center items-center">
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
                 {blogDetail.map((item, index) => (
                     <div key={index} className="space-y-3">

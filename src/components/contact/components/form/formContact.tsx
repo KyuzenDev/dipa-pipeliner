@@ -1,7 +1,10 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-
+import Image from 'next';
+import Asked from "@/Asked.svg";
+import Messages from "@/massages.svg";
+import Mailogo from "@Mailogo.svg";
 
 export default function FormContact() {
     return (
@@ -11,6 +14,7 @@ export default function FormContact() {
                 <div className="flex flex-col gap-6 text-left">
                     <div className="w-full rounded-2xl border-3 p-6 gap-4 border-white bg-white shadow-md">
                         <div className="w-full gap-1">
+                            <Image src={Messages} alt="logos" />
                             <p className="font-sans font-medium text-lg text-gray-900 leading-[150%]">Open Live Chat</p>
                             <p className="font-sans font-normal text-sm text-grayscale-600 leading-[150%]">Talk to our customer support.</p>
                         </div>
@@ -18,6 +22,7 @@ export default function FormContact() {
                     </div>
                     <div className="w-full rounded-2xl border-3 p-6 gap-4 border-white bg-white shadow-md">
                         <div className="w-full gap-1">
+                            <Image src={Asked} alt="logos" />
                             <p className="font-sans font-medium text-lg text-gray-900 leading-[150%]">Read FAQs</p>
                             <p className="font-sans font-normal text-sm text-grayscale-600 leading-[150%]">Browse our general questions.</p>
                         </div>
@@ -27,6 +32,7 @@ export default function FormContact() {
 
                 <div className="flex flex-col rounded-2xl gap-6 p-6 bg-white text-left border border-grayscale-200">
                     <div className="w-full flex flex-col">
+                        <Image src={Mailogo} alt="logos" />
                         <label className="font-sans font-normal text-sm leading-[150%] text-grayscale-500">
                             Full Name <span className="text-red-500">*</span>
                         </label>

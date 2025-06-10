@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 export default function PricingPlan() {
     return (
         <>
-            <div className="max-w-full h-auto border-b border-grayscale-200 pt-32 pb-16 px-16 gap-4 flex flex-col bg-white">
+            <div className="max-w-full h-auto border-b border-grayscale-200 pt-32 pb-16 px-16 gap-4 flex flex-col bg-gradient-to-r from-white via-green-100 to-blue-200 : bg-white">
                 <Badge>Pricing</Badge>
                 <h2 className="m-auto w-full font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
                 <p className="m-auto w-full font-sans font-normal text-base text-grayscale-700 leading-[150%]">Start small, dream big. Get going in minutes—no commitment needed.</p>

@@ -9,7 +9,7 @@ export default function About() {
         <>
             <div className="max-w-full w-full h-auto pt-12 px-4 md:px-[64px] gap-2">
                 <div className="w-full h-auto md:h-[196px] gap-4 justify-center items-center flex flex-col mx-auto">
-                    <Badge>
+                    <Badge variant="default">
                         About
                     </Badge>
                     <div className="w-full h-auto justify-center items-center flex flex-col gap-1 text-center">

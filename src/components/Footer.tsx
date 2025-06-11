@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { navigation } from "@/data/navigation";
 import { Button } from "./ui/button";
+import { footerSocialMedia } from "@/data/footer";
 
 export default function Footer() {
   return (
@@ -28,14 +29,21 @@ export default function Footer() {
               ))}
             </ul>
           <div className="flex justify-center items-center md:flex gap-1 md:justify-center md:items-center">
-            {["facebook", "instagram", "dribble", "linkedin"].map((platform) => (
-              <Button
-                key={platform}
-                size="icon"
-                className="w-7 h-7 p-1 relative flex cursor-pointer justify-center items-center rounded bg-grayscale-200 hover:bg-gray-300"
-              >
-                <Image src={`/socialMedia/${platform}.svg`} alt={platform} width={16} height={16} className="absolute z-1" />
-              </Button>
+            {footerSocialMedia.map(({ platform, url }) => (
+              <Link href={url} key={platform} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="icon"
+                  className="w-7 h-7 p-1 relative flex cursor-pointer justify-center items-center rounded bg-grayscale-200 hover:bg-gray-300"
+                >
+                  <Image
+                    src={`/socialMedia/${platform}.svg`}
+                    alt={platform}
+                    width={16}
+                    height={16}
+                    className="absolute z-1"
+                  />
+                </Button>
+              </Link>
             ))}
           </div>
         </div>

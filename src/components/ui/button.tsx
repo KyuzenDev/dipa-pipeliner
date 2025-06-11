@@ -5,22 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority"
 import clsx from "clsx"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium text-sm ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:pointer-events-none",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium text-sm ring-offset-white transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:pointer-events-none",
   {
     variants: {
       variant: {
         default:
-          "cursor-pointer transition duration-300 ease-in-out drop-shadow-custom hover:drop-shadow-hover bg-linear-to-t border-1 border-[#FFFFFF33] bg-[#181B25] from-[#FFFFFF00] to-[#FFFFFF29] text-sm font-medium text-white",
+          "cursor-pointer drop-shadow-custom hover:drop-shadow-hover bg-gradient-to-t from-[#FFFFFF00] to-[#FFFFFF29] border border-[#FFFFFF33] bg-[#181B25] text-sm font-medium text-white hover:bg-[#20232E]",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "cursor-pointer border border-grayscale-200 transition duration-300 ease-in-out drop-shadow-custom hover:drop-shadow-hover bg-linear-to-t bg-white text-black text-sm font-medium",
+          "cursor-pointer border border-grayscale-200 drop-shadow-custom hover:drop-shadow-hover bg-white text-black text-sm font-medium hover:bg-gray-100",
         secondary:
-          "cursor-pointer transition duration-300 ease-in-out drop-shadow-custom hover:drop-shadow-hover bg-linear-to-t bg-white text-black text-sm font-medium",
+          "cursor-pointer drop-shadow-custom hover:drop-shadow-hover bg-white text-black text-sm font-medium hover:bg-gray-200",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        conect: "text-white cursor-pointer bg-blue-700 px-5 border-1 rounded-4xl border-blue-700 hover:bg-white hover:text-blue-500"
+        conect:
+          "text-white cursor-pointer bg-blue-700 px-5 border border-blue-700 rounded-4xl hover:bg-white hover:text-blue-500 transition-all duration-300 ease-in-out",
       },
       size: {
         default: "h-9 px-5 py-5 rounded-xl has-[>svg]:px-3",

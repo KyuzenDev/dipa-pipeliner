@@ -3,7 +3,6 @@ import GuidedCard from "@/components/about/components/card/guidedCard";
 import { Badge } from "@/components/ui/badge";
 import FeaturesFAQ from "@/components/pipeliner-homepage/components/features/featuresFAQ";
 import CTA from "@/components/CTA";
-import Image from "next/image";
 
 export default function About() {
     return (
@@ -31,31 +30,6 @@ export default function About() {
                             Don&apos;t hesitate to reach out to us if you need further assistance.
                         </p>
                         <GuidedCard />
-                    </div>
-                </div>
-                <div className="w-full py-20 h-auto gap-8 flex flex-col items-center mx-auto">
-                    <div className="w-full bg-[#F5F8FC] flex justify-center items-center border-1 border-grayscale-200 py-10 px-5 ">
-                        <div className="w-full gap-10 bg-[#F5F8FC] flex justify-center items-center border-1 border-grayscale-200 py-10 px-5 relative">
-                            <div className="w-[203px] relative h-[230px] bg-gradient-to-br from-[#D9F8C0] to-[#88CCF8] border-10 border-white rounded-lg p-5">
-                                <Image
-                                    src="/filterImage.png"
-                                    alt="Filter Image"
-                                    width={212}
-                                    height={213}
-                                    className="absolute bottom-0 left-0 z-10"
-                                />
-                            </div>
-                            <div className="flex flex-col h-full justify-center items-start gap-4">
-                                <p className="font-normal text-2xl leading-[130%] text-grayscale-900">
-                                    Pipeliner is the first CRM that feels truly <br /> modern. It&apos;s powerful, flexible, and fast <br />
-                                    to build with. There&apos;s nothing like it.
-                                </p>
-                                <div className="flex flex-col gap-1 text-md">
-                                    <p className="font-bold text-grayscale-900">Odessa Mira</p>
-                                    <p className="font-normal text-grayscale-600">CEO & Head of Finance</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className="w-full py-20 h-auto gap-8 flex flex-col items-center mx-auto">

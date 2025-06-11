@@ -37,7 +37,7 @@ export default function TopNavbar() {
 
       
       {isMenuOpen && (
-        <nav className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6">
+        <nav className="absolute z-10 top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6">
           {navigation.filter(item => !item.hideInNavbar && item.published).map((item) => (
             <Link key={item.url} href={item.url} className="text-lg hover:text-gray-900">
               {item.label}

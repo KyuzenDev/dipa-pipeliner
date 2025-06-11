@@ -21,18 +21,18 @@ export default function CTA() {
                         <Button variant="secondary">Contact Sales</Button>
                     </div>
 
-                    <div className="relative w-full flex justify-center items-center">
+                    <div className=" relative w-full flex justify-center items-center">
                         <Image
                             src="ctaItem.svg"
                             alt="ctaItem"
-                            width={1088}
+                            width={2088}
                             height={200}
-                            className="absolute z-0"
+                            className="absolute bottom-0 z-0"
                         />
                         <Image
                             src="ctaTablet.svg"
                             alt="ctaTablet"
-                            width={708}
+                            width={908}
                             height={200}
                         />
                     </div>

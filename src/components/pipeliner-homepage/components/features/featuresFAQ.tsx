@@ -34,7 +34,7 @@ export default function FeaturesFAQ() {
               <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
               <AccordionContent className="flex flex-col gap-5">
                 {item.content}
-                <div className="border-t-2 border-dashed border-grayscale-200 pb-4"></div>
+                <div className="border-t-2 border-dashed border-grayscale-200"></div>
                 <Link
                   href={item.link}
                   className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"

@@ -4,13 +4,14 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { navigation } from "@/data/navigation";
-import { HiMenuAlt3, HiX } from "react-icons/hi"; // Ikon burger dan close
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 export default function TopNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12">
+    <header className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
+      ${isMenuOpen ? "bg-white shadow-md" : "bg-transparent"}`}>
 
       <div>
         <Link href="/">
@@ -42,7 +43,6 @@ export default function TopNavbar() {
       >
         {isMenuOpen ? <HiX className="w-8 h-8" /> : <HiMenuAlt3 className="w-8 h-8" />}
       </button>
-
 
       {isMenuOpen && (
         <nav className="absolute z-10 top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6">

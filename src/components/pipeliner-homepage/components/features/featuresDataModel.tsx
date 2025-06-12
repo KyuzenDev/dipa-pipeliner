@@ -1,8 +1,9 @@
 import { SlidersHorizontalIcon, StackIcon } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 
 export default function FeaturesDataModel() {
     return (
-        <div className="flex flex-col justifity-between gap-20 py-12 px-18">
+        <div className="flex flex-row justify-between gap-20 py-12 px-18">
             <div className="flex flex-col items-start gap-8">
                 <div className="flex flex-col gap-2 ">
                     <h1 className="text-4xl font-semibold">The Ultimate Data Model <br />
@@ -26,7 +27,7 @@ export default function FeaturesDataModel() {
 
                 </div>
             </div>
-            <div></div>
+           <Image src="/vectorFeatures.png" alt="Data Model" width={454} height={278} className="object-cover" />
         </div>
     );
 }

@@ -38,8 +38,8 @@ export default function PricingPlan() {
                             <p className="text-md text-grayscale-800 font-medium">{plan.notes}</p>
                             <ul className="flex flex-col gap-4">
                                 {plan.features.map((feature) => (
-                                    <li key={feature} className="flex items-start text-sm text-gray-800">
-                                        <span className="text-blue-600">✔️</span> {feature}
+                                    <li key={feature} className="flex items-center gap-2 text-sm text-black">
+                                        <Image src="/pricing-plan/checklist.svg" alt="checklist" width={30} height={30} /> {feature}
                                     </li>
                                 ))}
                             </ul>

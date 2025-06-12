@@ -27,7 +27,7 @@ export default function CTA() {
                             alt="ctaItem"
                             width={2088}
                             height={200}
-                            className="absolute bottom-0 z-0"
+                            className="absolute bottom-0 -z-1"
                         />
                         <Image
                             src="ctaTablet.svg"

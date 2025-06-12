@@ -13,7 +13,15 @@ export default function TopNavbar() {
     <header className="w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12">
 
       <div>
-        <Image src="/logo/app-logo.png" alt="App Logo" width={113} height={24} />
+        <Link href="/">
+          <Image
+            src="/logo/app-logo.png"
+            alt="App Logo"
+            width={113}
+            height={24}
+            className="cursor-pointer hover:opacity-80 transition-opacity duration-300"
+          />
+        </Link>
       </div>
 
       <nav className="hidden md:flex w-auto gap-4 md:gap-8 justify-center items-center">
@@ -35,7 +43,7 @@ export default function TopNavbar() {
         {isMenuOpen ? <HiX className="w-8 h-8" /> : <HiMenuAlt3 className="w-8 h-8" />}
       </button>
 
-      
+
       {isMenuOpen && (
         <nav className="absolute z-10 top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6">
           {navigation.filter(item => !item.hideInNavbar && item.published).map((item) => (

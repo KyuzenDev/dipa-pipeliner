@@ -9,7 +9,7 @@ export default function About() {
     return (
         <>
             <div className="max-w-full w-full h-auto pt-12 px-4 md:px-[64px] gap-2">
-                <div className="w-full h-auto md:h-[196px] gap-4 justify-center items-center flex flex-col mx-auto">
+                <div className="w-full h-auto md:h-[196px] gap-4 justify-center items-center flex flex-col mx-auto mb-10">
                     <Badge variant="default">
                         About
                     </Badge>
@@ -21,6 +21,7 @@ export default function About() {
                         Pipeliner is on a mission to craft tools that support business growth through smart.
                     </p>
                 </div>
+                <Image src="/hero/pipeliner.png" alt="Pipeliner" width={1400} height={32} />
                 <div className="w-full py-20 h-auto gap-8 flex flex-col items-center mx-auto">
                     <div className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
                         <Badge variant="default">

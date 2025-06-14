@@ -28,14 +28,17 @@ export default function FeaturesFAQ() {
         </Button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
-        {FAQ.map((item, index) => (
-          <Accordion type="single" key={index} collapsible>
-            <AccordionItem value="item">
+        <Accordion type="single" collapsible>
+          {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
               <AccordionContent className="flex flex-col gap-5">
                 {item.content}
-                <div className="border-1 text-grayscale-300 border-dashed"></div>
-                <Link href={item.link} className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group">
+                <div className="border-t-2 border-dashed border-grayscale-200"></div>
+                <Link
+                  href={item.link}
+                  className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
+                >
                   <p className="text-grayscale-600 font-medium">Learn more</p>
                   <ArrowRightIcon
                     size={18}
@@ -44,8 +47,30 @@ export default function FeaturesFAQ() {
                 </Link>
               </AccordionContent>
             </AccordionItem>
-          </Accordion>
-        ))}
+          ))}
+        </Accordion>
+
+        <Accordion type="single" collapsible>
+          {FAQ.slice(Math.ceil(FAQ.length / 2)).map((item, index) => (
+            <AccordionItem key={index} value={`item-${index + Math.ceil(FAQ.length / 2)}`}>
+              <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-5">
+                {item.content}
+                <div className="border-1 text-grayscale-300 border-dashed"></div>
+                <Link
+                  href={item.link}
+                  className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
+                >
+                  <p className="text-grayscale-600 font-medium">Learn more</p>
+                  <ArrowRightIcon
+                    size={18}
+                    className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
+                  />
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
 

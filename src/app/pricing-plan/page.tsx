@@ -16,33 +16,49 @@ export default function PricingPlan() {
 
                 <Image src={Plate} alt="photos" className="absolute right-0 top-31"></Image>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 p-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6 max-w-7xl mx-auto">
                 {pricing.map((plan) => (
                     <div
                         key={plan.head}
-                        className={`border border-grayscale-200 justify-between flex flex-col gap-8 p-6 shadow-sm ${plan.version === 'Primary' ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%' : 'bg-white'
-                            }`}>
+                        className={`border border-grayscale-200 justify-between flex flex-col gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
+                                ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
+                                : 'bg-white'
+                            }`}
+                    >
+                        {/* Header */}
                         <div className="flex flex-row justify-between items-center">
-                            <h3 className="text-xl font-medium">{plan.head}</h3>
+                            <h3 className="text-xl font-semibold text-gray-800">{plan.head}</h3>
                             {plan.popularity && (
-                                <div className="text-sm font-medium text-white bg-blue-600 px-3 py-1 rounded-full inline-block ml-4">
+                                <div className="text-sm font-medium text-white bg-blue-600 px-3 py-1 rounded-full">
                                     Most Value
                                 </div>
                             )}
                         </div>
+
+                        {/* Price */}
                         <div className="flex flex-col">
-                            <p className="text-4xl font-bold">{plan.price}</p>
+                            <p className="text-4xl font-bold text-gray-900">{plan.price}</p>
                             <p className="text-sm text-gray-500">{plan.description}</p>
                         </div>
+
+                        {/* Features */}
                         <div className="flex flex-col gap-6">
-                            <p className="text-md text-grayscale-800 font-medium">{plan.notes}</p>
-                            <ul className="flex flex-col gap-4">
+                            <p className="text-base font-medium text-gray-700">{plan.notes}</p>
+                            <ul className="flex flex-col gap-3">
                                 {plan.features.map((feature) => (
-                                    <li key={feature} className="flex items-center gap-2 text-sm text-black">
-                                        <Image src="/pricing-plan/checklist.svg" alt="checklist" width={30} height={30} /> {feature}
+                                    <li key={feature} className="flex items-start gap-2 text-sm text-gray-800">
+                                        <Image
+                                            src="/pricing-plan/checklist.svg"
+                                            alt="checklist"
+                                            width={20}
+                                            height={20}
+                                        />
+                                        <span>{feature}</span>
                                     </li>
                                 ))}
                             </ul>
+
+                            {/* CTA Button */}
                             <Button
                                 variant={plan.version === 'Primary' ? 'default' : 'outline'}
                                 className="w-full py-2 px-4 rounded-xl text-sm font-semibold"

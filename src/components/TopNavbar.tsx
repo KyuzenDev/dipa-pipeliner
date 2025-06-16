@@ -4,10 +4,16 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { navigation } from "@/data/navigation";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
+import { FiMenu } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 export default function TopNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isDashboard = pathname === "/";
+  const logoSrc = isDashboard ? "/logo/app-logo.png" : "/logo/app-footer.png";
 
   return (
     <header className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
@@ -16,11 +22,12 @@ export default function TopNavbar() {
       <div>
         <Link href="/">
           <Image
-            src="/logo/app-logo.png"
+            src={logoSrc}
             alt="App Logo"
             width={113}
             height={24}
-            className="cursor-pointer hover:opacity-80 transition-opacity duration-300"
+            className={`cursor-pointer transition-opacity duration-300 hover:opacity-80 ${isDashboard ? "" : ""
+              }`}
           />
         </Link>
       </div>
@@ -38,10 +45,10 @@ export default function TopNavbar() {
       </div>
 
       <button
-        className="md:hidden text-gray-700 hover:text-gray-900 p-2 rounded-lg cursor-pointer"
+        className="md:hidden text-grayscale-900 hover:text-grayscale-700 p-2 rounded-lg cursor-pointer"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        {isMenuOpen ? <HiX className="w-8 h-8" /> : <HiMenuAlt3 className="w-8 h-8" />}
+        {isMenuOpen ? <HiX className="w-8 h-8" /> : <FiMenu className="w-8 h-8" />}
       </button>
 
       {isMenuOpen && (

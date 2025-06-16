@@ -9,32 +9,26 @@ import Plate from "../../../public/pricing-plan/head.svg"
 export default function PricingPlan() {
     return (
         <>
-            <div className="relative max-w-full h-auto border-b border-grayscale-200 pt-24 pb-16 px-6 sm:px-10 md:px-16 flex flex-col items-center gap-4 bg-gradient-to-r from-white via-green-100 to-blue-200">
-                <Badge>Pricing</Badge>
+            <div className="max-w-full relative h-auto border-b border-grayscale-200 pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
+                <div className="gap-4 flex flex-col items-start">
+                    <Badge>Pricing</Badge>
+                    <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
+                    <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">Start small, dream big. Get going in minutes—no commitment needed.</p>
+                </div>
 
-                <h2 className="text-center font-sans font-semibold text-3xl sm:text-4xl text-grayscale-900 leading-tight">
-                    Hack to Unicorn
-                </h2>
-
-                <p className="text-center font-sans font-normal text-base sm:text-lg text-grayscale-700 leading-relaxed max-w-2xl">
-                    Start small, dream big. Get going in minutes—no commitment needed.
-                </p>
-
-                {/* Tablet image / dashboard UI */}
-                <Image
-                    src={Plate}
-                    alt="photos"
-                    className="hidden sm:block absolute right-0 top-[160px] max-w-[600px] w-full h-auto"
-                />
+                <div className="mt-10 md:mt-0 relative md:absolute md:bottom-0 md:right-0 w-full md:w-auto flex justify-center md:justify-end">
+                    <Image src={Plate} alt="photos" className="max-w-full h-auto object-contain" />
+                </div>
             </div>
-            
+
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6 max-w-7xl mx-auto">
                 {pricing.map((plan) => (
                     <div
                         key={plan.head}
                         className={`border border-grayscale-200 justify-between flex flex-col gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
-                                ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
-                                : 'bg-white'
+                            ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
+                            : 'bg-white'
                             }`}
                     >
                         {/* Header */}

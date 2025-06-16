@@ -9,7 +9,7 @@ export default function BlogCard() {
                 {blogDetail.map((item, index) => (
                     <div key={index} className="space-y-3">
                         <Image
-                            src={`/CMS/CMS-${index + 1}.svg`}
+                            src={`/content-of-blog/blog-${index + 1}.png`}
                             width={400}
                             height={250}
                             alt={item.title}

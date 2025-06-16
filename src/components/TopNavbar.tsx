@@ -52,13 +52,13 @@ export default function TopNavbar() {
       </button>
 
       {isMenuOpen && (
-        <nav className="absolute z-10 top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6">
+        <nav className="absolute z-10 px-5 top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6">
           {navigation.filter(item => !item.hideInNavbar && item.published).map((item) => (
             <Link key={item.url} href={item.url} className="text-lg hover:text-gray-900">
               {item.label}
             </Link>
           ))}
-          <Button>Start for Free</Button>
+          <Button className="w-full py-6">Start for Free</Button>
         </nav>
       )}
     </header>

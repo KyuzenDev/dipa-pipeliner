@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Badge } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function Testimony() {
     <div className="max-w-full h-auto block static px-16 py-20 bg-[#F5F8FC] justify-center items-center">

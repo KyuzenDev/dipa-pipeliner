@@ -52,7 +52,7 @@ export default function About() {
                                     modern. It&apos;s powerful, flexible, and fast<br />
                                     to build with. There&apos;s nothing like it.
                                 </p>
-                                <div className="flex flex-col gap-1 text-md md:justify-center md:items-center lg:justify-center lg:items-center">
+                                <div className="flex flex-col gap-1 text-md">
                                     <p className="font-sans font-bold text-grayscale-900">Odessa Mira</p>
                                     <p className="font-sans font-normal text-grayscale-600">CEO & Head of Finance</p>
                                 </div>

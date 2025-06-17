@@ -1,16 +1,26 @@
+"use client";
+import { useState } from "react";
 import { FAQ } from "@/data/faq";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 export default function FeaturesFAQ() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFAQ, setActiveFAQ] = useState<{ title: string; content: string } | null>(null);
+
+  const openModal = (item: typeof FAQ[number]) => {
+    setActiveFAQ(item);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="flex flex-col items-center gap-20 py-12 px-18">
       <div className="text-center flex flex-col items-center gap-6">
@@ -35,8 +45,8 @@ export default function FeaturesFAQ() {
               <AccordionContent className="flex flex-col gap-5">
                 {item.content}
                 <div className="border-t-2 border-dashed border-grayscale-200"></div>
-                <Link
-                  href={item.link}
+                <button
+                  onClick={() => openModal(item)}
                   className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
                 >
                   <p className="text-grayscale-600 font-medium">Learn more</p>
@@ -44,7 +54,8 @@ export default function FeaturesFAQ() {
                     size={18}
                     className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
                   />
-                </Link>
+                </button>
+
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -57,8 +68,8 @@ export default function FeaturesFAQ() {
               <AccordionContent className="flex flex-col gap-5">
                 {item.content}
                 <div className="border-1 text-grayscale-300 border-dashed"></div>
-                <Link
-                  href={item.link}
+                <button
+                  onClick={() => openModal(item)}
                   className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
                 >
                   <p className="text-grayscale-600 font-medium">Learn more</p>
@@ -66,12 +77,23 @@ export default function FeaturesFAQ() {
                     size={18}
                     className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
                   />
-                </Link>
+                </button>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </div>
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="bg-white">
+          <DialogHeader>
+            <DialogTitle>{activeFAQ?.title}</DialogTitle>
+          </DialogHeader>
+          <div className="text-grayscale-700 whitespace-pre-line text-sm leading-relaxed">
+            {activeFAQ?.content}
+          </div>
+        </DialogContent>
+      </Dialog>
+
     </div>
 
   );

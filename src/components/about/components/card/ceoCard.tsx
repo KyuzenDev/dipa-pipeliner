@@ -9,7 +9,7 @@ export default function FounderCards() {
                 {founders.map((founder) => (
                     <div
                         key={founder.name}
-                        className={`w-full px-6 md:px-10 bg-gray-100 border border-gray-300 rounded-xl 
+                        className={`w-full px-6 bg-gradient-to-r from-white to-[#B7E2FA25] md:px-10 bg-white border border-gray-300 rounded-xl 
                                     flex flex-col md:flex-row-reverse justify-between items-center gap-6`}
                     >
                         <Image
@@ -22,8 +22,8 @@ export default function FounderCards() {
 
                         <div className="flex flex-col gap-6 text-center md:text-left">
                             <div className="flex flex-col gap-3">
-                                <p className="font-bold text-xl text-gray-900">{founder.name}</p>
-                                <p className="font-normal text-md text-gray-600">{founder.title}</p>
+                                <p className="font-semibold text-2xl text-grayscale-900">{founder.name}</p>
+                                <p className="font-normal text-md text-grayscale-600">{founder.title}</p>
                             </div>
 
                             <div className="flex gap-2">

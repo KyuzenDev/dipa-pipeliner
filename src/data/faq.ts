@@ -1,4 +1,13 @@
 import { itemsFAQ } from "@/app/pipeliner-homepage/types/itemsFAQ";
+import { SocialMedia } from "@/types/socialMedia";
+
+export const FAQSosialMedia: SocialMedia[] = [
+  { platform: "facebook", url: "#" },
+  { platform: "instagram", url: "#" },
+  { platform: "dribble", url: "#" },
+  { platform: "linkedin", url: "#" },
+];
+
 
 export const FAQ: itemsFAQ[] = [
   {

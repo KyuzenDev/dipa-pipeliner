@@ -9,7 +9,7 @@ export default function About() {
     return (
         <>
             <div className="max-w-full w-full h-auto pt-12 px-4 md:px-[64px] gap-2">
-                <div className="w-full h-auto md:h-[196px] gap-4 justify-center items-center flex flex-col mx-auto mb-10">
+                <div className="relative w-full gap-4 justify-between items-center flex flex-col mx-auto mb-52">
                     <Badge variant="default">
                         About
                     </Badge>
@@ -20,9 +20,32 @@ export default function About() {
                     <p className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700 text-center">
                         Pipeliner is on a mission to craft tools that support business growth through smart.
                     </p>
+
+                    <div className="absolute -bottom-8">
+                        <Image
+                            src="/ornament.svg"
+                            alt="Ornament Image"
+                            width={718}
+                            height={347}
+                            className="w-full h-auto object-cover"
+                        />
+                    </div>
+                    <div className="relative z-10">
+                        <Image
+                            src="/imageAbout.svg"
+                            alt="About Hero"
+                            width={539}
+                            height={329}
+                            className="w-full h-auto object-cover"
+                        />
+                    </div>
                 </div>
-                <Image src="/hero/pipeliner.png" alt="Pipeliner" width={1400} height={32} />
-                <div className="w-full py-20 h-auto gap-8 flex flex-col items-center mx-auto">
+                <div className="w-full h-auto flex justify-center items-center px-8">
+                    <div className="w-full max-w-7xl py-8 flex justify-center items-center">
+                        <Image src="/hero/pipeliner.png" alt="Pipeliner" width={1400} height={32} />
+                    </div>
+                </div>
+                <div className="w-full py-28 h-auto gap-16 flex flex-col items-between mx-auto">
                     <div className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
                         <Badge variant="default">
                             Guided
@@ -31,10 +54,10 @@ export default function About() {
                         <p className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700">
                             Don&apos;t hesitate to reach out to us if you need further assistance.
                         </p>
-                        <GuidedCard />
                     </div>
+                    <GuidedCard />
                 </div>
-                <div className="w-full py-20 h-auto flex flex-col items-center mx-auto">
+                <div className="w-full h-auto flex flex-col items-center mx-auto">
                     <div className="w-full bg-[#F5F8FC] flex justify-center items-center border border-grayscale-200 py-10 px-5">
                         <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-center items-center gap-10 relative">
                             <div className="w-[203px] h-[230px] relative bg-gradient-to-br from-[#D9F8C0] to-[#88CCF8] border-[10px] border-white rounded-lg p-5">

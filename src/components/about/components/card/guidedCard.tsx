@@ -9,20 +9,25 @@ export default function GuidedCard() {
             {guide.map((item, index) => (
                 <div
                     key={index}
-                    className="rounded-xl h-[250px] max-w-[341px] flex flex-col justify-between bg-white shadow-sm p-6 border border-gray-100"
+                    className="rounded-xl h-auto w-full flex flex-col gap-8 justify-between 
+                         bg-[linear-gradient(30deg,white_0%,#B7E2FA30_100%)] 
+                         shadow-sm p-6 border border-gray-100"
                 >
-                    <div className="flex items-center justify-between">
-                        <span className="text-4xl font-semibold">{item.persentation}</span>
-                        <Image
-                            src={item.icons}
-                            alt={item.title}
-                            width={60}
-                            height={60}
-                        />
-                    </div>
-                    <div className="text-left">
-                        <h3 className="text-2xl font-semibold">{item.title}</h3>
-                        <p className="text-md text-grayscale-500">{item.description}</p>
+            
+                    <div className="flex flex-col gap-6">
+                        <div className="flex items-center justify-between">
+                            <span className="text-4xl font-semibold">{item.persentation}</span>
+                            <Image
+                                src={item.icons}
+                                alt={item.title}
+                                width={60}
+                                height={60}
+                            />
+                        </div>
+                        <div className="flex flex-col gap-2 text-left">
+                            <h3 className="text-2xl font-semibold">{item.title}</h3>
+                            <p className="text-md text-grayscale-500">{item.description}</p>
+                        </div>
                     </div>
                     <div className="border-t-2 border-dashed border-grayscale-200"></div>
                     <Link

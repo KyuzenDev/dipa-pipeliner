@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { Pagination } from '../ui/pagination';
+import {Pagination} from '@/components/ui/pagination';
 
 type User = {
   id: number;

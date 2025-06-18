@@ -51,27 +51,6 @@ export default function ContentBlogDetail() {
                         these new players are now <u className="text-grayscale-900 font-sans text-large leading-[160%]>ready to meet enterprise</u> demands with integration.
                     </p>
                 </div>
-                <div className="self-start flex flex-col items-center gap-4 ">
-                    <p className="text-grayscale-500">Share post on</p>
-                    <div className="flex gap-2">
-                        {FAQSosialMedia.map(({ platform, url }) => (
-                            <Link href={url} key={platform} target="_blank" rel="noopener noreferrer">
-                                <Button
-                                    size="icon"
-                                    className="w-6 h-6 p-1 relative flex cursor-pointer justify-center items-center rounded bg-grayscale-200 hover:bg-gray-300"
-                                >
-                                    <Image
-                                        src={`/socialMedia/${platform}.svg`}
-                                        alt={platform}
-                                        width={14}
-                                        height={14}
-                                        className="absolute z-1"
-                                    />
-                                </Button>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
             </div>
         </div>
     )

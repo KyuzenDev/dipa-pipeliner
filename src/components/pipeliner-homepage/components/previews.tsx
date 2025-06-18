@@ -18,7 +18,7 @@ const users: User[] = [
     id: 1,
     name: 'Odessa Mira',
     company: 'Altria Group',
-    avatar: '/avatars/user1.png',
+    avatar: '/filterImage.png',
     badge: '/icons/odesa.png',
     badgeBg: 'bg-red-100',
   },
@@ -26,7 +26,7 @@ const users: User[] = [
     id: 2,
     name: 'Staci Owens',
     company: 'Campbell Soup',
-    avatar: '/avatars/user2.png',
+    avatar: '/stecu.png',
     badge: '/icons/staci.png',
     badgeBg: 'bg-blue-100',
   },
@@ -51,8 +51,8 @@ export default function PreviewPage() {
               <Image
                 src={user.avatar}
                 alt={user.name}
-                width={300}
-                height={100}
+                width={750}
+                height={400}
                 className="rounded-xl w-full h-[250px] object-cover grayscale"
               />
             </div>

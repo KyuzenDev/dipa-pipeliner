@@ -3,7 +3,7 @@ export default function ContentBlogDetail() {
         <div className="flex w-full justify-center">
             <div className="flex flex-col gap-8 w-full max-w-[720px]">
                 <p className="font-sans text-large font-normal text-gray-500 leading-8 text-left">
-                    In 2025, <u className="text-gray-900">Customer Relationship Management (CRM)</u>is poised for some thrilling
+                    In 2025, <u className="text-gray-900">Customer Relationship Management (CRM)</u> is poised for some thrilling
                     changes. With the rapid rise of generative AI, shifting business dynamics, and an
                     increasing focus on post-sales support, CRM is evolving to be faster and flexible.
                 </p>
@@ -31,8 +31,8 @@ export default function ContentBlogDetail() {
                         CRMs are no longer just for closing deals—they&apos;re evolving to support the entire
                         customer journey, from first touch to long-term retention.
                         <br />
-                        • Pipeliner are evolving beyond just sales tools
-                        • The post-sales experience is becoming a priority
+                        • Pipeliner are evolving beyond just sales tools <br />
+                        • The post-sales experience is becoming a priority <br />
                         • Pipeliner will manage the full customer journey
                     </p>
                 </div>
@@ -48,7 +48,7 @@ export default function ContentBlogDetail() {
                     <p className="font-sans font-normal text-left text-large leading-[160%] text-gray-900">
                         AI isn&apos;t the only force transforming CRM smaller vendors are gaining ground, offering
                         flexible, user-friendly solutions that rival legacy systems. Once focused on SMBs,
-                        these new players are now ready to meet enterprise demands with integration.
+                        these new players are now <u className="text-grayscale-900 font-sans text-large leading-[160%]>ready to meet enterprise</u> demands with integration.
                     </p>
                 </div>
             </div>

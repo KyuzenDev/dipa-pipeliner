@@ -48,7 +48,7 @@ export default function ContentBlogDetail() {
                     <p className="font-sans font-normal text-left text-large leading-[160%] text-gray-900">
                         AI isn&apos;t the only force transforming CRM smaller vendors are gaining ground, offering
                         flexible, user-friendly solutions that rival legacy systems. Once focused on SMBs,
-                        these new players are now <u className="text-grayscale-900 font-sans text-large leading-[160%]>ready to meet enterprise</u> demands with integration.
+                        these new players are now <u className="text-grayscale-900 font-sans text-large leading-[160%]">ready to meet enterprise</u> demands with integration.
                     </p>
                 </div>
             </div>

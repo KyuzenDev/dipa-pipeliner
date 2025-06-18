@@ -1,10 +1,8 @@
 import CTA from "@/components/CTA";
-import TopNavbar from "@/components/TopNavbar";
 import SubBlog from "../blogdetails/headerblogdetail";
 import Image from "next/image";
 import ContentBlogDetail from "../blogdetails/contentblogdetail";
 import BlogCard from "../blogContent";
-import Firsto from "../../../../../public/content-of-blog/blog-1.png"
 
 export default function FirstPage() {
     return (
@@ -15,7 +13,7 @@ export default function FirstPage() {
                     date="April 24, 2025"
                     detail="Customers"
                 />
-                <Image src={Firsto} alt="photos"></Image>
+                <Image src="/content-of-blog/blog-1.png" alt="photos"></Image>
                 <ContentBlogDetail/>
                 <BlogCard/>
             </div>

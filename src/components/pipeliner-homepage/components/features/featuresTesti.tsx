@@ -7,12 +7,12 @@ export default function Testimony() {
             <div className="w-full h-auto static flex flex-col gap-4 justify-center items-center text-center">
                 <Badge>Testimonials</Badge>
                 <h2 className="font-sans font-semibold text-[40px] text-center text-grayscale-900">Their Favorites Feature</h2>
-                <p className="font-sans font-normal text-base text-center text-grayscale-700">Leverage insights from your business, customer, and product data <br /> to drive and enhance your team's performance and success.</p>
+                <p className="font-sans font-normal text-base text-center text-grayscale-700">Leverage insights from your business, customer, and product data <br /> to drive and enhance your team&apos;s performance and success.</p>
             </div>
             <div className="w-full h-auto static flex flex-row gap-5">
                 <div className="w-full h-auto static flex flex-col p-[40px] rounded-xl gap-[40px] bg-[#EBEDFD]">
                     <h3 className="font-sans font-normal text-3xl leading-[130%] text-grayscale-900">
-                        Pipeliner is the first CRM that feels truly modern. It’s powerful, flexible, and fast to build with. There’s nothing like it.
+                        Pipeliner is the first CRM that feels truly modern. It&apos;s powerful, flexible, and fast to build with. There&apos;s nothing like it.
                     </h3>
                     <div className="w-full h-auto static flex flex-row gap-4">
                         <Image src="#" alt="photo"></Image>

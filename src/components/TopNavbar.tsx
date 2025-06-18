@@ -17,7 +17,8 @@ export default function TopNavbar() {
 
   return (
     <header className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
-      ${isMenuOpen ? "bg-white shadow-md" : "bg-white"}`}>
+  ${isMenuOpen ? "bg-white shadow-md" : isDashboard ? "bg-transparent" : "bg-white"} z-50`}>
+
 
       <div>
         <Link href="/">

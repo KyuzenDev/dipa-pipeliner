@@ -18,7 +18,7 @@ const users: User[] = [
     id: 1,
     name: 'Odessa Mira',
     company: 'Altria Group',
-    avatar: '/avatars/user1.png',
+    avatar: '/ornament.svg',
     badge: '/icons/odesa.png',
     badgeBg: 'bg-red-100',
   },

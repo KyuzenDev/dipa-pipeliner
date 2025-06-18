@@ -26,7 +26,7 @@ const users: User[] = [
     id: 2,
     name: 'Staci Owens',
     company: 'Campbell Soup',
-    avatar: '/avatars/user2.png',
+    avatar: '/stecu.png',
     badge: '/icons/staci.png',
     badgeBg: 'bg-blue-100',
   },

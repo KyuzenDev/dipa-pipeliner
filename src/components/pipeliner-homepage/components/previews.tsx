@@ -51,8 +51,8 @@ export default function PreviewPage() {
               <Image
                 src={user.avatar}
                 alt={user.name}
-                width={300}
-                height={100}
+                width={750}
+                height={400}
                 className="rounded-xl w-full h-[250px] object-cover grayscale"
               />
             </div>

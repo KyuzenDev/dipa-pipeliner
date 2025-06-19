@@ -22,7 +22,7 @@ export default function FeaturesCRM() {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-center">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] gap-6 w-full justify-center text-center">
 
                 <div className="w-full overflow-hidden shadow-sm flex-col max-w-[341px] mx-auto items-center justify-center rounded-2xl border border-[#E0F1FB]">
                     <div className="rounded-2xl flex flex-col gap-4 bg-whit py-6">

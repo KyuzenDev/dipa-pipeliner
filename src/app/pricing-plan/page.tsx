@@ -26,7 +26,7 @@ export default function PricingPlan() {
                 {pricing.map((plan) => (
                     <div
                         key={plan.head}
-                        className={`border border-grayscale-200 justify-between flex flex-col gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
+                        className={`border border-grayscale-200 flex flex-col justify-between h-full gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
                             ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
                             : 'bg-white'
                             }`}

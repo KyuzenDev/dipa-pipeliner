@@ -75,7 +75,7 @@ export default function About() {
                                     className="absolute bottom-0 left-0 z-10"
                                 />
                             </div>
-                            <div className="flex flex-col h-full justify-center items-start text-center lg:text-left gap-4">
+                            <div className="flex flex-col h-full justify-center items-center lg:items-start text-center lg:text-left gap-4">
                                 <p className="font-sans font-normal text-2xl leading-[130%] text-grayscale-900">
                                     Pipeliner is the first CRM that feels truly<br />
                                     modern. It&apos;s powerful, flexible, and fast<br />

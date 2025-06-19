@@ -21,7 +21,7 @@ export default function FeaturesCRM() {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-center">
 
                 <div className="rounded-2xl p-6 flex flex-col gap-4 bg-[linear-gradient(to_bottom,white_50%,#B7E2FA_80%)] shadow-sm border border-[#E0F1FB]">
                     <h3 className="font-semibold text-4xl text-grayscale-900">Data Powered <br/> Workflows Design</h3>

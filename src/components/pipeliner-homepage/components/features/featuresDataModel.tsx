@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function FeaturesDataModel() {
     return (
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-20 py-12 px-6 md:px-12 lg:px-18">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 py-12 px-6 md:px-12 lg:px-18">
             {/*Text Section*/}
             <div className="flex flex-col items-start gap-8 max-w-xl">
                 <div className="flex flex-col gap-2 text-center lg:text-left">

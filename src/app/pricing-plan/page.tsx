@@ -17,7 +17,7 @@ export default function PricingPlan() {
                 </div>
 
                 <div className="mt-10 md:mt-0 relative md:absolute md:bottom-0 md:right-0 w-full md:w-auto flex justify-center md:justify-end">
-                    <Image src={Plate} alt="photos" className="max-w-full h-auto object-contain lg:translate-x-32" />
+                    <Image src={Plate} alt="photos" className="max-w-full h-auto object-contain" />
                 </div>
             </div>
 

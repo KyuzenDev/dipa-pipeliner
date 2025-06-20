@@ -19,7 +19,7 @@ export default function Footer() {
           />
 
 
-          <ul className="w-full md:w-auto flex flex-wrap gap-4 md:gap-6 justify-center items-center">
+          <ul className="w-full md:w-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4 justify-center items-center">
             {navigation.filter(item => item.hideInNavbar || item.published).map((item) => (
                 <li key={item.url}>
                   <Link href={item.url} className="hover:text-gray-900">

@@ -1,4 +1,4 @@
-import CEO from "@/components/about/components/card/ceoCard";
+import FounderCards from "@/components/about/components/card/ceoCard";
 import GuidedCard from "@/components/about/components/card/guidedCard";
 import { Badge } from "@/components/ui/badge";
 import FeaturesFAQ from "@/components/pipeliner-homepage/components/features/featuresFAQ";
@@ -99,7 +99,7 @@ export default function About() {
                         <p className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700">
                             We transform big ideas into smart solutions for today&apos;s teams.
                         </p>
-                        <CEO />
+                        <FounderCards />
                     </div>
                 </div>
             </div>

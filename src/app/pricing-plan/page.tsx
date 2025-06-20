@@ -26,9 +26,9 @@ export default function PricingPlan() {
                 {pricing.map((plan) => (
                     <div
                         key={plan.head}
-                        className={`border border-grayscale-200 justify-between flex flex-col gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
-                            ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
-                            : 'bg-white'
+                        className={`border border-grayscale-200 flex flex-col justify-between h-full gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
+                                ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
+                                : 'bg-white'
                             }`}
                     >
                         {/* Header */}
@@ -47,27 +47,29 @@ export default function PricingPlan() {
                             <p className="text-sm text-gray-500">{plan.description}</p>
                         </div>
 
-                        {/* Features */}
-                        <div className="flex flex-col gap-6">
-                            <p className="text-base font-medium text-gray-700">{plan.notes}</p>
-                            <ul className="flex flex-col gap-3">
-                                {plan.features.map((feature) => (
-                                    <li key={feature} className="flex items-start gap-2 text-sm text-gray-800">
-                                        <Image
-                                            src="/pricing-plan/checklist.svg"
-                                            alt="checklist"
-                                            width={20}
-                                            height={20}
-                                        />
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        {/* Features and CTA */}
+                        <div className="flex flex-col flex-1 justify-between">
+                            <div className="flex flex-col gap-6">
+                                <p className="text-base font-medium text-gray-700">{plan.notes}</p>
+                                <ul className="flex flex-col gap-3">
+                                    {plan.features.map((feature) => (
+                                        <li key={feature} className="flex items-start gap-2 text-sm text-gray-800">
+                                            <Image
+                                                src="/pricing-plan/checklist.svg"
+                                                alt="checklist"
+                                                width={20}
+                                                height={20}
+                                            />
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                            {/* CTA Button */}
+                            {/* CTA */}
                             <Button
                                 variant={plan.version === 'Primary' ? 'default' : 'outline'}
-                                className="w-full py-2 px-4 rounded-xl text-sm font-semibold"
+                                className="w-full py-2 px-4 rounded-xl text-sm font-semibold mt-8"
                             >
                                 {plan.head === 'Enterprise' ? 'Talk to Sales' : `Go with ${plan.head}`}
                             </Button>

@@ -24,7 +24,7 @@ export default function FeaturesFAQ() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-20 py-12 px-18">
+    <div className="flex flex-col items-center gap-20 py-12 px-4 sm:px-6 md:px-12 lg:px-20">
       <div className="text-center flex flex-col items-center gap-6">
         <Badge>
           FAQ’s
@@ -40,7 +40,7 @@ export default function FeaturesFAQ() {
         </Button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
-        <Accordion type="single" collapsible>
+        <Accordion type="single" className="flex flex-col gap-4" collapsible>
           {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
@@ -63,7 +63,7 @@ export default function FeaturesFAQ() {
           ))}
         </Accordion>
 
-        <Accordion type="single" collapsible>
+        <Accordion type="single" className="flex flex-col gap-4" collapsible>
           {FAQ.slice(Math.ceil(FAQ.length / 2)).map((item, index) => (
             <AccordionItem key={index} value={`item-${index + Math.ceil(FAQ.length / 2)}`}>
               <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>

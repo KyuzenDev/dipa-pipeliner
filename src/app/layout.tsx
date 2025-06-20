@@ -14,14 +14,14 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname(); // Ambil halaman saat ini
+  const pathname = usePathname();
   const isHomePage = pathname === "/";
   return (
     <html lang="en">
       <body
         className={inter.className}
       >
-        <main className="flex flex-col items-center justify-between w-full">
+        <main className="w-full min-h-screen">
           {isHomePage && (
             <div className="relative w-full h-full">
               <div className="absolute bg-gradient-custom inset-0 backdrop-blur-md h-screen max-h-[70vh] z-[-10]">

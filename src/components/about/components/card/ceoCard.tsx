@@ -17,7 +17,7 @@ export default function FounderCards() {
                             alt={founder.name}
                             width={240}
                             height={560}
-                            className="w-auto"
+                            className="w-auto md:mt-8"
                         />
 
                         <div className="flex flex-col gap-6 text-center md:text-left">
@@ -26,7 +26,7 @@ export default function FounderCards() {
                                 <p className="font-normal text-md text-grayscale-600">{founder.title}</p>
                             </div>
 
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 justify-center md:justify-start">
                                 {founder.socialMedia?.map(({ platform, url }) => (
                                     <Link
                                         key={platform}

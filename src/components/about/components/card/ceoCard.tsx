@@ -10,7 +10,7 @@ export default function FounderCards() {
                     <div
                         key={founder.name}
                         className={`w-full px-6 bg-gradient-to-r from-white to-[#B7E2FA25] md:px-10 bg-white border border-gray-300 rounded-xl 
-                                    flex flex-col md:flex-row-reverse justify-between items-center gap-6`}
+                                    flex flex-col md:flex-col-reverse lg:flex-row-reverse justify-between items-center gap-6`}
                     >
                         <Image
                             src={founder.image}

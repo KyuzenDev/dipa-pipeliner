@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import samsul from "../../../../../public/Relationship/samsul.png"
 import PreviewPage from "../previews";
+import auto from "../../../../../public/icons/flow/conect.png"
+import produce from "../../../../../public/icons/flow/files.png"
+import source from "../../../../../public/icons/flow/source.png"
 
 export default function Testimony() {
     return (
@@ -26,9 +29,22 @@ export default function Testimony() {
                         </div>
                         <div className="border-1 text-grayscale-300 border-dashed"></div>
                         <div className="w-full h-auto flex flex-col"></div>
-                        <div className="w-full h-auto static flex flex-col bg-transparent gap-4">
-                            <p className="w-full h-auto font-sans font-normal text-sm text-graycale-600">Favorites Future</p>
-                            <div className="w-full h-auto static flex flex-row"></div>
+                        <div className="w-full h-auto static flex flex-col bg-transparent gap-4 mt-[-40px]">
+                            <p className="w-full h-auto font-sans font-normal text-sm text-grayscale-600">Favorites Future</p>
+                            <div className="w-full h-auto static flex flex-row gap-4">
+                                <div className="w-30 h-auto static flex flex-row gap-2">
+                                    <Image src={auto} width={24} height={24} alt="image"></Image>
+                                    <p className="font-sans font-medium text-base leading-[150%] text-grayscale-900">Automation</p>
+                                </div>
+                                <div className="w-30 h-auto static flex flex-row gap-2">
+                                    <Image src={produce} width={24} height={24} alt="image"></Image>
+                                    <p className="font-sans font-medium text-base leading-[150%] text-grayscale-900">Productivity</p>
+                                </div>
+                                <div className="w-30 h-auto static flex flex-row gap-2">
+                                    <Image src={source} width={24} height={24} alt="image"></Image>
+                                    <p className="font-sans font-medium text-base leading-[150%] text-grayscale-900">Pipeline</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="w-full h-auto">

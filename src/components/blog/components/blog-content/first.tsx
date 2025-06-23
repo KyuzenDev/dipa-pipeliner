@@ -3,6 +3,7 @@ import SubBlog from "../blogdetails/headerblogdetail";
 import Image from "next/image";
 import ContentBlogDetail from "../blogdetails/contentblogdetail";
 import BlogCard from "../blogContent";
+import Firsto from "../../../../../public/content-of-blog/blog-1.png"
 
 export default function FirstPage() {
     return (
@@ -10,10 +11,10 @@ export default function FirstPage() {
             <div className="w-full border-b border-white py-15 px-15 gap-10 flex flex-col justify-center items-center">
                 <SubBlog
                     title="How to Choose the Right CRM for Your Personal and Business"
-                    date="April 24, 2025"
-                    detail="Customers"
+                    date="April 28, 2025"
+                    detail="Product"
                 />
-                <Image src="/content-of-blog/blog-1.png" alt="photos"></Image>
+                <Image src={Firsto} alt="photos"></Image>
                 <ContentBlogDetail/>
                 <BlogCard/>
             </div>

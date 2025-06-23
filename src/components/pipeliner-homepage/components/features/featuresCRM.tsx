@@ -22,32 +22,34 @@ export default function FeaturesCRM() {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] gap-6 w-full justify-center text-center">
+            <div className="w-full flex flex-wrap gap-6 justify-center text-center">
 
-                <div className="w-full overflow-hidden shadow-sm flex-col max-w-[341px] mx-auto items-center justify-center rounded-2xl border border-[#E0F1FB]">
-                    <div className="rounded-2xl flex flex-col gap-4 bg-whit py-6">
+                <div className="overflow-hidden shadow-sm flex flex-col items-center justify-center max-w-[341px] w-full rounded-2xl border border-[#E0F1FB]">
+                    <div className="rounded-2xl flex flex-col gap-4 bg-white py-6 px-4">
                         <h3 className="font-semibold text-xl text-grayscale-900">Data Powered <br /> Workflows Design</h3>
                         <p className="text-grayscale-600 text-md">Automate your go market decisions <br /> based on the most reliable dataset.</p>
                     </div>
-                    <Image src="/features/features_1/card_1.svg" alt="Workflow Design" width={341} height={264}/>
+                    <Image src="/features/features_1/card_1.svg" alt="Workflow Design" width={341} height={264} />
                 </div>
 
-                <div className="w-full overflow-hidden shadow-sm flex-col max-w-[341px] mx-auto items-center justify-center rounded-2xl  border border-[#E0F1FB]">
-                    <div className="rounded-2xl flex flex-col gap-4 bg-white py-6">
+                <div className="overflow-hidden shadow-sm flex flex-col items-center justify-center max-w-[341px] w-full rounded-2xl border border-[#E0F1FB]">
+                    <div className="rounded-2xl flex flex-col gap-4 bg-white py-6 px-4">
                         <h3 className="font-semibold text-xl text-grayscale-900">Your Team <br /> Synergy Station</h3>
                         <p className="text-grayscale-600 text-md">Pipeliner boosts go market teams <br /> productivity and streamlines tasks.</p>
                     </div>
                     <Image src="/features/features_1/card_2.svg" alt="Workflow Design" width={341} height={264} />
                 </div>
 
-                <div className="w-full overflow-hidden shadow-sm flex-col max-w-[341px] mx-auto items-center justify-center rounded-2xl border border-[#E0F1FB]">
-                    <div className="rounded-2xl flex flex-col gap-4 bg-white py-6">
+                <div className="overflow-hidden shadow-sm flex flex-col items-center justify-center max-w-[341px] w-full rounded-2xl border border-[#E0F1FB]">
+                    <div className="rounded-2xl flex flex-col gap-4 bg-white py-6 px-4">
                         <h3 className="font-semibold text-xl text-grayscale-900">Automate with <br /> Intelligent Control</h3>
                         <p className="text-grayscale-600 text-md">Effortlessly automate intricate <br /> business processes with our smart.</p>
                     </div>
                     <Image src="/features/features_1/card_3.svg" alt="Workflow Design" width={341} height={264} />
                 </div>
+
             </div>
+
 
         </div>
     );

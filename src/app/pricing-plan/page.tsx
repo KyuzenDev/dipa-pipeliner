@@ -22,54 +22,51 @@ export default function PricingPlan() {
             </div>
 
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 max-w-7xl mx-auto">
                 {pricing.map((plan) => (
                     <div
                         key={plan.head}
-                        className={`border border-grayscale-200 flex flex-col justify-between h-full gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300 ${plan.version === 'Primary'
+                        className={`flex flex-col justify-between h-full transition-all duration-300 ${plan.version === 'Primary'
                                 ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
                                 : 'bg-white'
                             }`}
                     >
-                        {/* Header */}
-                        <div className="flex flex-row justify-between items-center">
-                            <h3 className="text-xl font-semibold text-gray-800">{plan.head}</h3>
-                            {plan.popularity && (
-                                <div className="text-sm font-medium text-white bg-blue-600 px-3 py-1 rounded-full">
-                                    Most Value
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Price */}
-                        <div className="flex flex-col">
-                            <p className="text-4xl font-bold text-gray-900">{plan.price}</p>
-                            <p className="text-sm text-gray-500">{plan.description}</p>
-                        </div>
-
-                        {/* Features and CTA */}
-                        <div className="flex flex-col flex-1 justify-between">
-                            <div className="flex flex-col gap-6">
-                                <p className="text-base font-medium text-gray-700">{plan.notes}</p>
-                                <ul className="flex flex-col gap-3">
-                                    {plan.features.map((feature) => (
-                                        <li key={feature} className="flex items-start gap-2 text-sm text-gray-800">
-                                            <Image
-                                                src="/pricing-plan/checklist.svg"
-                                                alt="checklist"
-                                                width={20}
-                                                height={20}
-                                            />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                        <div className="flex flex-col gap-4 p-6 border-x border-grayscale-200">
+                            <div className="flex flex-row justify-between items-center">
+                                <h3 className="text-xl font-semibold text-gray-800">{plan.head}</h3>
+                                {plan.popularity && (
+                                    <div className="text-sm font-medium text-white bg-blue-600 px-3 py-1 rounded-full">
+                                        Most Value
+                                    </div>
+                                )}
                             </div>
 
-                            {/* CTA */}
+                            <div className="flex flex-col">
+                                <p className="text-4xl font-bold text-grayscale-900">{plan.price}</p>
+                                <p className="text-sm font-normal text-grayscale-500">{plan.description}</p>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-6 border border-grayscale-200 border-x border-b px-6 pt-7 pb-6 h-full">
+                            <p className="text-base font-medium text-gray-700">{plan.notes}</p>
+
+                            <ul className="flex flex-col gap-3">
+                                {plan.features.map((feature) => (
+                                    <li key={feature} className="flex items-start gap-2 text-sm text-gray-800">
+                                        <Image
+                                            src="/pricing-plan/checklist.svg"
+                                            alt="checklist"
+                                            width={20}
+                                            height={20}
+                                        />
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
                             <Button
                                 variant={plan.version === 'Primary' ? 'default' : 'outline'}
-                                className="w-full py-2 px-4 rounded-xl text-sm font-semibold mt-8"
+                                className="w-full py-2 px-4 rounded-xl text-sm font-semibold"
                             >
                                 {plan.head === 'Enterprise' ? 'Talk to Sales' : `Go with ${plan.head}`}
                             </Button>
@@ -77,6 +74,7 @@ export default function PricingPlan() {
                     </div>
                 ))}
             </div>
+
             <FeaturesFAQ />
             <CTA />
         </>

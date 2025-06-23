@@ -43,7 +43,11 @@ export default function FeaturesFAQ() {
         <Accordion type="single" className="flex flex-col gap-4" collapsible>
           {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
+              <AccordionTrigger className="cursor-pointer text-left">
+                <div className="flex items-center gap-2">
+                  <Image src="/helpCircle.svg" width={20} height={20} alt="Help Circle" /> {item.title}
+                </div>
+              </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-5">
                 {item.content}
                 <div className="border-t-2 border-dashed border-grayscale-200"></div>
@@ -66,7 +70,11 @@ export default function FeaturesFAQ() {
         <Accordion type="single" className="flex flex-col gap-4" collapsible>
           {FAQ.slice(Math.ceil(FAQ.length / 2)).map((item, index) => (
             <AccordionItem key={index} value={`item-${index + Math.ceil(FAQ.length / 2)}`}>
-              <AccordionTrigger className="cursor-pointer">{item.title}</AccordionTrigger>
+              <AccordionTrigger className="cursor-pointer text-left">
+                <div className="flex items-center gap-2">
+                  <Image src="/helpCircle.svg" width={20} height={20} alt="Help Circle" /> {item.title}
+                </div>
+              </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-5">
                 {item.content}
                 <div className="border-1 text-grayscale-300 border-dashed"></div>

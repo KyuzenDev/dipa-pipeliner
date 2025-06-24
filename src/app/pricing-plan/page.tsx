@@ -9,18 +9,26 @@ import Plate from "../../../public/pricing-plan/head.svg"
 export default function PricingPlan() {
     return (
         <>
-            <div className="max-w-full relative h-auto border-b border-grayscale-200 pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
-                <div className="gap-4 flex flex-col items-start">
-                    <Badge>Pricing</Badge>
-                    <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
-                    <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
-                        Start small, dream big. Get going in minutes—no commitment needed.
-                    </p>
-                </div>
+            <div className="max-w-full relative border-b border-grayscale-200 lg:pt-24 lg:pb-32 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
+                    {/* Konten Teks */}
+                    <div className="flex flex-col items-start w-full lg:w-1/2 gap-4 mt-8">
+                        <Badge>Pricing</Badge>
+                        <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
+                        <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
+                            Start small, dream big. Get going in minutes—no commitment needed.
+                        </p>
+                    </div>
 
-                {/* Gambar di bawah teks di mobile & tablet, floating kanan hanya di desktop */}
-                <div className="mt-10 lg:mt-0 relative w-full flex justify-center lg:absolute lg:bottom-0 lg:right-0 lg:w-auto lg:justify-end">
-                    <Image src={Plate} alt="photos" width={900}/>
+                    {/* Gambar */}
+                    <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0 lg:absolute lg:right-[-10px]">
+                        <Image
+                            src={Plate}
+                            alt="photos"
+                            width={900}
+                            className="max-w-full h-auto object-contain"
+                        />
+                    </div>
                 </div>
             </div>
 

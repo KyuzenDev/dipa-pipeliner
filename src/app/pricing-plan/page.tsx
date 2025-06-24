@@ -9,7 +9,7 @@ import Plate from "../../../public/pricing-plan/head.svg"
 export default function PricingPlan() {
     return (
         <>
-            <div className="max-w-full relative h-auto border-b border-grayscale-200 pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
+            <div className="max-w-full relative h-auto pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
                 <div className="gap-4 flex flex-col items-start">
                     <Badge>Pricing</Badge>
                     <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
@@ -21,7 +21,7 @@ export default function PricingPlan() {
                 </div>
             </div>
 
-            <div className="max-w-full border-b border-grayscale-200">
+            <div className="max-w-full border-y border-grayscale-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 max-w-7xl mx-auto">
                     {pricing.map((plan) => (
                         <div
@@ -31,7 +31,7 @@ export default function PricingPlan() {
                                 : 'bg-white'
                                 }`}
                         >
-                            <div className="flex flex-col gap-4 p-6 border-x border-grayscale-200">
+                            <div className="flex flex-col gap-4 p-6 border-x border-b border-grayscale-200">
                                 <div className="flex flex-row justify-between items-center">
                                     <h3 className="text-xl font-semibold text-gray-800">{plan.head}</h3>
                                     {plan.popularity && (
@@ -47,7 +47,8 @@ export default function PricingPlan() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-6 border-grayscale-200 border-x px-6 pt-7 pb-6 h-full">
+                            <div className="flex flex-col gap-6 border-x border-b border-grayscale-200 lg:border-b-0 px-6 pt-7 pb-6 h-full"
+                            >
                                 <p className="text-base font-medium text-gray-700">{plan.notes}</p>
 
                                 <ul className="flex flex-col gap-3">

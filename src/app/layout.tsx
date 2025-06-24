@@ -18,6 +18,10 @@ export default function Layout({
   const isHomePage = pathname === "/";
   return (
     <html lang="en">
+      <Head>
+        <title>Pipeliner</title>
+        <meta name="description" content="Platform CRM modern dan mudah digunakan" />
+      </Head>
       <body
         className={inter.className}
       >

@@ -9,37 +9,27 @@ import Plate from "../../../public/pricing-plan/head.svg"
 export default function PricingPlan() {
     return (
         <>
-            <div className="max-w-full relative border-b border-grayscale-200 lg:pt-24 lg:pb-32 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
-                <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
-                    {/* Konten Teks */}
-                    <div className="flex flex-col items-start w-full lg:w-1/2 gap-4 mt-8">
-                        <Badge>Pricing</Badge>
-                        <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
-                        <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
-                            Start small, dream big. Get going in minutes—no commitment needed.
-                        </p>
-                    </div>
+            <div className="max-w-full relative h-auto pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
+                <div className="gap-4 flex flex-col items-start">
+                    <Badge>Pricing</Badge>
+                    <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
+                    <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">Start small, dream big. Get going in minutes—no commitment needed.</p>
+                </div>
 
-                    {/* Gambar */}
-                    <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0 lg:absolute lg:right-[-10px]">
-                        <Image
-                            src={Plate}
-                            alt="photos"
-                            width={900}
-                            className="max-w-full h-auto object-contain"
-                        />
-                    </div>
+                <div className="mt-10 md:mt-0 relative md:absolute md:bottom-0 md:right-0 w-full md:w-auto flex justify-center md:justify-end">
+                    <Image src={Plate} alt="photos" className="max-w-full h-auto object-contain" />
                 </div>
             </div>
+
             <div className="max-w-full border-y border-grayscale-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 max-w-7xl mx-auto">
                     {pricing.map((plan) => (
                         <div
                             key={plan.head}
-                            className={`border border-grayscale-200 flex flex-col justify-between h-full gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300
-                            ${plan.version === 'Primary' ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%' : 'bg-white'}
-                            ${plan.head === 'Enterprise' ? 'md:col-span-2 lg:col-span-1' : ''}
-                          `}
+                            className={`flex flex-col justify-between h-full transition-all duration-300 ${plan.version === 'Primary'
+                                ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
+                                : 'bg-white'
+                                }`}
                         >
                             <div className="flex flex-col gap-4 p-6 border-x border-b border-grayscale-200">
                                 <div className="flex flex-row justify-between items-center">

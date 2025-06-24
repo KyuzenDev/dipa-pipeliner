@@ -9,9 +9,10 @@ export default function GuidedCard() {
             {guide.map((item, index) => (
                 <div
                     key={index}
-                    className="rounded-xl h-auto w-full flex flex-col justify-between gap-6 
-                         bg-[linear-gradient(30deg,white_0%,#B7E2FA30_100%)] 
-                         shadow-sm p-6 border border-gray-100"
+                    className={`rounded-xl h-auto w-full flex flex-col justify-between gap-6 
+                        bg-[linear-gradient(30deg,white_0%,#B7E2FA30_100%)] 
+                        shadow-sm p-6 border border-gray-100
+                        ${index === 2 ? 'sm:col-span-2' : ''}`}
                 >
             
                     <div className="flex flex-col gap-6">

@@ -9,15 +9,18 @@ import Plate from "../../../public/pricing-plan/head.svg"
 export default function PricingPlan() {
     return (
         <>
-            <div className="max-w-full relative h-auto pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
+            <div className="max-w-full relative h-auto border-b border-grayscale-200 pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
                 <div className="gap-4 flex flex-col items-start">
                     <Badge>Pricing</Badge>
                     <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">Hack to Unicorn</h2>
-                    <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">Start small, dream big. Get going in minutes—no commitment needed.</p>
+                    <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
+                        Start small, dream big. Get going in minutes—no commitment needed.
+                    </p>
                 </div>
 
-                <div className="mt-10 md:mt-0 relative md:absolute md:bottom-0 md:right-0 w-full md:w-auto flex justify-center md:justify-end">
-                    <Image src={Plate} alt="photos" className="max-w-full h-auto object-contain" />
+                {/* Gambar di bawah teks di mobile & tablet, floating kanan hanya di desktop */}
+                <div className="mt-10 lg:mt-0 relative w-full flex justify-center lg:absolute lg:bottom-0 lg:right-0 lg:w-auto lg:justify-end">
+                    <Image src={Plate} alt="photos" width={900}/>
                 </div>
             </div>
 
@@ -26,10 +29,10 @@ export default function PricingPlan() {
                     {pricing.map((plan) => (
                         <div
                             key={plan.head}
-                            className={`flex flex-col justify-between h-full transition-all duration-300 ${plan.version === 'Primary'
-                                ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%'
-                                : 'bg-white'
-                                }`}
+                            className={`border border-grayscale-200 flex flex-col justify-between h-full gap-6 sm:gap-8 p-6 shadow-sm rounded-xl transition-all duration-300
+                            ${plan.version === 'Primary' ? 'bg-gradient-to-b from-white to-[#B7E2FA] from-45%' : 'bg-white'}
+                            ${plan.head === 'Enterprise' ? 'md:col-span-2 lg:col-span-1' : ''}
+                          `}
                         >
                             <div className="flex flex-col gap-4 p-6 border-x border-b border-grayscale-200">
                                 <div className="flex flex-row justify-between items-center">

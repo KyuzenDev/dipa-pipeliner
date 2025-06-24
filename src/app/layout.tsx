@@ -4,6 +4,7 @@ import "./globals.css";
 import TopNavbar from "@/components/TopNavbar";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
+import Head from "next/head";
 
 const inter = Inter_Tight({
   subsets: ["latin"],
@@ -18,6 +19,10 @@ export default function Layout({
   const isHomePage = pathname === "/";
   return (
     <html lang="en">
+      <Head>
+        <title>Pipeliner</title>
+        <meta name="description" content="Platform CRM modern dan mudah digunakan" />
+      </Head>
       <body
         className={inter.className}
       >

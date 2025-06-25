@@ -1,5 +1,4 @@
 import CTA from "@/components/CTA";
-import TopNavbar from "@/components/TopNavbar";
 import SubBlog from "../blogdetails/headerblogdetail";
 import Image from "next/image";
 import ContentBlogDetail from "../blogdetails/contentblogdetail";

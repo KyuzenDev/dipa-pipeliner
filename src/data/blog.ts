@@ -7,6 +7,7 @@ export const blogDetail: BlogDetail[] = [
     title: "How to Choose the Right CRM for Your Personal and Business",
     description:
       "Not all CRMs are created equal. Here’s how to pick the best one for your needs.",
+    url: ""
   },
   {
     photos: "@/CMS-2.svg",
@@ -15,6 +16,7 @@ export const blogDetail: BlogDetail[] = [
     title: "The Future of CRM: Trends to Now Companies Watch in 2025",
     description:
       "Stay ahead of the game with the latest trends shaping customer relationship tools.",
+    url: ""
   },
   {
     photos: "@/CMS-3.svg",
@@ -23,6 +25,7 @@ export const blogDetail: BlogDetail[] = [
     title: "How Sales Teams Use CRM to Close Deals with Customers",
     description:
       "Not all CRMs are created equal. Here’s how to pick the best one for your needs.",
+    url: ""
   },
   {
     photos: "@/CMS-4.svg",
@@ -31,6 +34,7 @@ export const blogDetail: BlogDetail[] = [
     title: "CRM 101: A Beginner’s Guide to Customer Relationship Team",
     description:
       "New to CRM? Here's a quick guide to what it is, how it works, and why it matters.",
+    url: ""
   },
   {
     photos: "@/CMS-5.svg",
@@ -39,6 +43,7 @@ export const blogDetail: BlogDetail[] = [
     title: "CRM for Best Marketing Teams What You Need to Fast Know",
     description:
       "See how marketing can use CRM to improve targeting, timing, and tracking.",
+    url: ""
   },
   {
     photos: "@/CMS-6.svg",
@@ -47,6 +52,7 @@ export const blogDetail: BlogDetail[] = [
     title: "How Founders Use CRM to Stay Close to Good Value Customers",
     description:
       "Tips for startup founders to use CRM for building lasting relationships.",
+    url: ""
   },
   {
     photos: "@/CMS-7.svg",
@@ -55,6 +61,7 @@ export const blogDetail: BlogDetail[] = [
     title: "How to Clean Your CRM Data (Without the Headache More)",
     description:
       "Keep your CRM accurate and useful with easy data-cleaning tips.",
+    url: ""
   },
   {
     photos: "@/CMS-8.svg",
@@ -63,6 +70,7 @@ export const blogDetail: BlogDetail[] = [
     title: "See Real-Life CRM Setups from Good Modern Pipeliner Teams",
     description:
       "Inspiration from how real startups and companies set up and use their CRMs.",
+    url: ""
   },
   {
     photos: "@/CMS-9.svg",
@@ -71,5 +79,6 @@ export const blogDetail: BlogDetail[] = [
     title: "Customer Success and CRM: A Perfect Match with Piperliner",
     description:
       "See how CS teams use CRM to proactively support and retain customers.",
+    url: ""
   },
 ];

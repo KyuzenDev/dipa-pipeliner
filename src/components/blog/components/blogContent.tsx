@@ -1,6 +1,7 @@
 import { blogDetail } from "@/data/blog";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BlogCard() {
     return (
@@ -18,9 +19,14 @@ export default function BlogCard() {
                         <div className="text-sm text-gray-500">
                             {item.date} | {item.category}
                         </div>
-                        <h3 className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-blue-400">
-                            {item.title}
-                        </h3>
+
+                        {/* Linked the subcontenent data details*/}
+                        <Link href={item.url}>
+                            <h3 className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-blue-400">
+                                {item.title}
+                            </h3>
+                        </Link>
+                        
                         <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                 ))}

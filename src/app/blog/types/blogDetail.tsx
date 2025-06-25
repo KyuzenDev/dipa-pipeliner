@@ -4,4 +4,5 @@ export type BlogDetail = {
     category: string;
     title: string;
     description: string;
+    url: string;
 }

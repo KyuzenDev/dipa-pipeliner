@@ -1,4 +1,3 @@
-// components/pagination.tsx
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -28,25 +27,27 @@ export const Pagination = ({
   return (
     <div className="flex items-center justify-center gap-4 mt-6">
       <Button
-        variant="outline"
-        size="icon"
         onClick={handlePrevious}
         disabled={currentPage === 1}
+        className={`w-16 h-16 flex items-center justify-center rounded-[999px] border transition-colors p-0 bg-white
+          ${currentPage === 1
+            ? "border-3 border-gray-200 text-gray-400"
+            : "border-3 border-gray-200 text-gray-600 hover:bg-gray-100"}`}
+        variant="ghost"
       >
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft className="h-5 w-5" />
       </Button>
 
-      <span className="text-sm text-muted-foreground">
-        Page {currentPage} of {totalPages}
-      </span>
-
       <Button
-        variant="outline"
-        size="icon"
         onClick={handleNext}
         disabled={currentPage === totalPages}
+        className={`w-16 h-16 flex items-center justify-center rounded-[999px] border transition-colors p-0 bg-white
+          ${currentPage === totalPages
+            ? "border-3 border-gray-200 text-gray-400"
+            : "border-3 border-gray-200 text-black hover:bg-gray-100"}`}
+        variant="ghost"
       >
-        <ChevronRight className="h-4 w-4" />
+        <ChevronRight className="h-5 w-5" />
       </Button>
     </div>
   )

@@ -30,7 +30,38 @@ const users: User[] = [
     badge: '/icons/staci.png',
     badgeBg: 'bg-blue-100',
   },
-  // Tambahkan lebih banyak user jika perlu
+  {
+    id: 3,
+    name: 'Terry Snow',
+    company: 'Altria Group',
+    avatar: '/ceo/terry.png',
+    badge: '/icons/odesa.png',
+    badgeBg: 'bg-green-100',
+  },
+  {
+    id: 4,
+    name: 'Millicent Farrell',
+    company: 'Campbell Soup',
+    avatar: '/ceo/millicent.png',
+    badge: '/icons/staci.png',
+    badgeBg: 'bg-purple-100',
+  },
+  {
+    id: 5,
+    name: 'Harland Colon',
+    company: 'Altria Group',
+    avatar: '/ceo/harland.png',
+    badge:'/icons/odesa.png',
+    badgeBg: 'bg-blue-100',
+  },
+  {
+    id: 6,
+    name: 'Hester Melton',
+    company: 'Campbell Soup',
+    avatar: '/ceo/hester.png',
+    badge:'/icons/staci.png',
+    badgeBg: 'bg-purple-100',
+  }
 ];
 
 const USERS_PER_PAGE = 2;

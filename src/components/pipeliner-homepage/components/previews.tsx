@@ -74,8 +74,8 @@ export default function PreviewPage() {
   const selectedUsers = users.slice(startIndex, startIndex + USERS_PER_PAGE);
 
   return (
-    <div className="min-h-[450px] bg-gray-50 px-6 py-4">
-      <div className="flex gap-6 justify-center">
+    <div className="min-h-[450px] bg-gray-50">
+      <div className="flex gap-6 justify-start">
         {selectedUsers.map((user) => (
           <div key={user.id} className="bg-white rounded-xl shadow-md p-4 w-[250px]">
             <div className={`rounded-xl p-1 ${user.badgeBg}`}>

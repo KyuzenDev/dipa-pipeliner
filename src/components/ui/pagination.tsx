@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 type PaginationProps = {
@@ -25,30 +24,28 @@ export const Pagination = ({
   }
 
   return (
-    <div className="flex items-center justify-center gap-4 mt-6">
-      <Button
+    <div className="flex items-center justify-start gap-4 mt-6">
+      <button
         onClick={handlePrevious}
         disabled={currentPage === 1}
-        className={`w-16 h-16 flex items-center justify-center rounded-[999px] border transition-colors p-0 bg-white
+        className={`w-12 h-12 flex items-center justify-center rounded-full border cursor-pointer transition-colors p-0 bg-white
           ${currentPage === 1
-            ? "border-3 border-gray-200 text-gray-400"
-            : "border-3 border-gray-200 text-gray-600 hover:bg-gray-100"}`}
-        variant="ghost"
+           ? "border-1 border-grayscale-200 text-grayscale-400"
+            : "border-1 border-grayscale-200 text-black hover:bg-grayscale-100"}`}
       >
         <ChevronLeft className="h-5 w-5" />
-      </Button>
+      </button>
 
-      <Button
+      <button
         onClick={handleNext}
         disabled={currentPage === totalPages}
-        className={`w-16 h-16 flex items-center justify-center rounded-[999px] border transition-colors p-0 bg-white
+        className={`w-12 h-12 flex items-center justify-center rounded-full border cursor-pointer transition-colors p-0 bg-white
           ${currentPage === totalPages
-            ? "border-3 border-gray-200 text-gray-400"
-            : "border-3 border-gray-200 text-black hover:bg-gray-100"}`}
-        variant="ghost"
+            ? "border-1 border-grayscale-200 text-grayscale-400"
+            : "border-1 border-grayscale-200 text-black hover:bg-grayscale-100"}`}
       >
         <ChevronRight className="h-5 w-5" />
-      </Button>
+      </button>
     </div>
   )
 }

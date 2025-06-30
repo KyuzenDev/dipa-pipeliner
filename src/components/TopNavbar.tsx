@@ -44,13 +44,16 @@ export default function TopNavbar() {
   useEffect(() => {
     const isDesktop = window.innerWidth >= 768;
     if (isDesktop && desktopBtnRef.current) {
-      gsap.fromTo(
-        desktopBtnRef.current,
-        { x: 40, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, delay: 0.2, ease: "power3.out" }
-      );
+      requestAnimationFrame(() => {
+        gsap.fromTo(
+          desktopBtnRef.current,
+          { x: 40, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.1 }
+        );
+      });
     }
   }, []);
+   
   
   useEffect(() => {
     const isDesktop = window.innerWidth >= 768;
@@ -113,7 +116,9 @@ export default function TopNavbar() {
       </nav>
 
       <div className="hidden md:block">
-        <Button ref={desktopBtnRef}>Start for Free</Button>
+        <Button ref={desktopBtnRef} className="transition-none">
+          Start for Free
+        </Button>
       </div>
 
       <button

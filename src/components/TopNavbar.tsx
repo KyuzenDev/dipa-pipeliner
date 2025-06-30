@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import { navigation } from "@/data/navigation";
 import { HiX } from "react-icons/hi";
 import { FiMenu } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import gsap from "gsap";
 
 export default function TopNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +16,44 @@ export default function TopNavbar() {
   const isDashboard = pathname === "/";
   const logoSrc = isDashboard ? "/logo/app-logo.png" : "/logo/app-footer.png";
 
+  const headerRef = useRef<HTMLElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+
+  // Animate header on mount
+  useEffect(() => {
+    gsap.fromTo(
+      headerRef.current,
+      { y: -50, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.8, 
+        ease: "power3.out",
+        delay: 0.2,
+      }
+    );
+  }, []);
+
+  // Animate mobile nav open/close
+  useEffect(() => {
+    if (isMenuOpen && mobileNavRef.current) {
+      gsap.fromTo(
+        mobileNavRef.current,
+        { y: -20, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.5, 
+          ease: "power2.out",
+        }
+      );
+    }
+  }, [isMenuOpen]);
+
   return (
-    <header className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
+    <header 
+      ref={headerRef}
+      className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
   ${isMenuOpen ? "bg-white shadow-md" : isDashboard ? "bg-transparent" : "bg-white"} z-50`}>
 
 

@@ -1,6 +1,5 @@
 "use client";
-
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -16,70 +15,12 @@ export default function TopNavbar() {
   const desktopBtnRef = useRef<HTMLButtonElement>(null);
   const isDashboard = pathname === "/";
   const logoSrc = isDashboard ? "/logo/app-logo.png" : "/logo/app-footer.png";
-  const menuItemsRef = useRef<HTMLAnchorElement[]>([]);
-  menuItemsRef.current = [];  
-  const logoRef = useRef<HTMLImageElement>(null);
-  const mobileNavRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (logoRef.current) {
-      gsap.fromTo(
-        logoRef.current,
-        { x: -40, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isMenuOpen && mobileNavRef.current) {
-      gsap.fromTo(
-        mobileNavRef.current,
-        { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
-      );
-    }
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    const isDesktop = window.innerWidth >= 768;
-    if (isDesktop && desktopBtnRef.current) {
-      gsap.fromTo(
-        desktopBtnRef.current,
-        { x: 40, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
-      );
-    }
-  }, []);
-  
-  useEffect(() => {
-    const isDesktop = window.innerWidth >= 768;
-    if (isDesktop && menuItemsRef.current.length > 0) {
-      gsap.fromTo(
-        menuItemsRef.current,
-        { y: -20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
-        }
-      );
-    }
-  }, []);
-  
   return (
-    <header
-      className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
-      ${
-        isMenuOpen
-          ? "bg-white shadow-md duration-200 ease-out"
-          : isDashboard
-          ? "bg-transparent"
-          : "bg-white"
-      } z-50`}
-    >
+    <header className={`w-full max-w-[1520px] mx-auto flex items-center justify-between py-5 px-6 md:px-12 
+  ${isMenuOpen ? "bg-white shadow-md" : isDashboard ? "bg-transparent" : "bg-white"} z-50`}>
+
+
       <div>
         <Link href="/">
           <Image

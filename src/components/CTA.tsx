@@ -11,10 +11,11 @@ export default function CTA() {
     const headerRef = useRef(null);
     const buttonRef = useRef(null);
     const imageRef = useRef(null);
+    const descRef = useRef(null);
 
     useEffect(() => {
         // Slide in from top untuk badge dan heading
-        gsap.from([badgeRef.current, headerRef.current], {
+        gsap.from([badgeRef.current, headerRef.current, descRef.current], {
             y: -50,
             opacity: 0,
             duration: 1,

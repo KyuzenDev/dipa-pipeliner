@@ -10,7 +10,7 @@ export default function About() {
     <>
       <div className="absolute w-[610px] -z-5 h-64 bg-[linear-gradient(to_top_right,_#88CCF8,_#D9F8C0)] rounded-xl blur-[160px]"></div>
       <div className="max-w-full w-full h-auto pt-12 gap-2">
-        <div className="relative w-full flex flex-col gap-6 items-center px-4 md:px-12 xl:px-24 pt-8 md:pt-32 pb-12 md:pb-52">
+        <div className="relative w-full flex flex-col gap-6 items-center px-4 md:px-12 xl:px-24 pt-8 md:pt-32 lg:pt-14 pb-12 md:pb-52">
           <Badge variant="default">About</Badge>
 
           <div className="text-center flex flex-col gap-2 max-w-2xl">

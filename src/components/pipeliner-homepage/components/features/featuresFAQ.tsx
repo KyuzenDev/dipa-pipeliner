@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import { FAQ, FAQSosialMedia } from "@/data/faq";
 import {
   Accordion,
@@ -10,42 +11,83 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function FeaturesFAQ() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeFAQ, setActiveFAQ] = useState<{ title: string; content: string } | null>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
 
-  const openModal = (item: typeof FAQ[number]) => {
+  useEffect(() => {
+    if (faqRef.current) {
+      const items = faqRef.current.querySelectorAll(".faq-animate");
+      gsap.fromTo(
+        items,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+        }
+      );
+    }
+  }, []);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFAQ, setActiveFAQ] = useState<{
+    title: string;
+    content: string;
+  } | null>(null);
+
+  const openModal = (item: (typeof FAQ)[number]) => {
     setActiveFAQ(item);
     setIsModalOpen(true);
   };
 
   return (
-    <div className="flex flex-col items-center gap-20 py-12 px-4 sm:px-6 md:px-12 lg:px-20">
+    <div
+      ref={faqRef}
+      className="flex flex-col items-center gap-20 py-12 px-4 sm:px-6 md:px-12 lg:px-20"
+    >
       <div className="text-center flex flex-col items-center gap-6">
-        <Badge>
-          FAQ’s
-        </Badge>
+        <Badge className="faq-animate">FAQ&apos;s</Badge>
         <div className="flex flex-col gap-5">
-          <h1 className="text-4xl font-semibold leading-[120%]">Frequently Asked Questions</h1>
-          <p className="font-normal text-grayscale-700">
+          <h1 className="text-4xl font-semibold leading-[120%] faq-animate">
+            Frequently Asked Questions
+          </h1>
+          <p className="faq-animate font-normal text-grayscale-700">
             Don&apos;t hesitate to reach out us if you need further assistance.
           </p>
         </div>
-        <Button className="w-fit" variant="outline">
+        <Button className="faq-animate w-fit transition-none" variant="outline">
           Show All Questions
         </Button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
         <Accordion type="single" className="flex flex-col gap-4" collapsible>
           {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="faq-animate"
+            >
               <AccordionTrigger className="cursor-pointer text-left">
                 <div className="flex items-center gap-2">
-                  <Image src="/helpCircle.svg" width={20} height={20} alt="Help Circle" /> {item.title}
+                  <Image
+                    src="/helpCircle.svg"
+                    width={20}
+                    height={20}
+                    alt="Help Circle"
+                  />{" "}
+                  {item.title}
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-5">
@@ -61,18 +103,27 @@ export default function FeaturesFAQ() {
                     className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
                   />
                 </button>
-
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
 
         <Accordion type="single" className="flex flex-col gap-4" collapsible>
-          {FAQ.slice(Math.ceil(FAQ.length / 2)).map((item, index) => (
-            <AccordionItem key={index} value={`item-${index + Math.ceil(FAQ.length / 2)}`}>
+          {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="faq-animate"
+            >
               <AccordionTrigger className="cursor-pointer text-left">
                 <div className="flex items-center gap-2">
-                  <Image src="/helpCircle.svg" width={20} height={20} alt="Help Circle" /> {item.title}
+                  <Image
+                    src="/helpCircle.svg"
+                    width={20}
+                    height={20}
+                    alt="Help Circle"
+                  />{" "}
+                  {item.title}
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-5">
@@ -96,7 +147,12 @@ export default function FeaturesFAQ() {
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="bg-white border-1 border-grayscale-200 rounded-2xl">
           <DialogHeader className="border-b border-grayscale-200 pb-3 flex flex-row items-center gap-4">
-            <Image src="/icons/qMark.svg" alt="Question Mark Icon" width={40} height={40} />
+            <Image
+              src="/icons/qMark.svg"
+              alt="Question Mark Icon"
+              width={40}
+              height={40}
+            />
             <DialogTitle>{activeFAQ?.title}</DialogTitle>
           </DialogHeader>
           <div className="text-grayscale-600 whitespace-pre-line text-sm leading-relaxed">
@@ -107,7 +163,12 @@ export default function FeaturesFAQ() {
               <p className="text-grayscale-500">Share post on</p>
               <div className="flex gap-2">
                 {FAQSosialMedia.map(({ platform, url }) => (
-                  <Link href={url} key={platform} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={url}
+                    key={platform}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button
                       size="icon"
                       className="w-6 h-6 p-1 relative flex cursor-pointer justify-center items-center rounded bg-grayscale-200 hover:bg-gray-300"
@@ -127,8 +188,6 @@ export default function FeaturesFAQ() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-
     </div>
-
   );
 }

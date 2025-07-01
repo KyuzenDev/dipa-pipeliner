@@ -54,7 +54,9 @@ export default function CTA() {
                     >
                         Start Creating Powerful <br className="hidden sm:block" /> Relationship Today
                     </h1>
-                    <p className="md:text-md lg:text-xl text-md text-grayscale-700 max-w-2xl mx-auto">
+                    <p 
+                        ref={descRef}
+                        className="md:text-md lg:text-xl text-md text-grayscale-700 max-w-2xl mx-auto">
                         Don&apos;t hesitate to reach out to us if you need further assistance.
                     </p>
                 </div>

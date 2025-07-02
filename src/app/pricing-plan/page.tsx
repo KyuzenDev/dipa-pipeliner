@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { pricing } from "@/data/pricing";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/CTA";
@@ -7,6 +11,26 @@ import Image from "next/image";
 import Plate from "../../../public/pricing-plan/head.svg";
 
 export default function PricingPlan() {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      const targets = cardRef.current.querySelectorAll(".pricing-animate");
+      gsap.fromTo(
+        targets,
+        { opacity: 0, y: -40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power2.out",
+        }
+      );
+    }
+  }, []);
+  
+
   return (
     <>
       <div className="max-w-full lg:h-[340px] md:h-full justify-between flex flex-wrap gap-2 relative h-auto pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
@@ -30,11 +54,14 @@ export default function PricingPlan() {
       </div>
 
       <div className="max-w-full border-y border-grayscale-200">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div
+          ref={cardRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 max-w-7xl mx-auto"
+        >
           {pricing.map((plan) => (
             <div
               key={plan.head}
-              className={`flex flex-col justify-between h-full transition-all duration-300 ${
+              className={`pricing-animate flex flex-col justify-between h-full transition-all duration-300 ${
                 plan.version === "Primary"
                   ? "bg-gradient-to-b from-white to-[#B7E2FA] from-45%"
                   : "bg-white"

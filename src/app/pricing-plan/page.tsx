@@ -35,19 +35,21 @@ export default function PricingPlan() {
   useEffect(() => {
     if (cardRef.current) {
       const targets = cardRef.current.querySelectorAll(".pricing-animate");
+
       gsap.fromTo(
         targets,
-        { opacity: 0, y: -40 },
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power2.out",
+          duration: 1,
+          stagger: 0.25,
+          ease: "power3.out",
         }
       );
     }
   }, []);
+  
   
 
   return (

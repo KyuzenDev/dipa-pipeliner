@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BlogCard() {
+export default function BlogList() {
     return (
         <div className="w-full py-12 px-4 flex flex-col items-center">
             <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

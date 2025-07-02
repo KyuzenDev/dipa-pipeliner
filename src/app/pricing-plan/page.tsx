@@ -12,7 +12,26 @@ import Plate from "../../../public/pricing-plan/head.svg";
 
 export default function PricingPlan() {
   const cardRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    if (textRef.current) {
+      gsap.fromTo(
+        textRef.current,
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+      );
+    }
 
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { x: 100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+      );
+    }
+  }, []);
   useEffect(() => {
     if (cardRef.current) {
       const targets = cardRef.current.querySelectorAll(".pricing-animate");
@@ -33,23 +52,32 @@ export default function PricingPlan() {
 
   return (
     <>
-      <div className="max-w-full lg:h-[340px] md:h-full justify-between flex flex-wrap gap-2 relative h-auto pt-32 pb-16 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
-        <div className="gap-4 flex flex-col justify-start">
-          <Badge>Pricing</Badge>
-          <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">
-            Hack to Unicorn
-          </h2>
-          <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
-            Start small, dream big. Get going in minutes—no commitment needed.
-          </p>
-        </div>
+      <div className="max-w-full relative border-b border-grayscale-200 lg:pt-24 lg:pb-32 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
+          <div
+            className="flex flex-col items-start w-full lg:w-1/2 gap-4 mt-8"
+            ref={textRef}
+          >
+            <Badge>Pricing</Badge>
+            <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">
+              Hack to Unicorn
+            </h2>
+            <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
+              Start small, dream big. Get going in minutes—no commitment needed.
+            </p>
+          </div>
 
-        <div className="md:mt-0 relative translate-x-0 md:absolute translate-18 md:translate-x-16 md:bottom-0 md:right-0 w-full md:w-auto flex justify-center md:justify-end overflow-auto">
-          <Image
-            src={Plate}
-            alt="photos"
-            className="max-w-full h-auto object-contain"
-          />
+          <div
+            className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 mb-4 lg:mt-0 lg:mb-3 lg:absolute lg:right-[-10px]"
+            ref={imageRef}
+          >
+            <Image
+              src={Plate}
+              alt="photos"
+              width={700}
+              className="max-w-full h-auto object-contain"
+            />
+          </div>
         </div>
       </div>
 

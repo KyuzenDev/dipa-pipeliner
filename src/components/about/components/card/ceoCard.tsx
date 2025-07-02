@@ -1,49 +1,14 @@
 "use client";
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { founders } from "@/data/founders";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function FounderCards() {
-    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        cardsRef.current.forEach((card, index) => {
-            if (card) {
-                gsap.fromTo(
-                    card,
-                    {
-                        opacity: 0,
-                        scale: 0.8,
-                    },
-                    {
-                        opacity: 1,
-                        scale: 1,
-                        duration: 0.8,
-                        delay: index * 0.2,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: card,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse",
-                        },
-                    }
-                );
-            }
-        });
-    }, []);
-
     return (
         <div className="max-w-full w-full px-4 md:px-15 py-20 bg-white border-y border-gray-300">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
-                {founders.map((founder, index) => (
+                {founders.map((founder) => (
                     <div
                         key={founder.name}
-                        ref={(el) => (cardsRef.current[index] = el)}
                         className={`w-full px-6 bg-gradient-to-r from-white to-[#B7E2FA25] md:px-10 bg-white border border-gray-300 rounded-xl 
                                     flex flex-col-reverse md:flex-col lg:flex-row-reverse justify-between items-center gap-6`}
                     >

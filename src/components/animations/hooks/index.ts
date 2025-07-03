@@ -5,3 +5,4 @@ export * from "./useSlideUp";
 export * from "./useFadeIn";
 export * from "./useZoom";
 export * from "./useSlideFromTop";
+export * from "./useStaggerZoom";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { StackIcon } from "@phosphor-icons/react/dist/ssr";
 import { PiFadersHorizontal } from "react-icons/pi";
 import { CiClock2 } from "react-icons/ci";
@@ -9,6 +9,7 @@ import {
   useSlideFromTop,
   useFadeIn,
   useZoom,
+  useStaggerZoom
 } from "@/components/animations/hooks";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,29 +26,7 @@ export default function FeaturesDataModel() {
   useSlideFromTop(headingRef, 0.1);
   useFadeIn(descRef, 0.2);
   useZoom(imageRef, 0.6);
-
-  useEffect(() => {
-    cardRefs.current.forEach((el, i) => {
-      if (el) {
-        gsap.fromTo(
-          el,
-          { scale: 0.9, opacity: 0 },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 0.6,
-            delay: 0.3 + i * 0.1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              once: true,
-            },
-          }
-        );
-      }
-    });
-  }, []);
+  useStaggerZoom(cardRefs, 0.3);
 
   const setCardRef = (el: HTMLDivElement | null, index: number) => {
     if (el) cardRefs.current[index] = el;

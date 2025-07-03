@@ -1,55 +1,25 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
-import gsap from "gsap";
+import {
+  useSlideFromTop,
+  useFadeIn,
+  useStaggerChildren,
+} from "@/components/animations/hooks";
 
 export default function FeaturesCRM() {
   const badgeRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (badgeRef.current) {
-      gsap.fromTo(
-        badgeRef.current,
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-      );
-    }
-
-    if (textRef.current) {
-      const textEls = textRef.current.querySelectorAll("h1, p");
-      gsap.fromTo(
-        textEls,
-        { y: -30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          stagger: 0.2,
-        }
-      );
-    }
-
-    if (cardsRef.current) {
-      const cards = cardsRef.current.querySelectorAll(".feature-card");
-      gsap.fromTo(
-        cards,
-        { scale: 0.8, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          stagger: 0.2,
-        }
-      );
-    }
-  }, []);
+  useSlideFromTop(badgeRef, 0.1);
+  useSlideFromTop(titleRef, 0.2);
+  useFadeIn(descRef, 0.3);
+  useStaggerChildren(cardsRef, ".feature-card", 0.4);
 
   return (
     <div className="flex flex-col items-center gap-20 py-12 px-18">
@@ -60,16 +30,22 @@ export default function FeaturesCRM() {
               <AvatarImage src="/avatar/jerrell.svg" sizes="sm" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            Jerrell Luna{" "}
+            Jerrell Luna
             <p className="text-grayscale-600"> - Chief Operating Officer</p>
           </Badge>
         </div>
 
-        <div className="flex flex-col gap-5" ref={textRef}>
-          <h1 className="text-4xl font-semibold leading-[120%]">
+        <div className="flex flex-col gap-5">
+          <h1
+            ref={titleRef}
+            className="text-4xl font-semibold leading-[120%]"
+          >
             “When I Tried Pipeliner<br /> I Think is the Future of CRM”
           </h1>
-          <p className="font-normal text-grayscale-700">
+          <p
+            ref={descRef}
+            className="font-normal text-grayscale-700"
+          >
             Experience the next generation of customer relationship management.
           </p>
         </div>

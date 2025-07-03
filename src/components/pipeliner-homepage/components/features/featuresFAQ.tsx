@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+
+import { useState, useRef } from "react";
 import { FAQ, FAQSosialMedia } from "@/data/faq";
 import {
   Accordion,
@@ -20,26 +20,25 @@ import {
 } from "@/components/ui/dialog";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  useSlideFromTop,
+  useFadeIn,
+  useStaggerChildren,
+  useZoom
+} from "@/components/animations/hooks";
 
 export default function FeaturesFAQ() {
-  const faqRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const faqListRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (faqRef.current) {
-      const items = faqRef.current.querySelectorAll(".faq-animate");
-      gsap.fromTo(
-        items,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
-        }
-      );
-    }
-  }, []);
+  useSlideFromTop(badgeRef, 0.1);
+  useSlideFromTop(headingRef, 0.2);
+  useFadeIn(descRef, 0.3);
+  useZoom(buttonRef, 0.4);
+  useStaggerChildren(faqListRef, ".faq-item", 0.5);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeFAQ, setActiveFAQ] = useState<{
@@ -53,97 +52,64 @@ export default function FeaturesFAQ() {
   };
 
   return (
-    <div
-      ref={faqRef}
-      className="flex flex-col items-center gap-20 py-12 px-4 sm:px-6 md:px-12 lg:px-20"
-    >
+    <div className="flex flex-col items-center gap-20 py-12 px-4 sm:px-6 md:px-12 lg:px-20">
       <div className="text-center flex flex-col items-center gap-6">
-        <Badge className="faq-animate">FAQ&apos;s</Badge>
+        <div ref={badgeRef}>
+          <Badge>FAQ&apos;s</Badge>
+        </div>
         <div className="flex flex-col gap-5">
-          <h1 className="text-4xl font-semibold leading-[120%] faq-animate">
+          <h1 ref={headingRef} className="text-4xl font-semibold leading-[120%]">
             Frequently Asked Questions
           </h1>
-          <p className="faq-animate font-normal text-grayscale-700">
+          <p ref={descRef} className="font-normal text-grayscale-700">
             Don&apos;t hesitate to reach out us if you need further assistance.
           </p>
         </div>
-        <Button className="faq-animate w-fit transition-none" variant="outline">
+        <Button ref={buttonRef} className="w-fit transition-none" variant="outline">
           Show All Questions
         </Button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
-        <Accordion type="single" className="flex flex-col gap-4" collapsible>
-          {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="faq-animate"
-            >
-              <AccordionTrigger className="cursor-pointer text-left">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/helpCircle.svg"
-                    width={20}
-                    height={20}
-                    alt="Help Circle"
-                  />{" "}
-                  {item.title}
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-5">
-                {item.content}
-                <div className="border-t-2 border-dashed border-grayscale-200"></div>
-                <button
-                  onClick={() => openModal(item)}
-                  className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
-                >
-                  <p className="text-grayscale-600 font-medium">Learn more</p>
-                  <ArrowRightIcon
-                    size={18}
-                    className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
-                  />
-                </button>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
 
-        <Accordion type="single" className="flex flex-col gap-4" collapsible>
-          {FAQ.slice(0, Math.ceil(FAQ.length / 2)).map((item, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="faq-animate"
-            >
-              <AccordionTrigger className="cursor-pointer text-left">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/helpCircle.svg"
-                    width={20}
-                    height={20}
-                    alt="Help Circle"
-                  />{" "}
-                  {item.title}
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-5">
-                {item.content}
-                <div className="border-1 text-grayscale-300 border-dashed"></div>
-                <button
-                  onClick={() => openModal(item)}
-                  className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
-                >
-                  <p className="text-grayscale-600 font-medium">Learn more</p>
-                  <ArrowRightIcon
-                    size={18}
-                    className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
-                  />
-                </button>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+      <div ref={faqListRef} className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
+        {[0, 1].map((column) => (
+          <Accordion key={column} type="single" className="flex flex-col gap-4" collapsible>
+            {FAQ.slice(column * Math.ceil(FAQ.length / 2), (column + 1) * Math.ceil(FAQ.length / 2)).map((item, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="faq-item"
+              >
+                <AccordionTrigger className="cursor-pointer text-left">
+                  <div className="flex items-center gap-2">
+                    <Image
+                      src="/helpCircle.svg"
+                      width={20}
+                      height={20}
+                      alt="Help Circle"
+                    />{" "}
+                    {item.title}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="flex flex-col gap-5">
+                  {item.content}
+                  <div className="border-t-2 border-dashed border-grayscale-200" />
+                  <button
+                    onClick={() => openModal(item)}
+                    className="text-sm text-grayscale-600 flex items-center justify-between gap-1 cursor-pointer group"
+                  >
+                    <p className="text-grayscale-600 font-medium">Learn more</p>
+                    <ArrowRightIcon
+                      size={18}
+                      className="transition-transform duration-300 ease-in-out -translate-x-1 group-hover:translate-x-0.5"
+                    />
+                  </button>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        ))}
       </div>
+
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="bg-white border-1 border-grayscale-200 rounded-2xl">
           <DialogHeader className="border-b border-grayscale-200 pb-3 flex flex-row items-center gap-4">

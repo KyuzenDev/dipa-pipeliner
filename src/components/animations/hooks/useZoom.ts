@@ -23,7 +23,7 @@ export const useZoom = (
           ease: "power3.out",
           scrollTrigger: {
             trigger: element,
-            start: "top 90%",
+            start: "top 95%",
             once: true,
           },
         }

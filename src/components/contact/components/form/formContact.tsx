@@ -18,8 +18,12 @@ import EmailSender from "../../../../../public/formulir/Mailogo.svg";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+import {
+  useFadeIn,
+  useZoom,
+  useSlideFromTop,
+} from "@/components/animations/hooks";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -28,28 +32,21 @@ const contactSchema = z.object({
 });
 
 export default function FormContact() {
-  const formRef = useRef<HTMLDivElement>(null);
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const nameLabelRef = useRef<HTMLLabelElement>(null);
+  const emailLabelRef = useRef<HTMLLabelElement>(null);
+  const messageLabelRef = useRef<HTMLLabelElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (formRef.current) {
-      const elements = formRef.current.querySelectorAll(".animated-item");
-
-      gsap.fromTo(
-        elements,
-        {
-          y: 40,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-          stagger: 0.15,
-        }
-      );
-    }
-  }, []);
+  useZoom(card1Ref, 0.1);
+  useZoom(card2Ref, 0.2);
+  useFadeIn(imageRef, 0.3);
+  useSlideFromTop(nameLabelRef, 0.4);
+  useSlideFromTop(emailLabelRef, 0.5);
+  useSlideFromTop(messageLabelRef, 0.6);
+  useZoom(buttonRef, 0.7);
 
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
@@ -65,13 +62,14 @@ export default function FormContact() {
   };
 
   return (
-    <div
-      ref={formRef}
-      className="w-full px-6 md:px-16 pb-16 md:pb-28 pt-10 md:pt-16 flex flex-col gap-16 bg-transparent"
-    >
-      <div className="animated-item max-w-[752px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="w-full px-6 md:px-16 pb-16 md:pb-28 pt-10 md:pt-16 flex flex-col gap-16 bg-transparent">
+      <div className="max-w-[752px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Left Cards */}
         <div className="flex flex-col gap-6 text-left">
-          <div className="animated-item w-full flex flex-col rounded-2xl border-3 p-6 gap-4 border-white bg-white shadow-md">
+          <div
+            ref={card1Ref}
+            className="flex flex-col rounded-2xl border-3 p-6 gap-4 border-white bg-white shadow-md"
+          >
             <Image src={Pesan} alt="massage-fitures" className="w-10 h-10" />
             <div className="flex flex-col gap-1">
               <p className="font-medium text-lg text-gray-900">
@@ -85,7 +83,11 @@ export default function FormContact() {
               Send Message
             </u>
           </div>
-          <div className="animated-item w-full flex flex-col rounded-2xl border-3 p-6 gap-4 border-white bg-white shadow-md">
+
+          <div
+            ref={card2Ref}
+            className="flex flex-col rounded-2xl border-3 p-6 gap-4 border-white bg-white shadow-md"
+          >
             <Image src={Asked} alt="asked-fre-media" className="w-10 h-10" />
             <div className="flex flex-col gap-1">
               <p className="font-medium text-lg text-gray-900">Read FAQs</p>
@@ -99,8 +101,11 @@ export default function FormContact() {
           </div>
         </div>
 
+        {/* Right Form */}
         <div className="flex flex-col rounded-2xl gap-6 p-6 bg-white text-left border border-grayscale-200">
-          <Image src={EmailSender} alt="send-your-feedback" />
+          <div ref={imageRef}>
+            <Image src={EmailSender} alt="send-your-feedback" />
+          </div>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -111,7 +116,7 @@ export default function FormContact() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="animated-item">
+                    <FormLabel ref={nameLabelRef}>
                       Full Name<span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -126,7 +131,7 @@ export default function FormContact() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="animated-item">
+                    <FormLabel ref={emailLabelRef}>
                       Email Address<span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -141,7 +146,7 @@ export default function FormContact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="animated-item">
+                    <FormLabel ref={messageLabelRef}>
                       Messages<span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -151,7 +156,7 @@ export default function FormContact() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="animated-item">
+              <Button ref={buttonRef} type="submit" className="transition-none">
                 Send Messages
               </Button>
             </form>

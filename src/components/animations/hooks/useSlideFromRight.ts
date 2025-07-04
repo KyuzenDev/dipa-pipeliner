@@ -23,7 +23,7 @@ export const useSlideFromRight = (
           ease: "power3.out",
           scrollTrigger: {
             trigger: element,
-            start: "top 95%",
+            start: "top 90%",
             once: true,
           },
         }

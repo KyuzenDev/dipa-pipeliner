@@ -23,7 +23,7 @@ export const useFadeIn = (
           delay,
           scrollTrigger: {
             trigger: el,
-            start: "top 95%",
+            start: "top 90%",
             once: true,
           },
         }

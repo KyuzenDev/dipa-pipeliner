@@ -22,7 +22,7 @@ export const useStaggerZoom = (
             ease: "power3.out",
             scrollTrigger: {
               trigger: el,
-              start: "top 95%",
+              start: "top 90%",
               once: true,
             },
           }

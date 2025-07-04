@@ -23,7 +23,7 @@ export const useStaggerChildren = (
           ease: "power2.out",
           scrollTrigger: {
             trigger: ref.current,
-            start: "top 95%",
+            start: "top 90%",
             once: true,
           },
         }

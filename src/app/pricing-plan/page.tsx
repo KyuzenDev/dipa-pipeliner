@@ -1,7 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+import {
+  useSlideFromTop,
+  useSlideFromLeft,
+  useSlideFromRight,
+  useZoom
+} from "@/components/animations/hooks"
 import { pricing } from "@/data/pricing";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/CTA";
@@ -11,67 +16,40 @@ import Image from "next/image";
 import Plate from "../../../public/pricing-plan/head.svg";
 
 export default function PricingPlan() {
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const imageref = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    if (textRef.current) {
-      gsap.fromTo(
-        textRef.current,
-        { x: -100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
-      );
-    }
+  const priceRef= useRef<HTMLHeadingElement>(null);
 
-    if (imageRef.current) {
-      gsap.fromTo(
-        imageRef.current,
-        { x: 100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
-      );
-    }
-  }, []);
-  useEffect(() => {
-    if (cardRef.current) {
-      const targets = cardRef.current.querySelectorAll(".pricing-animate");
-
-      gsap.fromTo(
-        targets,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.25,
-          ease: "power3.out",
-        }
-      );
-    }
-  }, []);
-  
-  
+  useSlideFromLeft(badgeRef, 0.235);
+  useSlideFromLeft(headerRef, 0.235);
+  useSlideFromLeft(descRef, 0.235);
+  useSlideFromRight(imageref, 0.238);
+  useZoom(cardRef, 0.24);
+  useSlideFromTop(priceRef, 0.238);
 
   return (
     <>
       <div className="max-w-full relative border-b border-grayscale-200 lg:pt-24 lg:pb-32 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
           <div
+            ref={badgeRef}
             className="flex flex-col items-start w-full lg:w-1/2 gap-4 mt-8"
-            ref={textRef}
           >
             <Badge>Pricing</Badge>
-            <h2 className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">
+            <h2 ref={headerRef} className="font-sans font-semibold text-4xl text-grayscale-900 leading-[120%]">
               Hack to Unicorn
             </h2>
-            <p className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
+            <p ref={descRef} className="font-sans font-normal text-base text-grayscale-700 leading-[150%]">
               Start small, dream big. Get going in minutes—no commitment needed.
             </p>
           </div>
 
           <div
+            ref={imageref}
             className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 mb-4 lg:mt-0 lg:mb-3 lg:absolute lg:right-[-10px]"
-            ref={imageRef}
           >
             <Image
               src={Plate}
@@ -143,7 +121,7 @@ export default function PricingPlan() {
 
                 <Button
                   variant={plan.version === "Primary" ? "default" : "outline"}
-                  className="w-full py-2 px-4 rounded-xl text-sm font-semibold"
+                  className="w-full py-2 px-4 rounded-xl text-sm font-semibold cursor-pointer"
                 >
                   {plan.head === "Enterprise"
                     ? "Talk to Sales"

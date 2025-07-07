@@ -1,7 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+import {
+  useSlideFromRight,
+  useSlideFromTop,
+  useZoom,
+} from "@/components/animations/hooks";
 import FounderCards from "@/components/about/components/card/ceoCard";
 import GuidedCard from "@/components/about/components/card/guidedCard";
 import { Badge } from "@/components/ui/badge";
@@ -10,49 +14,47 @@ import CTA from "@/components/CTA";
 import Image from "next/image";
 
 export default function About() {
-  const about = useRef<HTMLDivElement>(null);
-  
-    useEffect(() => {
-      if (about.current) {
-        const elements = about.current.querySelectorAll(".about-item");
-  
-        gsap.fromTo(
-          elements,
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.15,
-            ease: "power2.out",
-            duration: 0.8,
-          }
-        );
-      }
-    }, []);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const buttonGroupRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null); 
+  const ceoheaderRef = useRef<HTMLHeadingElement>(null);
+  const ceoNameRef = useRef<HTMLHeadingElement>(null);
+  const ceoPosRef = useRef<HTMLParagraphElement>(null);
+
+  useSlideFromTop(badgeRef, 0.135);
+  useSlideFromTop(headerRef, 0.135);
+  useSlideFromTop(descRef, 0.135);
+  useZoom(buttonGroupRef, 0.225);
+  useZoom(imageRef, 0.258);
+  useSlideFromRight(ceoheaderRef, 0.24);
+  useSlideFromRight(ceoNameRef, 0.24);
+  useSlideFromRight(ceoPosRef, 0.24);
+
   return (
     <>
       <div className="absolute w-[610px] -z-5 h-64 bg-[linear-gradient(to_top_right,_#88CCF8,_#D9F8C0)] rounded-xl blur-[160px]"></div>
-      <div ref={about} className="max-w-full w-full h-auto pt-12 gap-2">
-        <div className="relative w-full flex flex-col gap-6 items-center px-4 md:px-12 xl:px-24 pt-8 md:pt-32 lg:pt-14 pb-12 md:pb-52">
+      <div className="max-w-full w-full h-auto pt-12 gap-2">
+        <div ref={badgeRef} className="relative w-full flex flex-col gap-6 items-center px-4 md:px-12 xl:px-24 pt-8 md:pt-32 lg:pt-14 pb-12 md:pb-52">
           <Badge variant="default" className="about-item">
             About
           </Badge>
-
           <div className="text-center flex flex-col gap-2 max-w-2xl">
-            <h2 className="font-semibold about-item text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900">
+            <h2 ref={headerRef} className="font-semibold about-item text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900">
               The CRM Behind
             </h2>
-            <p className="font-normal about-item text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900">
+            <p ref={descRef} className="font-normal about-item text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900">
               Thousands of Companies
             </p>
           </div>
 
-          <p className="text-sm sm:text-base about-item text-grayscale-700 text-center max-w-xl">
+          <p ref={descRef} className="text-sm sm:text-base about-item text-grayscale-700 text-center max-w-xl">
             Pipeliner is on a mission to craft tools that support business
             growth through smart.
           </p>
 
-          <div className="relative w-full about-item max-w-3xl mt-8">
+          <div ref={imageRef} className="relative w-full about-item max-w-3xl mt-8">
             <Image
               src="/imageAbout.png"
               alt="About Hero"
@@ -60,7 +62,7 @@ export default function About() {
               height={329}
               className="w-full h-auto object-contain z-10 relative"
             />
-            <div className="absolute top-0 left-1/2 about-item -translate-x-1/2 w-[90%] max-w-[750px] z-0">
+            <div ref={imageRef} className="absolute top-0 left-1/2 about-item -translate-x-1/2 w-[90%] max-w-[750px] z-0">
               <Image
                 src="/ornament.svg"
                 alt="Ornament Image"
@@ -75,7 +77,7 @@ export default function About() {
         </div>
 
         <div className="w-full px-4 sm:px-6 py-8 about-item">
-          <div className="w-full py-6 flex justify-center items-center">
+          <div ref={imageRef} className="w-full py-6 flex justify-center items-center">
             <Image
               src="/hero/pipeliner.png"
               alt="Pipeliner"
@@ -87,14 +89,14 @@ export default function About() {
         </div>
 
         <div className="w-full px-4 sm:px-6 md:px-10 xl:px-[64px] py-16 md:py-24 flex flex-col gap-12 mx-auto">
-          <div className="w-full flex flex-col gap-4 items-center text-center">
+          <div ref={badgeRef} className="w-full flex flex-col gap-4 items-center text-center">
             <Badge variant="default" className="about-item">
               Guided
             </Badge>
-            <h2 className="font-semibold about-item text-2xl sm:text-3xl md:text-4xl leading-snug text-grayscale-900">
+            <h2 ref={headerRef} className="font-semibold about-item text-2xl sm:text-3xl md:text-4xl leading-snug text-grayscale-900">
               Value Driven Actions
             </h2>
-            <p className="text-sm about-item sm:text-base text-grayscale-700 max-w-xl">
+            <p ref={descRef} className="text-sm about-item sm:text-base text-grayscale-700 max-w-xl">
               Don&apos;t hesitate to reach out to us if you need further
               assistance.
             </p>
@@ -105,7 +107,7 @@ export default function About() {
         <div className="w-full px-4 md:px-[64px] h-auto flex flex-col items-center mx-auto">
           <div className="w-full bg-[#F5F8FC] flex justify-center items-center border border-grayscale-200 py-10 px-5">
             <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-center items-center gap-10 relative">
-              <div className="w-[203px] h-[230px] relative bg-gradient-to-br from-[#D9F8C0] to-[#88CCF8] border-[10px] border-white rounded-lg p-5">
+              <div ref={imageRef} className="w-[203px] h-[230px] relative bg-gradient-to-br from-[#D9F8C0] to-[#88CCF8] border-[10px] border-white rounded-lg p-5">
                 <Image
                   src="/filterImage.png"
                   alt="Filter Image"
@@ -115,7 +117,7 @@ export default function About() {
                 />
               </div>
               <div className="flex flex-col h-full justify-center items-center lg:items-start text-center lg:text-left gap-4">
-                <p className="font-sans font-normal text-2xl leading-[130%] text-grayscale-900">
+                <p ref={ceoheaderRef} className="font-sans font-normal text-2xl leading-[130%] text-grayscale-900">
                   Pipeliner is the first CRM that feels truly
                   <br />
                   modern. It&apos;s powerful, flexible, and fast
@@ -123,10 +125,10 @@ export default function About() {
                   to build with. There&apos;s nothing like it.
                 </p>
                 <div className="flex flex-col gap-1 text-md text-center lg:text-left items-center lg:items-start">
-                  <p className="font-sans font-bold text-grayscale-900">
+                  <p ref={ceoNameRef} className="font-sans font-bold text-grayscale-900">
                     Odessa Mira
                   </p>
-                  <p className="font-sans font-normal text-grayscale-600">
+                  <p ref={ceoPosRef} className="font-sans font-normal text-grayscale-600">
                     CEO & Head of Finance
                   </p>
                 </div>
@@ -135,14 +137,14 @@ export default function About() {
           </div>
         </div>
         <div className="w-full px-4 md:px-[64px] py-20 h-auto gap-8 flex flex-col items-center mx-auto">
-          <div className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
+          <div ref={badgeRef} className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
             <Badge variant="default" className="about-item">
               Founder
             </Badge>
-            <h2 className="font-semibold about-item text-xl md:text-4xl leading-[120%] text-grayscale-900">
+            <h2 ref={headerRef} className="font-semibold about-item text-xl md:text-4xl leading-[120%] text-grayscale-900">
               Meet the Team
             </h2>
-            <p className="font-normal text-sm about-item md:text-base leading-[150%] text-grayscale-700">
+            <p ref={descRef} className="font-normal text-sm about-item md:text-base leading-[150%] text-grayscale-700">
               We transform big ideas into smart solutions for today&apos;s
               teams.
             </p>

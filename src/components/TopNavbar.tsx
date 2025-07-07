@@ -57,7 +57,7 @@ export default function TopNavbar() {
             alt="App Logo"
             width={113}
             height={24}
-            className="cursor-pointer transition-opacity duration-300 hover:opacity-80"
+            className="cursor-pointer transition-none duration-300 hover:opacity-80"
           />
         </Link>
       </div>

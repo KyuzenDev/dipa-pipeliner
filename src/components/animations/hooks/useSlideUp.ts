@@ -23,7 +23,7 @@ export const useSlideUp = (
           ease: "back.out(1.7)",
           scrollTrigger: {
             trigger: element,
-            start: "top 90%",
+            start: "top 85%",
             once: true,
           },
         }

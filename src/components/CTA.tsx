@@ -11,13 +11,11 @@ import {
 } from "@/components/animations/hooks";
 
 export default function CTA() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const buttonGroupRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headerRef, 0.2);
   useFadeIn(descRef, 0.3);
   useZoom(buttonGroupRef, 0.4);
@@ -26,7 +24,7 @@ export default function CTA() {
   return (
     <div className="w-full sm:px-5 md:px-18 lg:px-20 px-8 pt-12 bg-gradient-cta shadow-blur-top">
       <div className="w-full mx-auto flex flex-col gap-10 items-center text-center relative z-10">
-        <div ref={badgeRef}>
+        <div>
           <Badge>Pipeliner Platform</Badge>
         </div>
 

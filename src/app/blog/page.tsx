@@ -7,18 +7,16 @@ import { useSlideFromTop } from "@/components/animations/hooks";
 
 
 export default function Blog() {
-    const badgeRef = useRef<HTMLDivElement>(null);
     const headRef = useRef<HTMLHeadingElement>(null);
     const descRef = useRef<HTMLParagraphElement>(null);
 
-    useSlideFromTop(badgeRef, 0.243);
     useSlideFromTop(headRef, 0.249);
     useSlideFromTop(descRef, 0.255);
     
     return (
         <>
             <div className="max-w-full h-auto border-b border-grayscale-200 pt-32 pb-16 px-16 gap-4 flex flex-col bg-white justify-center items-center bg-gradient-to-r from-blue-200 via-gray-100 to-green-200">
-                <div ref={badgeRef}>
+                <div>
                     <Badge variant="default">Announcement</Badge>
                 </div>
                 <h2

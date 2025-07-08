@@ -16,14 +16,12 @@ import Image from "next/image";
 import Plate from "../../../public/pricing-plan/head.svg";
 
 export default function PricingPlan() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const imageref = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const priceRef= useRef<HTMLHeadingElement>(null);
 
-  useSlideFromLeft(badgeRef, 0.235);
   useSlideFromLeft(headerRef, 0.235);
   useSlideFromLeft(descRef, 0.235);
   useSlideFromRight(imageref, 0.238);
@@ -35,7 +33,6 @@ export default function PricingPlan() {
       <div className="max-w-full relative border-b border-grayscale-200 lg:pt-24 lg:pb-32 px-4 md:px-16 bg-gradient-to-r from-white via-green-100 to-blue-200 overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
           <div
-            ref={badgeRef}
             className="flex flex-col items-start w-full lg:w-1/2 gap-4 mt-8"
           >
             <Badge>Pricing</Badge>

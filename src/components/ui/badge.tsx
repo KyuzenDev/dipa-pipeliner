@@ -1,7 +1,11 @@
+"use client";
 import * as React from "react"
+import { useRef } from "react";
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
+import {
+  useSlideFromTop,
+} from "@/components/animations/hooks";
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
@@ -33,10 +37,13 @@ function Badge({
 }: React.ComponentProps<"span"> &
   VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "span"
+  const badgeRef = useRef<HTMLDivElement>(null);
+  useSlideFromTop(badgeRef, 0.1);
 
   return (
     <Comp
       data-slot="badge"
+      ref={badgeRef}
       className={cn(badgeVariants({ variant }), className)}
       {...props}
     />

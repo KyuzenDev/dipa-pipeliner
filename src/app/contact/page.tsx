@@ -10,12 +10,10 @@ import {
 } from "@/components/animations/hooks";
 
 export default function Contact() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headingRef, 0.2);
   useFadeIn(descRef, 0.3);
   useZoom(formRef, 0.4);
@@ -26,7 +24,7 @@ export default function Contact() {
 
       <div className="relative w-full flex flex-col items-center gap-8 mx-auto">
         <div className="flex flex-col items-center text-center gap-4 w-full">
-          <div ref={badgeRef}>
+          <div>
             <Badge>Contact</Badge>
           </div>
 

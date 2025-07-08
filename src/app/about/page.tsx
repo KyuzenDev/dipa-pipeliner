@@ -16,7 +16,6 @@ import {
 
 export default function About() {
 
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
   const subHeaderRef = useRef<HTMLParagraphElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
@@ -24,42 +23,36 @@ export default function About() {
   const ornamentRef = useRef<HTMLDivElement>(null);
   const groupHeaderRef = useRef<HTMLDivElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headerRef, 0.2);
   useFadeIn(subHeaderRef, 0.3);
   useFadeIn(descRef, 0.4);
   useZoom(imageRef, 0.5);
   useFadeIn(ornamentRef, 0.6);
-  useStaggerChildren(groupHeaderRef, ".about-section", 0.3); // untuk Guided + Founder badge+heading+desc
+  useStaggerChildren(groupHeaderRef, ".about-section", 0.3);
 
   return (
     <>
       <div className="absolute w-[610px] -z-5 h-64 bg-[linear-gradient(to_top_right,_#88CCF8,_#D9F8C0)] rounded-xl blur-[160px]" />
 
-      <div className="max-w-full w-full h-auto pt-12 gap-2">
+      <div
+        ref={groupHeaderRef}
+        className="max-w-full w-full h-auto pt-12 gap-2"
+      >
         <div className="relative w-full flex flex-col gap-6 items-center px-4 md:px-12 xl:px-24 pt-8 md:pt-32 lg:pt-14 pb-12 md:pb-52">
-          <div ref={badgeRef}>
-            <Badge variant="default">About</Badge>
-          </div>
+          <Badge variant="default">About</Badge>
 
           <div className="text-center flex flex-col gap-2 max-w-2xl">
-            <h2
-              ref={headerRef}
-              className="font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900"
-            >
+            <h2 className="font-semibold about-section text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900">
               The CRM Behind
             </h2>
-            <p
-              ref={subHeaderRef}
-              className="font-normal text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900"
-            >
+            <p className="font-normal about-section text-2xl sm:text-3xl md:text-4xl leading-tight text-grayscale-900">
               Thousands of Companies
             </p>
           </div>
 
           <p
-            ref={descRef}
-            className="text-sm sm:text-base text-grayscale-700 text-center max-w-xl"
+            ref={subHeaderRef}
+            className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700"
           >
             Pipeliner is on a mission to craft tools that support business
             growth through smart.
@@ -103,30 +96,37 @@ export default function About() {
         </div>
 
         <div className="w-full px-4 sm:px-6 md:px-10 xl:px-[64px] py-16 md:py-24 flex flex-col gap-12 mx-auto">
-          <div ref={groupHeaderRef} className="w-full flex flex-col gap-4 items-center text-center">
-            <Badge variant="default" className="about-section">
-              Guided
-            </Badge>
-            <h2 className="font-semibold about-section text-2xl sm:text-3xl md:text-4xl leading-snug text-grayscale-900">
+          <div
+            ref={groupHeaderRef}
+            className="w-full flex flex-col gap-4 items-center text-center"
+          >
+            <Badge variant="default">Guided</Badge>
+            <h2 className="font-semibold about-section text-xl md:text-4xl leading-[120%] text-grayscale-900">
               Value Driven Actions
             </h2>
-            <p className="text-sm about-section sm:text-base text-grayscale-700 max-w-xl">
-              Don&apos;t hesitate to reach out to us if you need further assistance.
+            <p className="font-normal about-section text-sm md:text-base leading-[150%] text-grayscale-700">
+              Don&apos;t hesitate to reach out to us if you need further
+              assistance.
             </p>
           </div>
           <GuidedCard />
         </div>
 
         <div className="w-full px-4 md:px-[64px] py-20 h-auto gap-8 flex flex-col items-center mx-auto">
-          <div ref={groupHeaderRef} className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
-            <Badge variant="default" className="about-section">
-              Founder
-            </Badge>
-            <h2 className="font-semibold about-section text-xl md:text-4xl leading-[120%] text-grayscale-900">
+          <div className="w-full h-auto gap-4 flex flex-col justify-between items-center text-center">
+            <Badge variant="default">Founder</Badge>
+            <h2
+              ref={headerRef}
+              className="font-semibold text-xl md:text-4xl leading-[120%] text-grayscale-900"
+            >
               Meet the Team
             </h2>
-            <p className="font-normal text-sm about-section md:text-base leading-[150%] text-grayscale-700">
-              We transform big ideas into smart solutions for today&apos;s teams.
+            <p
+              ref={descRef}
+              className="font-normal text-sm md:text-base leading-[150%] text-grayscale-700"
+            >
+              We transform big ideas into smart solutions for today&apos;s
+              teams.
             </p>
             <FounderCards />
           </div>

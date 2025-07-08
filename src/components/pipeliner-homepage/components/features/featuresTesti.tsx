@@ -15,11 +15,9 @@ import {
 import { StaticImageData } from "next/image";
 
 export default function Testimony() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const paraRef = useRef<HTMLParagraphElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headingRef, 0.2);
   useFadeIn(paraRef, 0.3);
 
@@ -27,7 +25,7 @@ export default function Testimony() {
     <div className="max-w-full h-auto px-16 py-20 bg-[#F5F8FC]">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-4 items-center text-center">
-          <div ref={badgeRef}>
+          <div>
             <Badge>Testimonials</Badge>
           </div>
           <h2

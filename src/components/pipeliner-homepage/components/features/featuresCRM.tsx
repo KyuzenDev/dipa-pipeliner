@@ -11,12 +11,10 @@ import {
 } from "@/components/animations/hooks";
 
 export default function FeaturesCRM() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(titleRef, 0.2);
   useFadeIn(descRef, 0.3);
   useStaggerChildren(cardsRef, ".feature-card", 0.4);
@@ -24,7 +22,7 @@ export default function FeaturesCRM() {
   return (
     <div className="flex flex-col items-center gap-20 py-12 px-18">
       <div className="text-center flex flex-col items-center gap-5">
-        <div ref={badgeRef}>
+        <div>
           <Badge>
             <Avatar>
               <AvatarImage src="/avatar/jerrell.svg" sizes="sm" />

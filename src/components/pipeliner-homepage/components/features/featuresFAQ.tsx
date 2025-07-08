@@ -28,13 +28,11 @@ import {
 } from "@/components/animations/hooks";
 
 export default function FeaturesFAQ() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const faqListRef = useRef<HTMLDivElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headingRef, 0.2);
   useFadeIn(descRef, 0.3);
   useZoom(buttonRef, 0.4);
@@ -54,7 +52,7 @@ export default function FeaturesFAQ() {
   return (
     <div className="flex flex-col items-center gap-20 py-12 px-4 sm:px-6 md:px-12 lg:px-20">
       <div className="text-center flex flex-col items-center gap-6">
-        <div ref={badgeRef}>
+        <div>
           <Badge>FAQ&apos;s</Badge>
         </div>
         <div className="flex flex-col gap-5">

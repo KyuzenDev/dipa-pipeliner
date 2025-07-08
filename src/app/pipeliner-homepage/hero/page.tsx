@@ -11,14 +11,12 @@ import {
 } from "@/components/animations/hooks";
 
 export default function Hero() {
-  const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const buttonGroupRef = useRef<HTMLDivElement>(null);
   const reportsImageRef = useRef<HTMLDivElement>(null);
   const carouselImageRef = useRef<HTMLDivElement>(null);
 
-  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headingRef, 0.2);
   useFadeIn(descRef, 0.3);
   useZoom(buttonGroupRef, 0.4);
@@ -28,9 +26,9 @@ export default function Hero() {
   return (
     <div className="flex flex-col items-center gap-20 py-12 px-18 overflow-hidden">
       <div className="text-center flex flex-col items-center gap-10">
-        <div ref={badgeRef}>
+        <div>
           <Badge variant="secondary">
-            <Badge variant="blue">New</Badge>
+            <Badge variant="blue" className="transition-none">New</Badge>
             The Best AI CRM
           </Badge>
         </div>

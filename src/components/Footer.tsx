@@ -10,14 +10,20 @@ import { footerSocialMedia } from "@/data/footer";
 import {
   useFadeIn,
   useStaggerChildren,
+  useSlideFromLeft,
+  useSlideFromRight
 } from "@/components/animations/hooks";
 
 export default function Footer() {
   const footerContainerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
+  const copyrightRef = useRef<HTMLParagraphElement>(null);
+  const startbtnRef = useRef<HTMLParagraphElement>(null);
 
   useFadeIn(logoRef, 0.1);
   useStaggerChildren(footerContainerRef, ".nav-item", 0.3);
+  useSlideFromLeft(copyrightRef, 0.1);
+  useSlideFromRight(startbtnRef, 0.1);
 
   return (
     <div className="w-full bg-gray-100">
@@ -73,10 +79,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-300 py-6 flex flex-wrap gap-4 justify-between items-center text-grayscale-600">
-          <p className="text-center md:text-left">
+          <p ref={copyrightRef} className="text-center md:text-left">
             Pipeliner © 2025
           </p>
-          <div className="flex items-center cursor-pointer gap-2">
+          <div ref={startbtnRef} className="flex items-center cursor-pointer gap-2">
             <Link href="#" className="hover:text-gray-900">
               Get this template
             </Link>

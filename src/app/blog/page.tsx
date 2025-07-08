@@ -1,43 +1,20 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import CTA from "@/components/CTA";
 import BlogList from "@/components/blog/components/blogContent";
 import { Badge } from "@/components/ui/badge";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSlideFromTop } from "@/components/animations/hooks";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Blog() {
     const badgeRef = useRef<HTMLDivElement>(null);
     const headRef = useRef<HTMLHeadingElement>(null);
     const descRef = useRef<HTMLParagraphElement>(null);
 
-    useEffect(() => {
-        const elements = [badgeRef.current, headRef.current, descRef.current];
-
-        elements.forEach((el, index) => {
-            if (el) {
-                gsap.fromTo(
-                    el,
-                    { opacity: 0, y: -40 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        delay: index * 0.2,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: el,
-                            start: "top 90%",
-                            toggleActions: "play none none reverse",
-                        },
-                    }
-                );
-            }
-        });
-    }, []);
-
+    useSlideFromTop(badgeRef, 0.243);
+    useSlideFromTop(headRef, 0.249);
+    useSlideFromTop(descRef, 0.255);
+    
     return (
         <>
             <div className="max-w-full h-auto border-b border-grayscale-200 pt-32 pb-16 px-16 gap-4 flex flex-col bg-white justify-center items-center bg-gradient-to-r from-blue-200 via-gray-100 to-green-200">

@@ -11,21 +11,26 @@ import source from "../../../../../public/icons/flow/source.png";
 import {
   useSlideFromTop,
   useFadeIn,
+  useZoom
 } from "@/components/animations/hooks";
 import { StaticImageData } from "next/image";
 
 export default function Testimony() {
+  const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const paraRef = useRef<HTMLParagraphElement>(null);
+  const testimonyRef = useRef<HTMLDivElement>(null);
 
+  useSlideFromTop(badgeRef, 0.1);
   useSlideFromTop(headingRef, 0.2);
   useFadeIn(paraRef, 0.3);
+  useZoom(testimonyRef, 0.325);
 
   return (
     <div className="max-w-full h-auto px-16 py-20 bg-[#F5F8FC]">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-4 items-center text-center">
-          <div>
+          <div ref={badgeRef}>
             <Badge>Testimonials</Badge>
           </div>
           <h2
@@ -43,7 +48,7 @@ export default function Testimony() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-5">
+        <div ref={testimonyRef} className="flex flex-col lg:flex-row gap-5">
           <div className="flex flex-col p-6 sm:p-10 rounded-xl gap-6 bg-[#EBEDFD] border-10 border-white">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-normal text-grayscale-900 leading-[140%]">
               Pipeliner is the first CRM that feels truly modern. It&apos;s powerful, flexible,

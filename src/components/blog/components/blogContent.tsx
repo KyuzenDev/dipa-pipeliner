@@ -1,14 +1,24 @@
+"use-client"
+import { useRef } from "react";
+import { useStaggerZoom } from "@/components/animations/hooks";
 import { blogDetail } from "@/data/blog";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function BlogList() {
+    const blogRefs = useRef<HTMLDivElement[]>([]);
+    useStaggerZoom(blogRefs, 0.3);
     return (
         <div className="w-full py-12 px-4 flex flex-col items-center">
             <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {blogDetail.map((item, index) => (
-                    <div key={index} className="space-y-3">
+                    <div
+                        ref={(el) => {
+                            if (el) blogRefs.current[index] = el;
+                        }}
+                        key={index}
+                        className="space-y-3">
                         <Image
                             src={`/content-of-blog/blog-${index + 1}.png`}
                             width={400}
@@ -26,7 +36,7 @@ export default function BlogList() {
                                 {item.title}
                             </h3>
                         </Link>
-                        
+
                         <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                 ))}

@@ -5,7 +5,7 @@ import {
   useSlideFromTop,
   useSlideFromLeft,
   useSlideFromRight,
-  useZoom
+  useStaggerZoom
 } from "@/components/animations/hooks"
 import { pricing } from "@/data/pricing";
 import { Button } from "@/components/ui/button";
@@ -19,13 +19,13 @@ export default function PricingPlan() {
   const headerRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const imageref = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<HTMLDivElement[]>([]);
   const priceRef= useRef<HTMLHeadingElement>(null);
 
   useSlideFromLeft(headerRef, 0.235);
   useSlideFromLeft(descRef, 0.235);
   useSlideFromRight(imageref, 0.238);
-  useZoom(cardRef, 0.24);
+  useStaggerZoom(cardRefs, 0.24);
   useSlideFromTop(priceRef, 0.238);
 
   return (
@@ -60,12 +60,14 @@ export default function PricingPlan() {
 
       <div className="max-w-full border-y border-grayscale-200">
         <div
-          ref={cardRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 max-w-7xl mx-auto"
         >
-          {pricing.map((plan) => (
+          {pricing.map((plan, index) => (
             <div
-              key={plan.head}
+              ref={(el) => {
+                if (el) cardRefs.current[index] = el;
+              }}
+              key={index}
               className={`pricing-animate flex flex-col justify-between h-full transition-all duration-300 ${
                 plan.version === "Primary"
                   ? "bg-gradient-to-b from-white to-[#B7E2FA] from-45%"

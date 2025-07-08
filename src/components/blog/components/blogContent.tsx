@@ -1,6 +1,6 @@
 "use-client"
 import { useRef } from "react";
-import { useStaggerZoom } from "@/components/animations/hooks";
+import { useStaggerZoom, useZoom } from "@/components/animations/hooks";
 import { blogDetail } from "@/data/blog";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -8,7 +8,11 @@ import Link from "next/link";
 
 export default function BlogList() {
     const blogRefs = useRef<HTMLDivElement[]>([]);
+    const buttonRef = useRef<HTMLDivElement>(null);
+
     useStaggerZoom(blogRefs, 0.3);
+    useZoom(buttonRef, 0.3);
+    
     return (
         <div className="w-full py-12 px-4 flex flex-col items-center">
             <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -42,9 +46,12 @@ export default function BlogList() {
                 ))}
             </div>
 
-            <Button variant="secondary" className="mt-10">
-                Load More Blogs
-            </Button>
+            <div ref={buttonRef}>
+                <Button variant="secondary" className="mt-10">
+                    Load More Blogs
+                </Button>
+            </div>
+            
         </div>
     );
 }

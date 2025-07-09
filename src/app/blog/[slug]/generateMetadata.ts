@@ -1,12 +1,15 @@
 import { client } from "@/lib/sanity";
 import { blogBySlugQuery } from "@/lib/queries";
 import type { Metadata } from "next";
+type BlogMetaProps = {
+  params: {
+    slug: string;
+  };
+};
 
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+}: BlogMetaProps): Promise<Metadata> {
   const blog = await client.fetch(blogBySlugQuery, { slug: params.slug });
 
   if (!blog) {

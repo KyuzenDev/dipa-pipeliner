@@ -13,6 +13,12 @@ export default async function BlogDetailPage({
   const blog = await client.fetch(blogBySlugQuery, {
     slug: resolvedParams.slug,
   });
+  const formatDate = (isoDate: string): string =>
+    new Date(isoDate).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
 
   if (!blog) return notFound();
 
@@ -27,7 +33,7 @@ export default async function BlogDetailPage({
       />
       <h1 className="text-3xl font-bold">{blog.title}</h1>
       <p className="text-gray-500 text-sm">
-        {blog.publishedAt} | {blog.category}
+        {formatDate(blog.publishedAt)} | {blog.category}
       </p>
       <p className="text-base text-gray-700">{blog.description}</p>
       <PortableText value={blog.body} />

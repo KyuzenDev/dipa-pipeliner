@@ -12,6 +12,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+const formatDate = (isoDate: string): string =>
+  new Date(isoDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
 export default function BlogClient({ posts }: { posts: Post[] }) {
   const blogRefs = useRef<HTMLDivElement[]>([]);
   const buttonRef = useRef<HTMLDivElement>(null);
@@ -19,7 +26,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
   const descRef = useRef<HTMLParagraphElement>(null);
 
   const [visibleCount, setVisibleCount] = useState(6);
-  const reversedPosts = posts.slice().reverse();
+  const reversedPosts = posts?.slice().reverse() || [];
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 6);
@@ -32,20 +39,24 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
 
   return (
     <>
-      <div className="max-w-full h-auto border-b border-grayscale-200 pt-16 pb-16 px-16 gap-4 flex flex-col bg-white justify-center items-center bg-gradient-to-r from-blue-200 via-gray-100 to-green-200">
-        <div>
-          <Badge variant="default">Announcement</Badge>
-        </div>
-        <h2 ref={headRef} className="text-4xl font-semibold text-center">
+      <div className="max-w-full border-b border-grayscale-200 pt-16 pb-16 px-16 flex flex-col items-center justify-center bg-gradient-to-r from-blue-200 via-gray-100 to-green-200">
+        <Badge variant="default">Announcement</Badge>
+        <h2
+          ref={headRef}
+          className="text-4xl font-semibold text-center leading-[120%] text-grayscale-900"
+        >
           Read Blog & Articles
         </h2>
-        <p ref={descRef} className="text-base text-center">
+        <p
+          ref={descRef}
+          className="text-base text-center leading-[150%] text-grayscale-700"
+        >
           Learn from our team and top experts on Pipeliner, CRM, and GTM.
         </p>
       </div>
 
       <div className="w-full py-12 px-4 flex flex-col items-center">
-        <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {reversedPosts.slice(0, visibleCount).map((post, index) => (
             <div
               key={post.slug.current}
@@ -62,10 +73,10 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                 className="rounded-lg w-full h-52 object-cover"
               />
               <div className="text-sm text-gray-500">
-                {post.publishedAt} | {post.category}
+                {formatDate(post.publishedAt)} | {post.category}
               </div>
               <Link href={`/blog/${post.slug.current}`}>
-                <h3 className="text-lg font-semibold hover:text-blue-400">
+                <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-400">
                   {post.title}
                 </h3>
               </Link>

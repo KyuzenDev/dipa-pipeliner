@@ -32,8 +32,8 @@ export default defineType({
       options: {
         list: [
           {title: 'Product', value: 'Product'},
-          {title: 'Marketing', value: 'Marketing'},
-          {title: 'Engineering', value: 'Engineering'},
+          {title: 'Companies', value: 'Companies'},
+          {title: 'Customers', value: 'Customers'},
         ],
       },
       validation: (Rule) => Rule.required(),

@@ -1,19 +1,29 @@
 "use client";
 
-import { useRef } from "react";
-import { useStaggerZoom, useZoom } from "@/components/animations/hooks";
+import { useRef, useState } from "react";
+import {
+  useStaggerZoom,
+  useZoom,
+  useSlideFromTop,
+} from "@/components/animations/hooks";
 import type { Post } from "@/types/sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useSlideFromTop } from "@/components/animations/hooks";
 
 export default function BlogClient({ posts }: { posts: Post[] }) {
   const blogRefs = useRef<HTMLDivElement[]>([]);
   const buttonRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
+
+  const [visibleCount, setVisibleCount] = useState(6);
+  const reversedPosts = posts.slice().reverse();
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
 
   useSlideFromTop(headRef, 0.249);
   useSlideFromTop(descRef, 0.255);
@@ -26,22 +36,17 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
         <div>
           <Badge variant="default">Announcement</Badge>
         </div>
-        <h2
-          ref={headRef}
-          className="m-auto w-full font-sans font-semibold text-4xl text-grayscale-900 text-center leading-[120%]"
-        >
+        <h2 ref={headRef} className="text-4xl font-semibold text-center">
           Read Blog & Articles
         </h2>
-        <p
-          ref={descRef}
-          className="m-auto w-full font-sans font-normal text-base text-grayscale-700 text-center leading-[150%]"
-        >
+        <p ref={descRef} className="text-base text-center">
           Learn from our team and top experts on Pipeliner, CRM, and GTM.
         </p>
       </div>
+
       <div className="w-full py-12 px-4 flex flex-col items-center">
         <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
+          {reversedPosts.slice(0, visibleCount).map((post, index) => (
             <div
               key={post.slug.current}
               ref={(el) => {
@@ -60,7 +65,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                 {post.publishedAt} | {post.category}
               </div>
               <Link href={`/blog/${post.slug.current}`}>
-                <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-400">
+                <h3 className="text-lg font-semibold hover:text-blue-400">
                   {post.title}
                 </h3>
               </Link>
@@ -69,11 +74,17 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
           ))}
         </div>
 
-        <div ref={buttonRef}>
-          <Button variant="secondary" className="mt-10">
-            Load More Blogs
-          </Button>
-        </div>
+        {visibleCount < posts.length && (
+          <div ref={buttonRef}>
+            <Button
+              variant="secondary"
+              className="mt-10"
+              onClick={handleLoadMore}
+            >
+              Load More Blogs
+            </Button>
+          </div>
+        )}
       </div>
     </>
   );

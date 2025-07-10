@@ -3,12 +3,17 @@ import { blogBySlugQuery } from "@/lib/queries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
+
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const blog = await client.fetch(blogBySlugQuery, { slug: params.slug });
+  const resolvedParams = await params;
+  const blog = await client.fetch(blogBySlugQuery, {
+    slug: resolvedParams.slug,
+  });
+
   if (!blog) return notFound();
 
   return (

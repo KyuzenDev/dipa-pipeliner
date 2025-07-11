@@ -47,7 +47,7 @@ export default function CTA() {
 
         <div
           ref={buttonGroupRef}
-          className="flex flex-row gap-3 items-center justify-center"
+          className="flex flex-row gap-3 z-1 items-center justify-center"
         >
           <Button className="min-w-[160px]">Start for Free</Button>
           <Button variant="secondary" className="min-w-[160px]">

@@ -31,7 +31,13 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 6);
   };
-
+  const cardGradients = [
+    "bg-gradient-to-br from-white  to-[#B7E2FA30]",
+    "bg-gradient-to-br from-white  to-[#C7CCFA30]",
+    "bg-gradient-to-br from-white  to-[#C8FBEE30]",
+  ];
+  
+  
   useSlideFromTop(headRef, 0.249);
   useSlideFromTop(descRef, 0.255);
   useStaggerZoom(blogRefs, 0.3);
@@ -56,32 +62,44 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
       </div>
 
       <div className="w-full py-12 px-4 flex flex-col items-center">
-        <div className="max-w-7xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {reversedPosts.slice(0, visibleCount).map((post, index) => (
-            <div
+            <Link
               key={post.slug.current}
-              ref={(el) => {
-                if (el) blogRefs.current[index] = el;
-              }}
-              className="space-y-3"
+              href={`/blog/${post.slug.current}`}
+              className="group"
             >
-              <Image
-                src={post.coverImage.asset.url}
-                alt={post.title}
-                width={400}
-                height={250}
-                className="rounded-lg w-full h-52 object-cover"
-              />
-              <div className="text-sm text-gray-500">
-                {formatDate(post.publishedAt)} | {post.category}
-              </div>
-              <Link href={`/blog/${post.slug.current}`}>
-                <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-400">
+              <div
+                ref={(el) => {
+                  if (el) blogRefs.current[index] = el;
+                }}
+                className={`space-y-3 px-12 py-16 border-1 border-grayscale-200 transition duration-300 hover:shadow-xl ${cardGradients[index % cardGradients.length]}`}
+              >
+                <div className="relative w-full h-52 overflow-hidden rounded-lg">
+                  <Image
+                    src={post.coverImage.asset.url}
+                    alt={post.title}
+                    width={400}
+                    height={250}
+                    className="rounded-lg w-full h-52 object-cover transition duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="text-sm text-grayscale-600">
+                  {formatDate(post.publishedAt)} | {post.category}
+                </div>
+
+                <h3 className="text-lg font-semibold text-grayscale-900 transition group-hover:text-blue-500">
                   {post.title}
                 </h3>
-              </Link>
-              <p className="text-gray-600 text-sm">{post.description}</p>
-            </div>
+
+                <p className="text-grayscale-500 text-sm">
+                  {post.description.length > 48
+                    ? `${post.description.slice(0, 48)}...`
+                    : post.description}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
 

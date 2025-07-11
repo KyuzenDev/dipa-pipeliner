@@ -79,10 +79,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-300 py-6 flex flex-wrap gap-4 justify-between items-center text-grayscale-600">
-          <p ref={copyrightRef} className="text-center md:text-left">
+          <p className="text-center md:text-left">
             Pipeliner © 2025
           </p>
-          <div ref={startbtnRef} className="flex items-center cursor-pointer gap-2">
+          <div className="flex items-center cursor-pointer gap-2">
             <Link href="#" className="hover:text-gray-900">
               Get this template
             </Link>

@@ -45,7 +45,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
 
   return (
     <>
-      <div className="max-w-full border-b border-grayscale-200 pt-16 pb-16 px-16 flex flex-col items-center justify-center bg-gradient-to-r from-blue-200 via-gray-100 to-green-200">
+      <div className="max-w-full border-b border-grayscale-200 gap-3 pt-16 pb-16 px-16 flex flex-col items-center justify-center bg-gradient-to-r from-blue-200 via-gray-100 to-green-200">
         <Badge variant="default">Announcement</Badge>
         <h2
           ref={headRef}

@@ -15,14 +15,16 @@ import {
 } from "@/components/animations/hooks";
 
 export default function About() {
-
   const headerRef = useRef<HTMLHeadingElement>(null);
   const subHeaderRef = useRef<HTMLParagraphElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const ornamentRef = useRef<HTMLDivElement>(null);
   const groupHeaderRef = useRef<HTMLDivElement>(null);
-
+  const testimonialRef = useRef<HTMLDivElement>(null);
+  const imageBoxRef = useRef<HTMLDivElement>(null);
+  useFadeIn(testimonialRef, 0.3); // animasi masuk dari transparansi
+  useZoom(imageBoxRef, 0.25); // zoom-in smooth pada kotak image
   useSlideFromTop(headerRef, 0.2);
   useFadeIn(subHeaderRef, 0.3);
   useFadeIn(descRef, 0.4);
@@ -110,6 +112,43 @@ export default function About() {
             </p>
           </div>
           <GuidedCard />
+        </div>
+        <div className="w-full h-auto gap-8 flex flex-col items-center mx-auto">
+          <div className="w-full bg-white flex justify-center items-center border-1 border-grayscale-200 px-12">
+            <div className="w-full gap-10 bg-[#F5F8FC] flex justify-center items-center border-x-1 border-grayscale-200 py-10 relative">
+              <div
+                ref={imageBoxRef}
+                className="w-[203px] relative h-[230px] bg-[linear-gradient(120deg,_#D9F8C0_30%,_#88CCF8)] border-10 border-white rounded-lg p-5"
+              >
+                <Image
+                  src="/filterImage.png"
+                  alt="Filter Image"
+                  width={212}
+                  height={213}
+                  className="absolute bottom-0 left-0 z-10"
+                />
+              </div>
+
+              <div
+                ref={testimonialRef}
+                className="flex flex-col h-full justify-center items-start gap-4"
+              >
+                <p className="font-normal text-4xl leading-[130%] text-grayscale-900">
+                  Pipeliner is the first CRM that feels truly <br /> modern.
+                  It&apos;s powerful, flexible, and fast <br />
+                  to build with. There&apos;s nothing like it.
+                </p>
+                <div className="flex flex-col gap-1 text-md">
+                  <p className="font-semibold text-grayscale-900">
+                    Odessa Mira
+                  </p>
+                  <p className="font-normal text-grayscale-600">
+                    CEO & Head of Finance
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="w-full px-4 md:px-[64px] py-20 h-auto gap-8 flex flex-col items-center mx-auto">

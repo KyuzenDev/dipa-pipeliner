@@ -45,8 +45,8 @@ export default function Footer() {
             {navigation
               .filter((item) => item.hideInNavbar || item.published)
               .map((item) => (
-                <li key={item.url} className="nav-item">
-                  <Link href={item.url} className="hover:text-gray-900">
+                <li key={item.url} className="nav-item text-center">
+                  <Link href={item.url} className="hover:text-grayscale-600">
                     {item.label}
                   </Link>
                 </li>
@@ -79,9 +79,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-300 py-6 flex flex-wrap gap-4 justify-between items-center text-grayscale-600">
-          <p className="text-center md:text-left">
-            Pipeliner © 2025
-          </p>
+          <p className="text-center md:text-left">Pipeliner © 2025</p>
           <div className="flex items-center cursor-pointer gap-2">
             <Link href="#" className="hover:text-gray-900">
               Get this template

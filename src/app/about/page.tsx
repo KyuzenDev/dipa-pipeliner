@@ -114,31 +114,35 @@ export default function About() {
           <GuidedCard />
         </div>
         <div className="w-full h-auto gap-8 flex flex-col items-center mx-auto">
-          <div className="w-full bg-white flex justify-center items-center border-1 border-grayscale-200 px-12">
-            <div className="w-full gap-10 bg-[#F5F8FC] flex justify-center items-center border-x-1 border-grayscale-200 py-10 relative">
+          <div className="w-full bg-white flex justify-center items-center border border-grayscale-200 px-4 md:px-12">
+            <div className="w-full bg-[#F5F8FC] flex flex-col lg:flex-row justify-center items-center border-x border-grayscale-200 py-10 gap-8 lg:gap-10 relative">
+
               <div
                 ref={imageBoxRef}
-                className="w-[203px] relative h-[230px] bg-[linear-gradient(120deg,_#D9F8C0_30%,_#88CCF8)] border-10 border-white rounded-lg p-5"
+                className="w-[180px] sm:w-[203px] h-[220px] sm:h-[230px] relative rounded-2xl p-[5px] bg-white shadow-md"
               >
-                <Image
-                  src="/filterImage.png"
-                  alt="Filter Image"
-                  width={212}
-                  height={213}
-                  className="absolute bottom-0 left-0 z-10"
-                />
+                <div className="w-full h-full relative rounded-2xl bg-[linear-gradient(120deg,_#D9F8C0_30%,_#88CCF8)]">
+                  <Image
+                    src="/filterImage.png"
+                    alt="Filter Image"
+                    width={212}
+                    height={213}
+                    className="absolute bottom-0 left-0 z-10"
+                  />
+                </div>
               </div>
 
               <div
                 ref={testimonialRef}
-                className="flex flex-col h-full justify-center items-start gap-4"
+                className="flex flex-col justify-center items-start gap-4 max-w-[700px] px-4 lg:px-0 text-center lg:text-left"
               >
-                <p className="font-normal text-4xl leading-[130%] text-grayscale-900">
-                  Pipeliner is the first CRM that feels truly <br /> modern.
-                  It&apos;s powerful, flexible, and fast <br />
+                <p className="font-normal text-lg sm:text-xl lg:text-4xl leading-[130%] text-grayscale-900">
+                  Pipeliner is the first CRM that feels truly{" "}
+                  <br className="hidden lg:block" /> modern. It&apos;s powerful,
+                  flexible, and fast <br className="hidden lg:block" />
                   to build with. There&apos;s nothing like it.
                 </p>
-                <div className="flex flex-col gap-1 text-md">
+                <div className="flex flex-col gap-1 text-sm sm:text-md">
                   <p className="font-semibold text-grayscale-900">
                     Odessa Mira
                   </p>

@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🚀 Tech Stack
+
+| Teknologi       | Deskripsi                                                                 |
+|----------------|---------------------------------------------------------------------------|
+| **Framework**   | [Next.js](https://nextjs.org/) (App Router)                               |
+| **Language**    | [TypeScript](https://www.typescriptlang.org/)                             |
+| **Styling**     | [TailwindCSS](https://tailwindcss.com/)                                   |
+| **UI Library**  | [shadcn/ui](https://ui.shadcn.com/)                                       |
+| **Forms**       | [React Hook Form](https://react-hook-form.com/)                          |
+| **Validation**  | [Zod](https://zod.dev/)                                                   |
+| **Routing**     | Next.js App Router (folder `app/`)                                        |
+| **Deployment**  | [Vercel](https://vercel.com/)                                             |
+| **Content**     | [Sanity](https://www.sanity.io/)
+| **Animation**   | [GSAP (GreenSock Animation Platform)](https://gsap.com/)                 |

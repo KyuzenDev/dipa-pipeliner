@@ -5,14 +5,8 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SocialMedia } from "@/types/socialMedia";
+import { blogdetailSocialMedia } from "@/types/socialMedia";
 
-export const blogdetailSocialMedia: SocialMedia[] = [
-  { platform: "facebook", url: "#" },
-  { platform: "instagram", url: "#" },
-  { platform: "dribble", url: "#" },
-  { platform: "linkedin", url: "#" },
-];
 export default async function BlogDetailPage({
   params,
 }: {

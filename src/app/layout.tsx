@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import Head from "next/head";
 
+
 const inter = Inter_Tight({
   subsets: ["latin"],
 });

@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Pipeliner
 
-## Getting Started
+**Pipeliner** adalah sebuah website modern yang dibangun menggunakan teknologi terkini dengan fokus pada performa, skalabilitas, dan kemudahan dalam pengembangan. Proyek ini menggunakan pendekatan modular dan type-safe dengan TypeScript serta App Router dari Next.js.
 
-First, run the development server:
+🔗 **Live Demo:** [https://dipa-pipeliner.vercel.app](https://dipa-pipeliner.vercel.app)
+---
+
+## 🚀 Tech Stack
+
+| Teknologi       | Deskripsi                                                                 |
+|----------------|---------------------------------------------------------------------------|
+| **Framework**   | [Next.js](https://nextjs.org/) (App Router)                               |
+| **Language**    | [TypeScript](https://www.typescriptlang.org/)                             |
+| **Styling**     | [TailwindCSS](https://tailwindcss.com/)                                   |
+| **UI Library**  | [shadcn/ui](https://ui.shadcn.com/)                                       |
+| **Forms**       | [React Hook Form](https://react-hook-form.com/)                          |
+| **Validation**  | [Zod](https://zod.dev/)                                                   |
+| **Routing**     | Next.js App Router (folder `app/`)                                        |
+| **Deployment**  | [Vercel](https://vercel.com/)                                             |
+| **Content** | [Sanity](https://sanity.io/)
+| **Animation**   | [GSAP (GreenSock Animation Platform)](https://gsap.com/)                 |
+
+---
+
+## 🏗️ Struktur Proyek
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+custo/
+├── app/                # Routing dan pages menggunakan Next.js App Router
+├── components/         # Reusable components (menggunakan shadcn/ui)
+├── lib/                # Helper dan utilitas (termasuk zod schemas)
+├── types/              # Sanity Content
+├── public/             # Aset statis 
+├── tsconfig.json       # Konfigurasi TypeScript
+├── postcss.config.mjs  # Konfigurasi TailwindCSS
+└── README.md
+
+
+# 1. Clone repository
+git clone https://github.com/username/dipa-pipeliner.git
+cd dipa-pipeliner
+
+# 2. Install dependencies
+pnpm install
+# atau
+npm install
+
+# 3. Jalankan di development mode
 pnpm dev
-# or
-bun dev
-```
+# atau
+npm run dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✅ Fitur Utama
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✨ Routing dinamis dan nested dengan Next.js App Router
 
-## Learn More
+🎨 UI elegan dan modular dengan shadcn/ui dan TailwindCSS
 
-To learn more about Next.js, take a look at the following resources:
+🧩 Validasi form yang kuat dan type-safe dengan Zod
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🪄 Animasi interaktif menggunakan GSAP
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+☁️ Deployment instan dan optimal di Vercel
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📦 Deployment
+Project ini dideploy menggunakan Vercel.

@@ -5,7 +5,7 @@ import TopNavbar from "@/components/TopNavbar";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import Head from "next/head";
-import CTA from "@/components/CTA";
+
 
 const inter = Inter_Tight({
   subsets: ["latin"],
@@ -37,7 +37,6 @@ export default function Layout({
           )}
           <TopNavbar />
           <div className="w-full">{children}</div>
-          <CTA/>
           <Footer />
         </main>
       </body>

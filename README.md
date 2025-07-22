@@ -25,7 +25,7 @@
 ## 🏗️ Struktur Proyek
 
 ```bash
-custo/
+pipeliner/
 ├── app/                # Routing dan pages menggunakan Next.js App Router
 ├── components/         # Reusable components (menggunakan shadcn/ui)
 ├── lib/                # Helper dan utilitas (termasuk zod schemas)

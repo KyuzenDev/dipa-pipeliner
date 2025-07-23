@@ -1,21 +1,26 @@
 import { client } from "@/lib/sanity";
-import { blogBySlugQuery } from "@/lib/queries";
+import { allBlogQuery, blogBySlugQuery } from "@/lib/queries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { blogdetailSocialMedia } from "@/types/socialMedia";
-
+import type { Post } from "@/types/sanity";
+import MoreInsight from "@/components/blog/components/moreInsight";
 export default async function BlogDetailPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
-  const blog = await client.fetch(blogBySlugQuery, {
-    slug: resolvedParams.slug,
-  });
+ const [blog, posts]: [Post, Post[]] = await Promise.all([
+   client.fetch(blogBySlugQuery, { slug: resolvedParams.slug }),
+   client.fetch(allBlogQuery),
+ ]);
+const insights = posts.filter(
+  (item) => item.slug.current !== resolvedParams.slug
+);
   const formatDate = (isoDate: string): string =>
     new Date(isoDate).toLocaleDateString("en-US", {
       year: "numeric",
@@ -56,7 +61,12 @@ export default async function BlogDetailPage({
         className="rounded-xl object-cover w-full h-auto"
       />
       <p className="text-base text-gray-700">{blog.description}</p>
-      <PortableText value={blog.body} />
+      {blog.body ? (
+        <PortableText value={blog.body} />
+      ) : (
+        <p className="text-gray-400">No content available yet.</p>
+      )}
+
       <div className="max-w-full flex flex-col justify-left items-left md:flex gap-3 md:justify-left md:items-left">
         <p className="text-base leading-[150%] text-gray-600">Share post on</p>
         <div className="flex justify-left items-left md:flex gap-1 md:justify-left md:items-left">
@@ -82,6 +92,7 @@ export default async function BlogDetailPage({
             </Link>
           ))}
         </div>
+        <MoreInsight posts={insights} />
       </div>
     </div>
   );

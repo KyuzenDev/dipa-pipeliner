@@ -63,10 +63,11 @@ export default async function BlogDetailPage({
           className="rounded-xl object-cover w-full h-auto"
         />
         <p className="text-lg text-gray-700">{blog.description}</p>
+
         {blog.body ? (
-          <PortableText value={blog.body} />
+        <PortableText value={blog.body} />
         ) : (
-          <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-7">
           <div className="flex flex-col gap-4">
             <h4 className="font-sans font-semibold text-2xl leading-[140%] text-grayscale-900">The Game Changer For CRM</h4>
             <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
@@ -82,15 +83,33 @@ export default async function BlogDetailPage({
           </div>
 
           <div className="flex flex-col gap-4">
+            <h4 className="font-sans font-semibold text-2xl leading-[140%] text-grayscale-900">A New Focus For CRM</h4>
+            <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
+              By 2025, the biggest shift in CRM is the growing focus on the post-sales memory,
+              CRMs are no longer just for closing deals—they’re evolving to support the entire
+              customer journey, from first touch to long-term retention.
+
+              • Pipeliner are evolving beyond just sales tools
+              • The post-sales experience is becoming a priority
+              • Pipeliner will manage the full customer journey
+            </p>
+            <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
+              The future of CRM isn’t just about tracking interactions; it’s about enhancing those 
+              interactions through smart, user-friendly, and secure solutions that benefit both 
+              businesses and customers.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4">
             <h4 className="font-sans font-semibold text-2xl leading-[140%] text-grayscale-900">Smaller Vendors On The Rise</h4>
             <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
-              AI isn’t the only force transforming CRM smaller vendors are gaining ground, offering 
-              flexible, user-friendly solutions that rival legacy systems. Once focused on SMBs, 
+              AI isn’t the only force transforming CRM smaller vendors are gaining ground, offering
+              flexible, user-friendly solutions that rival legacy systems. Once focused on SMBs,
               these new players are now <u className="text-gray-900"><Link href="/pricing-plan">ready to meet enterprise</Link></u> demands with integration.
             </p>
           </div>
         </div>
-        )}
+      )}
 
         <div className="max-w-full flex flex-col justify-left items-left md:flex gap-3 md:justify-left md:items-left">
           <p className="text-base leading-[150%] text-gray-600">

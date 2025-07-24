@@ -66,23 +66,30 @@ export default async function BlogDetailPage({
         {blog.body ? (
           <PortableText value={blog.body} />
         ) : (
+          <div className="flex flex-col gap-7">
           <div className="flex flex-col gap-4">
-            <h4 className="font-sans font-semibold text-2xl leading-[140%] text-gray-900">
-              The Game Changer For CRM
-            </h4>
-            <p className="font-sans font-normal text-lg leading-[160%] text-gray-600">
-              By 2025, AI-powered CRMs won’t just store data they’ll write
-              follow-ups, summarize meetings, track interactions, and predict
-              customer needs. What was once a bonus will soon be essential.
-              These AI-driven features will shift from nice-to-have.
+            <h4 className="font-sans font-semibold text-2xl leading-[140%] text-grayscale-900">The Game Changer For CRM</h4>
+            <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
+              By 2025, AI-powered CRMs won’t just store data they’ll write follow-ups, summarize
+              meetings, track interactions, and predict customer needs. What was once a bonus
+              will soon be essential. These AI-driven features will shift from nice-to-have.
             </p>
-            <p className="font-sans font-normal text-lg leading-[160%] text-gray-600">
-              Think about it automated meeting summaries, email drafting, and
-              activity tracking will soon be the new standard. This means sales
-              teams can say goodbye to hours spent on repetitive tasks like data
-              entry and instead focus on selling.
+            <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
+              Think about it automated meeting summaries, email drafting, and activity tracking
+              will soon be the new standard. This means sales teams can say goodbye to hours
+              spent on repetitive tasks like data entry and instead focus on selling.
             </p>
           </div>
+
+          <div className="flex flex-col gap-4">
+            <h4 className="font-sans font-semibold text-2xl leading-[140%] text-grayscale-900">Smaller Vendors On The Rise</h4>
+            <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
+              AI isn’t the only force transforming CRM smaller vendors are gaining ground, offering 
+              flexible, user-friendly solutions that rival legacy systems. Once focused on SMBs, 
+              these new players are now <u className="text-gray-900"><Link href="/pricing-plan">ready to meet enterprise</Link></u> demands with integration.
+            </p>
+          </div>
+        </div>
         )}
 
         <div className="max-w-full flex flex-col justify-left items-left md:flex gap-3 md:justify-left md:items-left">

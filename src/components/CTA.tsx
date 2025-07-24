@@ -60,13 +60,13 @@ export default function CTA() {
           ref={imageRef}
         >
           <Image
-            src="ctaItem.svg"
+            src="/ctaItem.svg"
             alt="ctaItem"
             width={1500}
             height={180}
             className="absolute bottom-0 -z-1 sm:hidden md:hidden lg:block"
           />
-          <Image src="ctaTablet.svg" alt="ctaTablet" width={908} height={200} />
+          <Image src="/ctaTablet.svg" alt="ctaTablet" width={908} height={200} />
         </div>
       </div>
     </div>

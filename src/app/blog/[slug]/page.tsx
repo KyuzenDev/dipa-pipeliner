@@ -45,7 +45,7 @@ const insights = posts.filter(
         Blog
       </Link>
 
-      <h1 className="text-4xl font-semibold">{blog.title}</h1>
+      <h1 className="text-4xl font-semibold leading-[130%]">{blog.title}</h1>
       <div className="flex gap-3">
         <p className="text-gray-500 text-normal">
           {formatDate(blog.publishedAt)}

@@ -87,10 +87,10 @@ export default async function BlogDetailPage({
             <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">
               By 2025, the biggest shift in CRM is the growing focus on the post-sales memory,
               CRMs are no longer just for closing deals—they’re evolving to support the entire
-              customer journey, from first touch to long-term retention.
+              customer journey, from first touch to long-term retention. <br/>
 
-              • Pipeliner are evolving beyond just sales tools
-              • The post-sales experience is becoming a priority
+              • Pipeliner are evolving beyond just sales tools <br/>
+              • The post-sales experience is becoming a priority <br/>
               • Pipeliner will manage the full customer journey
             </p>
             <p className="font-sans font-normal text-lg leading-[160%] text-grayscale-600">

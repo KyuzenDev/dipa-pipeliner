@@ -20,7 +20,7 @@ export default function InsightCards({ posts }: { posts: Post[] }) {
           href={`/blog/${post.slug.current}`}
           className="group"
         >
-          <div className="space-y-3 border-r-1 border-grayscale-200 px-8 py-8 bg-white transition duration-300">
+          <div className="insight-card space-y-3 border-r-1 border-grayscale-200 px-8 py-8 bg-white transition-none duration-300">
             <div className="relative w-full h-48 overflow-hidden rounded-lg">
               <Image
                 src={post.coverImage.asset.url}
